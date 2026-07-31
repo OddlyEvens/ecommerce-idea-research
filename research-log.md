@@ -100,3 +100,101 @@ dead end. Better fallback uses of the slot, in priority order:
 **Angles now considered saturated / low-yield — deprioritize:** generic "best X software
 2026" queries (pure SEO farm), Shopify order-export tooling (many incumbents), and
 freelancer invoice-chasing (crowded, and searches returned only vendor blogs).
+
+---
+
+## 2026-07-31 — Week 2 (Run 2, same calendar day as week 1)
+
+**Note on filing:** the scheduler fired twice on 2026-07-31. Week 1's report
+(`product-ideas-2026-07-31.md`) documents a zero-result run and was **not** overwritten;
+this run is filed as `product-ideas-2026-07-31-run2.md`.
+
+### Evidence mode: **B** (WebFetch UNAVAILABLE — second consecutive run)
+
+STEP 0 control fetches were run fresh, not assumed from last week:
+
+- `https://example.com` → **HTTP 403 Forbidden**
+- `https://en.wikipedia.org/wiki/Main_Page` → **HTTP 403 Forbidden**
+
+Both trivial hosts failing rules out site-level bot detection; this is the same
+environment-level egress block week 1 documented. **The block now looks persistent rather
+than intermittent.** Per the brief, WebFetch was not retried after the STEP 0 check and no
+curl/direct-HTTP workaround was attempted.
+
+### What worked this run — the method change that unblocked it
+
+Week 1 concluded WebSearch alone was unusable. That was too pessimistic, and the fix was
+narrow: **WebSearch returns result *titles* verbatim, and titles can themselves carry hard
+evidence.** The AI-written summary is the untrustworthy part, not the whole output. Query
+patterns that made titles do the work:
+
+1. **Competitor + price in the query** → titles come back containing real list prices.
+   Best single hit of the run: `"Profound Alternatives: 5 AI Visibility Tools That Don't
+   Cost $499/Month"` — a competitor name, a real price, and a positioning complaint, all in
+   a verbatim title.
+2. **Marketplace listing mining** (week 1's own suggestion — it worked). Flippa listing
+   titles embed real metrics: `"$44K rev, $8.5K profit in 10 mos, $3.9K MRR, 77 subs,
+   5.0-star Chrome extension"`. Numbers straight from the title, no page open needed.
+3. **Forum-thread-title targeting.** Searching the *shape of a thread title* rather than the
+   topic surfaced e.g. Soapmaking Forum's "Inventory and batch tracking software" and the
+   AppleVis thread "Website widget overlays (accessiBe, Userway, etc) are not accesible."
+4. **Regulatory forcing functions** turned out to be the richest vein by far — real dates,
+   real fines, real enforcement actions, all indexed and quotable without opening a page.
+   This is what produced ID 001 (composite 16), the only strong idea in two runs.
+
+### What did NOT work
+
+- Generic "I wish there was an app that" / "is there a tool that" exact-phrase queries →
+  still pure SEO listicle farm (`bigideasdb.com`, `appnatively.com`, "40 App Ideas Backed by
+  1M+ Complaints"). Week 1 said this; confirmed again. **Stop using these.**
+- `site:` operators and Reddit remain unavailable — Reddit is hard-blocked to the user agent.
+- Chrome Web Store 1-star review text is not reachable by search; queries return platform
+  docs and Google Groups threads about the review system being broken, never review text.
+- Asking for HN *comment* content returns only the submission title. Comments need Mode A.
+
+### Honest read on signal quality: **usable but soft**
+
+Four ideas cleared the Mode B bar, versus zero last week — a real improvement, and the method
+above is the reason. But calibrate down: no page was read in full, and one direct conflict
+went unresolved (Craftybase entry price reported as both $20/mo and $49/mo Studio by
+different sources). Where sources conflicted I recorded the conflict rather than picking.
+
+Three of the four new ideas score poorly on whitespace (1–2). That is not padding — those
+rows exist so week 3 does not re-research crowded ground. The genuine finding is ID 001, and
+it came from asking "where does regulation force a purchase?" rather than "what are people
+complaining about?"
+
+**Negative findings recorded deliberately** (each one saves a future slot):
+- PCI DSS 6.4.3/11.6.1 → killed by a 2025 SAQ A change; obligation no longer reaches small
+  merchants. Ruled out.
+- Etsy bulk-edit → crowded (Evlista, eRank, Sale Samurai, Alura). Retired.
+- Maker inventory → crowded (Craftybase, Inventora, SoapMaker 3, plus free open-source
+  Craftplan). Recorded but capped at whitespace 2.
+
+### Guidance for next week
+
+1. **If WebFetch is restored, drop everything and fetch
+   [news.ycombinator.com/item?id=48045237](https://news.ycombinator.com/item?id=48045237)
+   first** — "Ask HN: What do you still do manually in 2026 that should be automated?" Its
+   stated criteria (5+ times a week, looked for a tool and nothing good exists, would pay
+   $10–20/month) match this project's brief almost exactly. Hundreds of self-qualified demand
+   statements on one page. This is the single highest-value target identified in two runs.
+   Second priority under Mode A: re-validate ID 001 by opening the FTC order PDF and the
+   TestParty lawsuit research directly.
+2. **If still Mode B, lead with regulatory forcing functions** — the vein that actually
+   produced this week's only strong idea. Untried candidates: EU Digital Product Passport
+   (textiles/batteries, 2027 — check whether prep demand exists *now*), state-level US privacy
+   laws hitting small e-commerce, EU packaging waste regulation, and the EAA's national
+   implementations diverging by member state. Pair each with a price-anchored competitor query
+   to force list prices into result titles.
+3. **Also still Mode B: keep mining marketplace listing titles** (Flippa, Acquire) — verbatim
+   MRR figures with no page access required. Useful for reverse-engineering which micro-SaaS
+   categories actually transact.
+4. **Escalation, unchanged from week 1 and now more warranted:** two consecutive runs blocked.
+   Ask the environment owner to enable WebFetch or extend the egress allowlist to at least
+   `news.ycombinator.com`, `hn.algolia.com`, `reddit.com`, `chromewebstore.google.com`,
+   `apps.shopify.com`, `g2.com`, `capterra.com`, and `producthunt.com`. Mode B works, but it
+   yields provisional evidence and caps confidence on every score in the backlog.
+5. **Do not re-research:** generic wish-phrase queries, Etsy seller tooling, maker/craft
+   inventory, AI-visibility tracking, PCI DSS client-side scripts, freelancer invoice chasing,
+   Shopify order export, "best X software 2026" queries.
