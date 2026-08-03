@@ -198,3 +198,101 @@ complaining about?"
 5. **Do not re-research:** generic wish-phrase queries, Etsy seller tooling, maker/craft
    inventory, AI-visibility tracking, PCI DSS client-side scripts, freelancer invoice chasing,
    Shopify order export, "best X software 2026" queries.
+
+---
+
+## 2026-08-03 — Week 3
+
+### Evidence mode: **B** (WebFetch UNAVAILABLE — third consecutive run)
+
+STEP 0 control fetches re-run fresh, not assumed:
+
+- `https://example.com` → **HTTP 403 Forbidden**
+- `https://en.wikipedia.org/wiki/Main_Page` → **HTTP 403 Forbidden**
+
+Identical to weeks 1 and 2. Three consecutive runs, both trivial control hosts failing, no variation:
+**the block is persistent, not intermittent.** Per the brief, WebFetch was not retried after STEP 0 and
+no curl/direct-HTTP workaround was attempted.
+
+### The methodological breakthrough this week — Shopify App Store review text is searchable
+
+Week 2 concluded that 1-star review text was unreachable. That conclusion was **correct for the Chrome
+Web Store and wrong as a generalisation**. `apps.shopify.com/<app>/reviews` pages are indexed and their
+verbatim review text comes back in search-result text. This is the first channel in three runs that
+yields *actual user complaints with dollar figures*, not law-firm summaries.
+
+Query shape that works:
+
+```
+apps.shopify.com reviews <category> "<complaint phrase>" merchant 1 star
+```
+
+It produced, verbatim: *"it became so expensive that it put the app out of the question for us"* and
+*"Held hostage on a 12 month contract… was paying about $300/month and they jacked it up over
+$600/month."* That is exactly the evidence class the brief asks for, obtained under Mode B.
+
+**Second new channel: `community.shopify.com` threads are indexed, titles *and* partial reply content.**
+Search surfaced not just the thread title but merchants' actual answers ("reordering stock before it runs
+out, reconciling inventory across locations, chasing suppliers for POs"). Four high-value threads are now
+parked in `idea-backlog.md`. This partially defeats the week-2 finding that forum *comments* need Mode A —
+Shopify's forum is more indexable than HN's.
+
+### What did NOT work (each of these saves a future slot)
+
+- **Acquire.com listing mining** — unlike Flippa, returns only SEO listicles and Acquire's own marketing
+  pages, never listing titles with metrics. **Flippa listing mining still works** (a `$44K rev, $8.5K
+  profit, $3.9K MRR, 77 subs` title came back again). Use Flippa, skip Acquire.
+- **G2 / Capterra review text** — still unreachable. Queries return platform-comparison content about G2
+  and Capterra themselves. The search tool explicitly said the reviews "require searching within the
+  review platforms themselves." Confirmed twice now; **stop trying**.
+- **Generic price-hike backlash queries** — surfaced real numbers (QuickBooks +25% in 2026, Plus $85→$99,
+  Desktop Pro Plus $1,149/yr) but only for categories far too large to build against. Low yield for a
+  solo builder; the wedge is always "replace an accounting suite."
+- Attempts to surface the `/t/577348` "$100/month problem" thread's replies failed — only the title and
+  the opening post came back. Title-shaped queries get the thread; content-word queries get the replies.
+  Use content words.
+
+### Honest read on signal quality: **best channels yet, weakest ideas yet**
+
+A genuine tension this week. The evidence *channels* improved materially (real merchant quotes for the
+first time), but the ideas those channels produced scored **11–13** — worse than week 2's ID 001 at 16.
+That is not a failure of method; it is what the evidence said, and it is recorded rather than inflated.
+
+Two structural findings worth carrying forward:
+
+1. **The regulatory vein has a hard ceiling of Demand 3.** It reliably produces deadlines, fines and price
+   anchors — and it produced the backlog's only 16 — but it never produces a person saying they want to
+   buy something. IDs 002, 006 and 007 are all capped at 3 for this reason, consistently.
+2. **Obvious price chasms are already arbitraged.** ID 004 (AI visibility) and now ID 009 (inventory
+   forecasting) followed the identical arc: a loud, verifiable "too expensive" complaint, and a $10–49/mo
+   competitor already sitting in the gap by the time it was found. **New rule for week 4: check the cheap
+   tier before scoring demand, not after.** A "too expensive" complaint is a lagging indicator.
+
+Also recorded: the ID 008 kill. Merchant fury about Shopify app costs is loud and quotable, but **only
+1.8% of stores spend over $100/mo on apps** — the complaints are real and the paying pool is thin. Finding
+the datum that kills an idea is the week's second-most useful output.
+
+### Guidance for next week
+
+1. **If WebFetch is restored, the target order is unchanged at the top:**
+   [news.ycombinator.com/item?id=48045237](https://news.ycombinator.com/item?id=48045237) first, then the
+   four `community.shopify.com` threads now parked in the backlog, then re-validate ID 001 (FTC/accessiBe
+   order) and ID 006 (ProsperStack pricing page, state ARL texts) under Mode A.
+2. **If still Mode B, lead with marketplace review mining — it is now the highest-yield channel.** Extend
+   the `apps.shopify.com reviews "<phrase>"` pattern to other indexed marketplaces not yet tested:
+   WordPress.org plugin reviews, Atlassian Marketplace, Zapier app reviews, Notion template marketplaces,
+   Squarespace/Wix extensions. Prioritise categories with **few** competing apps — this week's failures
+   (wholesale, returns, forecasting) all had 9+ incumbents visible on a single results page.
+3. **Pair every review-mined complaint with an immediate cheap-tier check** before writing it up. Two of
+   four ideas this week died at that step, and both deaths were only discovered after the demand work.
+4. **Regulatory vein — remaining untried:** state-level ARL expansion beyond CA/NY/MN/VA, NY algorithmic
+   pricing disclosure, FTC junk-fee rule for lodging/ticketing. Expect Demand 3 ceilings; only pursue if
+   paired with a real price chasm as ID 001 was.
+5. **Escalation, third consecutive run.** Mode B is now genuinely productive — this run disproved two of
+   week 2's "unreachable" verdicts — so the block is no longer fatal. But no page has been read in three
+   runs and every score carries that caveat. Enabling WebFetch, or allowlisting
+   `news.ycombinator.com`, `hn.algolia.com`, `reddit.com`, `community.shopify.com`, `apps.shopify.com`,
+   `g2.com`, `capterra.com` and `producthunt.com`, would raise confidence across the entire backlog.
+6. **Do not re-research** (additions this week): local-food/farm ordering, cookie/GPC scanners, Shopify
+   B2B wholesale, Shopify inventory forecasting, Shopify app-spend auditing, EU PPWR, EU DPP, and
+   Acquire.com listing mining — plus everything on week 2's list.
