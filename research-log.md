@@ -296,3 +296,109 @@ the datum that kills an idea is the week's second-most useful output.
 6. **Do not re-research** (additions this week): local-food/farm ordering, cookie/GPC scanners, Shopify
    B2B wholesale, Shopify inventory forecasting, Shopify app-spend auditing, EU PPWR, EU DPP, and
    Acquire.com listing mining — plus everything on week 2's list.
+
+---
+
+## 2026-08-10 — Week 4
+
+### Evidence mode: **B** (WebFetch UNAVAILABLE — fourth consecutive run)
+
+STEP 0 control fetches re-run fresh, not assumed:
+
+- `https://example.com` → **`EGRESS_BLOCKED`** — "Access to example.com is blocked by the network egress proxy."
+- `https://en.wikipedia.org/wiki/Main_Page` → **`EGRESS_BLOCKED`** — same message.
+
+**The error shape changed this week and it is diagnostically useful.** Weeks 1–3 all reported a bare
+`HTTP 403 Forbidden`; this run returns a structured `{"error_type":"EGRESS_BLOCKED","domain":...}`
+envelope naming the egress proxy explicitly. Same outcome, but it settles the open question from week 1:
+this is a **deliberate egress allowlist**, not bot detection, not a site-level block, and not a transient
+fault. Four runs, zero variation. Per the brief, WebFetch was not retried after STEP 0 and no
+curl/direct-HTTP workaround was attempted.
+
+### Channels tested this week — two new, one confirmed, four dead
+
+**NEW and working: `wordpress.org/support/topic/` review titles are indexed verbatim.** WordPress.org
+files plugin reviews as support topics, and the title comes back in full, e.g. *"I wish we'd never
+started using WooCommerce"*, *"Extremely Poor Support, Beware — [Wholesale Suite]"*, *"Buyer Beware —
+Support Now Gone for 12 Days — WTF? — [WP Compress]"*, *"Don't buy this plugin and don't fall for the
+fake reviews — [Eventin]"*. Best hit of the run went further and surfaced **specific removed features**:
+*"WAIT BEFORE 'UPGRADING'! [REVISED] — [WooCommerce Shipping]"* naming the lost box-packing algorithm,
+label re-purchasing, and address auto-validation.
+
+**But calibrate the channel down.** It yields *quality* complaints — poor support, bugs, fake reviews —
+far more than *gap* complaints, and with roughly 60,000 plugins WordPress almost never has a hole. Every
+lead it produced this week died at the cheap-tier check (box packing → Octolize; salon booking → the
+1-star reviewer *names Amelia as the working alternative* in the review itself). Treat it as a
+secondary channel behind the Shopify App Store, not a replacement.
+
+**Confirmed still working:** Flippa listing-title mining (refreshed multiples: micro-SaaS <$1M ARR at
+**2.85× annual profit** average, **6.13×** top quartile; Chrome extensions **24–40× monthly revenue**;
+freemium extensions at $500–2K MRR selling for $15–60K; Flippa SaaS transactions **+73.5% in 2025**),
+and `community.shopify.com` thread + partial-reply indexing.
+
+**Dead — stop trying (each confirmed this run):**
+- **Trustpilot review text** — aggregator/SEO pages (softwareadvice, G2, Capterra, GetApp) intercept
+  every query. Same failure mode as G2/Capterra in week 3.
+- **iOS / Google Play review text** — not indexed. Queries return ASO-industry blog posts about review
+  management. This closes out the last unexplored item on the brief's suggested source list.
+- **Atlassian Marketplace** — returns Atlassian's own developer docs and marketplace-policy pages.
+- **Notion template marketplace** — returns Notion's help-centre refund policy and Gumroad spam.
+
+### Honest read on signal quality: **narrow but the best single idea since week 2**
+
+Two ideas cleared the bar against a 4–6 target. Reported as two. The compensation is that one of them,
+**ID 010 (Prop 65, composite 14)**, is the second-strongest row in the backlog and the first regulatory
+idea in four weeks to **break the Demand-3 ceiling** that week 3 identified as structural. The reason it
+broke is worth recording as a rule:
+
+> **The regulatory vein produces Demand 4+ only when the enforcement mechanism is a private bounty,
+> not a state agency.** Agency enforcement produces law-firm advisories and nobody complaining. Prop 65's
+> ~40 private enforcers filing ~3 notices a day produce *victims who post on seller forums* — which is
+> exactly the primary-source evidence class the brief asks for. Look for other private-right-of-action /
+> bounty statutes: that is where regulation and real complaints overlap.
+
+**Five kills this week**, all at the pre-scoring cheap-tier check — the rule week 3 introduced, now
+clearly earning its place, since four of the five would otherwise have consumed full write-ups:
+WooCommerce box packing (Octolize), EU Omnibus 30-day pricing (five-plus apps at $14.90–14.99/mo), FDA
+nutrition labels (KitchenSync $14.99, Food Label Maker $49), EU GPSR (seven-plus vendors, and the core
+deliverable is a legal service not software), HTS/tariff codes (Tariff HS Code Compliance already ships
+the exact described feature).
+
+**Also recorded honestly:** ID 011 (supplier PO chasing) graduated from parked lead to a scored row of
+13, but as a *negative* finding — three independent Shopify threads confirm the pain, and Auto Purchase
+Orders at $24.99/mo plus Replenishly at $299/yr already occupy the tier. This is the **fourth** instance
+of the arc "loud verifiable complaint → gap already filled" (004, 009, 011, and box packing). The
+pattern is now strong enough to state as a prior: *if a complaint is discoverable by searching "X is too
+expensive", the arbitrage has already happened, because every other builder runs that same query.*
+
+**Staleness check:** no row qualifies yet. The oldest ideas date to 2026-07-31, ten days ago, so nothing
+has reached the 3-week threshold. ID 005 (composite 10) is the first candidate and is already retired.
+
+### Guidance for next week
+
+1. **If WebFetch is restored, target order is unchanged and now four weeks old:**
+   [news.ycombinator.com/item?id=48045237](https://news.ycombinator.com/item?id=48045237) first, then the
+   four `community.shopify.com` threads, then re-validate under Mode A in composite order — ID 001
+   (FTC/accessiBe order), then **ID 010** (the OEHHA Article 6 regulation text and the CA AG's 60-day
+   notice register at [oag.ca.gov/prop65](https://oag.ca.gov/prop65), which would convert ID 010's
+   demand evidence from forum titles to primary records and plausibly move it to 5).
+2. **If still Mode B, hunt private-right-of-action statutes** — the rule derived above is the most
+   actionable finding of this run. Untried candidates with bounty or private-suit mechanics: ADA website
+   suits by state (feeds ID 001), TCPA/telemarketing consent, BIPA-style biometric laws beyond Illinois,
+   state wiretap claims against session-replay and chat widgets (an active plaintiff industry against
+   e-commerce sites, and *directly* adjacent to ID 001's scan-and-fix shape), and FDCPA-style consumer
+   statutes. Pair each with a cheap-tier check *before* any demand work.
+3. **Do not spend another slot on:** Trustpilot, iOS/Android app-store reviews, Atlassian Marketplace,
+   Notion Marketplace, Acquire.com, G2/Capterra, generic wish-phrase queries. The brief's suggested
+   source list is now fully explored under Mode B; Reddit, HN comments, Chrome Web Store and Product Hunt
+   comments require Mode A and nothing else remains untested.
+4. **Do not re-research** (additions this week): WooCommerce box packing and WooCommerce shipping
+   generally, EU Omnibus price history, FDA nutrition labels, EU GPSR, HTS/tariff codes, supplier PO
+   tooling — plus everything on weeks 2 and 3 lists.
+5. **Escalation, fourth consecutive run.** Mode B is genuinely productive and produced a 14 this week, so
+   the block is not fatal — but the brief's own evidence bar (Mode A preferred, "do not rely on
+   WebSearch's summary alone when WebFetch is available") cannot be met at all, and **no page has been
+   read in four runs**. Every composite in the backlog carries that caveat. The single highest-leverage
+   change available to this project remains allowlisting `news.ycombinator.com`, `hn.algolia.com`,
+   `reddit.com`, `community.shopify.com`, `apps.shopify.com`, `wordpress.org`, `sellercentral.amazon.com`,
+   `oag.ca.gov`, `g2.com` and `producthunt.com` for egress.
