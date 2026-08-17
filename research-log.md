@@ -402,3 +402,113 @@ has reached the 3-week threshold. ID 005 (composite 10) is the first candidate a
    change available to this project remains allowlisting `news.ycombinator.com`, `hn.algolia.com`,
    `reddit.com`, `community.shopify.com`, `apps.shopify.com`, `wordpress.org`, `sellercentral.amazon.com`,
    `oag.ca.gov`, `g2.com` and `producthunt.com` for egress.
+
+---
+
+## 2026-08-17 — Week 5
+
+### Evidence mode: **B** (WebFetch UNAVAILABLE — fifth consecutive run)
+
+STEP 0 control fetches re-run fresh, not assumed:
+
+- `https://example.com` → **`EGRESS_BLOCKED`** — "Access to example.com is blocked by the network egress proxy."
+- `https://en.wikipedia.org/wiki/Main_Page` → **`EGRESS_BLOCKED`** — same message.
+
+Identical structured envelope to week 4, confirming week 4's diagnosis: a deliberate egress
+allowlist, not bot detection, not transient. **Five runs, zero variation.** Per the brief,
+WebFetch was not retried after STEP 0 and no curl/direct-HTTP workaround was attempted.
+
+### The finding of the run is a channel, not an idea
+
+**NEW and working: `support.google.com/business` community threads are indexed verbatim —
+titles *and* partial reply content.** One query returned seven distinct threads carrying the
+complaint in the title itself (*"Google My Business Profile Disappeared, 200+ Reviews lost"*,
+*"Reviews disappeared after reinstatement – locked duplicate thread prevents follow-up"*,
+*"Listing Was Suspended + Reinstated. Lost visibility, and thousands of reviews are missing"*).
+
+**NEW and working: `localsearchforum.com`.** A vBulletin/XenForo-style local-SEO forum, deeply
+indexed, and unusually good at surfacing *practitioner* detail rather than owner venting —
+result text carried an agency reporting four client listings "losing 3 reviews every day,"
+which is exactly the evidence class the brief asks for.
+
+Together these open the **local-business** category, which four prior weeks of e-commerce and
+Shopify work never touched. Treat this pair the way week 3 treated the Shopify App Store: the
+lead channel for week 6, not a one-off.
+
+### What did NOT work (each saves a future slot)
+
+- **`community.intuit.com` / QuickBooks** — returned Intuit's own marketing and help-centre
+  pages, never forum threads. Query shape may be salvageable but one attempt was low-yield.
+- **`community.etsy.com`** — threads *are* indexed and reply content came back, but the vein is
+  wrong: "how many hours do you spend" threads yield time-spent laments, not tool gaps. Etsy
+  remains a dead category for this project.
+- **Show HN "I built it because no tool existed"** — five query rewrites, and the search tool
+  itself gave up. It re-surfaced Craftplan (already ID 003) and nothing new. **Stop.**
+- **`sellercentral.amazon.com` with content-word queries** — the thread-title shape that found
+  Prop 65 works; "anyone else / how do you keep track of" phrasing returns the forum homepage
+  and FAQ. Use title shapes on this domain, not content words.
+- **`wordpress.org` removed-feature queries** — the week-4 channel did not reproduce this week;
+  queries drifted to developer changelogs. The channel is real but the query needs a plugin
+  *name* in it.
+
+### Honest read on signal quality: **one real idea, five kills, one good channel**
+
+Two rows added against a 4–6 target, and only one of them (ID 012, composite 13) is a build
+candidate; ID 013 (CIPA, 11) is filed as a negative finding. Reported as two rather than padded.
+
+**Five kills at the pre-scoring cheap-tier check** — CIPA scanners (PieEye $10–14, CookieScript
+€8–19, Termly $10, free scanner at ciparisk.com), FTC fake-review rule, GBP reinstatement
+(Fiverr gigs $25–105), TCPA/SMS consent (built into Klaviyo/Postscript/Attentive), and Shopify
+payout reconciliation (CONA/A2X — closing a lead carried since week 1).
+
+Two structural findings worth carrying:
+
+1. **Week 4's private-bounty rule needs a second clause.** CIPA is a textbook private bounty —
+   $5,000 per violation, serial litigants, small businesses explicitly targeted — and it still
+   produced nothing, because the *tooling* had already been commoditised by the consent-management
+   industry. Revised rule: **private bounty gets you demand; you still need a compliance surface
+   that no existing category already owns.** Prop 65 (ID 010) cleared both. CIPA cleared only the
+   first, and is really the week-3 cookie/GPC kill wearing a new label.
+2. **A new kill shape: when the deliverable is a human service, there is no product.** GBP
+   reinstatement joins EU GPSR in this bucket. Cheap Fiverr labour is a competitive tier and
+   should be checked like any software tier.
+
+Also worth stating plainly: ID 012 is the **fifth** instance of "loud verifiable complaint → gap
+already filled" (004, 009, 011, box packing, now 012). What makes 012 survivable where the others
+did not is that the remaining gap sits **behind a non-obvious barrier** — Google's manual API
+approval, quota 0 until granted — rather than behind a price point any builder can undercut. That
+is now the most useful screen this project has: *look for gaps guarded by a gate, not by a price.*
+
+**Staleness check:** still nothing qualifies. The oldest rows date to 2026-07-31, 17 days back —
+just under the 3-week threshold. **Next week (2026-08-24) IDs 002, 003, 004, 005 and 008 all cross
+it**, and 004 (11), 005 (10) and 008 (11) sit below composite 12, so expect the first Stale marks
+of the project. ID 005 is already retired.
+
+### Guidance for next week
+
+1. **If WebFetch is restored, target order (now five weeks old at the top):**
+   [news.ycombinator.com/item?id=48045237](https://news.ycombinator.com/item?id=48045237) first,
+   then the four `community.shopify.com` threads, then re-validate ID 001 and ID 010 under Mode A.
+   **New Mode-A priority inserted at position 3:** open the `localsearchforum.com` thread
+   [Missing Reviews/ Reviews Disappearing](https://localsearchforum.com/threads/missing-reviews-reviews-disappearing.59057/)
+   — five-plus pages of practitioner detail that would move ID 012's demand evidence from titles
+   to quotes, and would settle whether anyone in that thread names a tool they already pay for.
+2. **If still Mode B, lead with the local-business pair** (`support.google.com/business` +
+   `localsearchforum.com`). Untried local verticals with the same shape: Google Ads account
+   suspensions for small advertisers, Apple Business Connect, Bing Places, and the multi-location
+   franchise reporting workflow. Apply the revised screen — prefer gaps guarded by an approval
+   gate or a data-access barrier over gaps guarded only by price.
+3. **Before any ID 012 build work, the go/no-go is the Google API access request**, not code.
+   Quota is 0 until manual approval; requests are reportedly denied where a project does not
+   consistently hit its QPM limit. Verify this under Mode A if access returns.
+4. **Do not re-research** (additions this week): CIPA and website-tracking wiretap scanners, the
+   FTC fake-review rule, GBP suspension/reinstatement, TCPA/SMS consent tooling, Shopify payout
+   reconciliation, Etsy community mining, and Show HN motivation queries — plus everything on the
+   weeks 2, 3 and 4 lists.
+5. **Escalation, fifth consecutive run.** Mode B keeps producing — a new category and two new
+   channels this week — so the block is not fatal. But the brief's preferred bar has now been
+   unmeetable for five straight runs and no page has ever been read. Allowlisting
+   `news.ycombinator.com`, `hn.algolia.com`, `reddit.com`, `localsearchforum.com`,
+   `support.google.com`, `community.shopify.com`, `apps.shopify.com`, `wordpress.org`,
+   `sellercentral.amazon.com` and `producthunt.com` remains the single highest-leverage change
+   available to this project.
