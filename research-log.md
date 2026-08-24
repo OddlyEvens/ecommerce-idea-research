@@ -512,3 +512,132 @@ of the project. ID 005 is already retired.
    `support.google.com`, `community.shopify.com`, `apps.shopify.com`, `wordpress.org`,
    `sellercentral.amazon.com` and `producthunt.com` remains the single highest-leverage change
    available to this project.
+
+---
+
+## 2026-08-24 — Week 6
+
+### Evidence mode: **B** (WebFetch UNAVAILABLE — sixth consecutive run)
+
+STEP 0 control fetches re-run fresh, not assumed:
+
+- `https://example.com` → **`EGRESS_BLOCKED`** — "Access to example.com is blocked by the network egress proxy."
+- `https://en.wikipedia.org/wiki/Main_Page` → **`EGRESS_BLOCKED`** — same message.
+
+Identical structured envelope to weeks 4 and 5. **Six runs, zero variation.** Per the brief, WebFetch
+was not retried after STEP 0 and no curl/direct-HTTP workaround was attempted.
+
+### Honest read on signal quality: the weakest idea week of the project
+
+Three rows added against a 4–6 target, and **all three lean negative** (composites 11–12). Not one is
+a build recommendation. Reported as three rather than padded. The compensating output is
+infrastructural: one new channel, one new evidence class, one parked lead closed, and six kills.
+
+### Channels tested — one new and working, one new but gated, several dead
+
+**NEW and working: `contractortalk.com`.** A deeply-indexed XenForo construction forum, and the first
+channel to open the **construction / home-services vertical** that six weeks of e-commerce, Shopify and
+local-SEO work never touched. Title queries return the thread plus genuinely useful result text — the
+COI thread surfaced a specific failure (a sub's supervisor RRP certs expired because *"the company
+renewed but the supervisors didn't take renewal courses"*) and a specific feature request (flag
+expiring dates; track X-Mod, OSHA 300A, incident rates). Same query discipline as
+`sellercentral.amazon.com`: **title shapes work, content-word shapes ("I built my own", "nothing out
+there") return nothing.** Sister forums `hvac-talk.com` and `plumbingzone.com` are indexed but thinner
+— they returned software-recommendation threads, not gap complaints.
+
+**NEW but gated: public feature-request boards.** `ideas.gohighlevel.com` individual request pages are
+indexed, and Canny-hosted boards exist at `feedback.*` subdomains. This is potentially the **best
+evidence class this project could reach** — a request marked *declined / not planned* on a paid
+product's own board is documented unmet demand from paying customers, which is strictly better than a
+forum complaint. But **the status label and vote count are the entire signal, and neither survives into
+search results.** Parked in the backlog as a Mode-A-only lead. This is now the second high-value target
+(after the Ask HN thread) that Mode B can see the door of but not open.
+
+**Confirmed but shallower than hoped: `community.shopify.com`.** A new companion thread surfaced —
+[/t/662111](https://community.shopify.com/t/whats-one-shopify-task-you-still-manage-manually-or-in-a-spreadsheet/662111)
+— but content-word mining of it returned only the three tasks already resolved into IDs 009 and 011,
+plus generic product-CSV uploading. The indexed reply fragments on these threads appear to be shallow;
+week 3's optimism about mining them under Mode B should be calibrated down.
+
+**Dead this run:** `site:reddit.com` exact-phrase wish queries (returned Gumroad spam — consistent with
+weeks 2–5, **stop trying entirely**); `biggerpockets.com` (forum topics *are* indexed and the vertical
+is real, but every query landed on spreadsheet-template threads and the tool tier is crowded —
+Stessa, RentRedi, TenantCloud, Innago, Avail, DoorLoop, Rentec named in one snippet); `dentaltown.com`
+(site-scoped queries never returned the domain — vendor content intercepts, same failure mode as
+Trustpilot); `community.zapier.com` (one weak thread; the week-1 connector-gap lead stays untouched
+and should probably be retired).
+
+### Six kills at the pre-scoring cheap-tier check
+
+TTB COLA pre-check (**COLAClear and COLA Cloud already occupy the exact niche**, and the urgency
+premise failed — 7-day median processing in Aug 2026); MoCRA cosmetics (under-$1M exemption plus soap
+excluded entirely — the covered population is gutted from both ends); STR permit renewal (zero host
+complaints; sources recommend *calendar reminders*, and you cannot sell against a calendar entry);
+Medicare call-recording retention (telephony + multi-year audio storage is the "heavy infrastructure"
+the brief excludes); LSA lead disputes (**premise expired** — Google deprecated manual disputes in
+mid-2024 and auto-credits now); and the Google/LSA agency suspension vein (single-domain, and it lands
+on week 5's service-not-software kill).
+
+### Structural findings worth carrying
+
+1. **A new kill shape: the expired premise.** LSA lead disputes and, partly, TTB COLA both died
+   because the pain the product would address *used to* exist and no longer does. Mode B search results
+   skew toward older indexed content, so this failure mode is systematically likelier here than in a
+   Mode-A run. **Add a "does this pain still exist in 2026?" check alongside the cheap-tier check.**
+2. **The vendor-SEO contamination problem is now material.** Two of this week's three rows lean on
+   pricing from a competitor's own comparison page (`billyforinsurance.com` comparing itself to myCOI;
+   `certifiedpayrollpro.com` comparing itself to eBacon and Points North). Under the Mode B rule a price
+   in a snippet is legitimate signal, but these are marketing documents about rivals. Both rows carry
+   the caveat explicitly. Treat any price quoted by a competitor as approximate.
+3. **Sixth instance of "loud verifiable complaint → gap already filled"** (004, 009, 011, box packing,
+   012, now 015). The week-4 prior is holding without exception. Week 5's refinement — *look for gaps
+   guarded by a gate, not by a price* — was applied deliberately this week to four candidates
+   (SP-API, LCPtracker/DIR portals, TTB COLAs Online, CMS retention). **The screen worked as a filter
+   but produced no winner**, because in every case the gate that would have deterred competitors also
+   deterred *this* builder: it showed up as feasibility 2–3, not as whitespace 4–5. Refined again:
+   **a useful gate must be one a solo builder can pass but a competitor won't bother to** — a manual
+   approval you can wait out (ID 012's) qualifies; a format-and-portal integration burden (ID 016) does
+   not.
+
+### Staleness
+
+**First Stale marks of the project**, exactly as week 5 predicted: **IDs 004 (11), 005 (10) and 008
+(11)** have passed three weeks below composite 12. IDs 002 (12) and 003 (13) also crossed three weeks
+but sit at or above the threshold and stay active. ID 003 was deep-dived this run.
+
+### Deep dive note
+
+ID 003 was the highest non-deep-dived row (13, tied with 011). Both tied rows carry *do not build*
+notes, so week 5's tie-break rule did not resolve cleanly; broken toward 003 because its note leaves
+an explicit door open. **The deep dive returns a conditional-NO** and reduces the whole idea to one
+unanswerable-under-Mode-B question: does Craftybase already ship lot→customer reverse traceability?
+That question is now the first Mode-A item for ID 003.
+
+### Guidance for next week
+
+1. **If WebFetch is restored, target order (now six weeks old at the top):**
+   [news.ycombinator.com/item?id=48045237](https://news.ycombinator.com/item?id=48045237) first; then
+   the **new position 2 — public feature-request boards filtered to declined/not-planned, sorted by
+   votes**, which is a higher-yield evidence class than anything Mode B can reach; then the
+   `localsearchforum.com` missing-reviews thread; then the Craftybase feature page (settles ID 003's
+   go/no-go in one fetch); then re-validate IDs 001 and 010.
+2. **If still Mode B, mine `contractortalk.com` properly with title shapes** — this week only scratched
+   it, and it is the freshest working channel. Untried adjacent forums with the same structure worth one
+   query each: `roofing.com`, `landscaperstalk`, `garagejournal` trade sections, `truckersreport.com`.
+   Prefer the **office/admin** subforums over the trade subforums; that is where tool gaps live.
+3. **Apply the refined gate screen**: a gate is only an advantage if a solo builder can pass it and a
+   competitor would not bother. Waiting-out an approval qualifies. Portal-format integration does not.
+4. **Add the expired-premise check** to the pre-scoring routine, alongside the cheap-tier check. Two
+   kills this week came from pain that no longer exists.
+5. **Do not re-research** (additions this week): TTB COLA / alcohol label approval, MoCRA and cosmetics
+   registration, short-term-rental permits, Medicare/CMS call recording, LSA lead disputes, Amazon fee
+   tooling, COI tracking, certified payroll, `reddit.com` exact-phrase wish queries, `dentaltown.com`,
+   `biggerpockets.com` landlord tooling — plus everything on the weeks 2–5 lists.
+6. **Escalation, sixth consecutive run.** Mode B is still producing channels, but it has now produced
+   **three consecutive negative-leaning rows and no build candidate**, and the two highest-value targets
+   this project has ever identified (the Ask HN thread, and now declined feature-request boards) are
+   both Mode-A-only. The block has moved from "not fatal" to "the binding constraint on output
+   quality." Allowlisting `news.ycombinator.com`, `hn.algolia.com`, `reddit.com`, `canny.io`,
+   `ideas.gohighlevel.com`, `localsearchforum.com`, `support.google.com`, `community.shopify.com`,
+   `apps.shopify.com`, `contractortalk.com`, `wordpress.org` and `sellercentral.amazon.com` remains the
+   single highest-leverage change available.
