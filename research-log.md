@@ -641,3 +641,152 @@ That question is now the first Mode-A item for ID 003.
    `ideas.gohighlevel.com`, `localsearchforum.com`, `support.google.com`, `community.shopify.com`,
    `apps.shopify.com`, `contractortalk.com`, `wordpress.org` and `sellercentral.amazon.com` remains the
    single highest-leverage change available.
+
+---
+
+## 2026-08-31 — Week 7
+
+### Evidence mode: **B** (WebFetch UNAVAILABLE — seventh consecutive run)
+
+STEP 0 control fetches re-run fresh, not assumed:
+
+- `https://example.com` → **`EGRESS_BLOCKED`** — "Access to example.com is blocked by the network egress proxy."
+- `https://en.wikipedia.org/wiki/Main_Page` → **`EGRESS_BLOCKED`** — same message.
+
+Identical structured envelope to weeks 4–6. **Seven runs, zero variation.** WebFetch was not retried
+after STEP 0; no curl or direct-HTTP workaround attempted.
+
+### Honest read on signal quality: the best run since week 2, and the first with two build candidates
+
+Three rows against a 4–6 target — reported as three, not padded — but the composition is different
+from week 6's three negatives. **Two rows scored 15**, the highest new scores since week 2, and both
+carry **Whitespace 4**, a rating that had not appeared in five weeks. One row (019) is a clean kill.
+Eight kills total, two new working channels, and one correction to week 6's own guidance.
+
+### The finding of the run: week 6's "Mode-A-only" verdict on feature-request boards was wrong
+
+Week 6 identified public feature-request boards as potentially "the best evidence class this project
+could reach" and then parked them, reasoning that **status labels and vote counts do not survive into
+search results**. That is true for Canny-hosted boards and false for Lithium/Khoros-hosted vendor
+communities:
+
+- `community.hubspot.com` returned, **in result text**, a Dec 2019 request marked *"Not Currently
+  Planned"* with **428 upvotes**; an Apr 2021 Sales Hub forecasting request, *"Not Currently
+  Planned"*; a Mar 2022 workflow throttling request, same status; plus board-level totals (92 in
+  development, 252 in beta, 2,121 delivered, 36 alternative solutions).
+- `community.xero.com` returned status **and age**: a custom report builder marked **"Not Planned"**
+  with Xero's stated reason (*"the effort required doesn't seem to be the best use of resources at
+  the moment"*), a user complaining a feature was *"not planned after two years of your customers
+  asking for it"*, and — the single most valuable datum of the run — a **tiered price-list request
+  open since 2012**.
+- `ideas.gohighlevel.com` (Canny) still returns only category pages: no status, no votes. Confirmed.
+- `community.airtable.com` and `community.notion.so` surfaced no status vocabulary at all.
+
+**Rule extracted: Lithium/Khoros vendor communities are a first-class Mode B channel; Canny boards
+are not.** This channel produced ID 017 directly.
+
+### Channels tested — two new and productive, several dead
+
+**NEW and productive: `practicalmachinist.com`.** Deeply-indexed XenForo forum with a dedicated
+**"Shop Management and Owner Issues"** subforum. Week 6's rule — *prefer the office/admin subforum
+over the trade subforum* — held perfectly; essentially all signal came from that one subforum. Result
+text carries verbatim complaints **with dates**, including a 2 July 2026 thread. Produced ID 018.
+
+**NEW and productive: `signs101.com`.** Same structure, same discipline. Produced ID 019 (a kill) and
+a hard price datum (shopVOX $215 → $366/mo) confirmed on a second domain (Capterra UK).
+
+**NEW and working, category exhausted: `talk.newagtalk.com` (AgTalk).** Opens the agriculture
+vertical. Title queries work well and return real threads. The record-keeping category itself is
+closed (see kills), but the channel is worth keeping for other ag categories.
+
+**Also indexed and usable, categories closed:** `lawnsite.com`, `thetruckersreport.com`,
+`woodweb.com` (its Business and Management Forum is indexed and returned real threads —
+worth a proper mining pass next week, it was only sampled).
+
+**Dead this run:** `community.spiceworks.com` (site-scoped queries never returned the domain —
+vendor/G2 interception, same failure mode as `dentaltown.com` and Trustpilot; also note
+`itflow-org/itflow`, a free open-source MSP billing tool, would kill the cheap tier anyway);
+`cnczone.com` and `eng-tips.com` (site-scoped queries returned nothing);
+`community.airtable.com` / `community.notion.so` (no status vocabulary).
+
+### Kills (8)
+
+1. **QBO invoice feature-restoration** — the **expired-premise screen's first solo kill**, and it
+   killed the shape this project rates most highly (feature *loss*). Complaints about lost subtotals
+   and lost billable-time grouping are real, loud and verbatim — and date from the May 2024 new-invoice
+   rollout. Intuit has since restored both natively (custom form styles group/subtotal by date or
+   type; an explicit "Add subtotal" command; Group Time by Service). **Week 6 added this screen; it
+   paid for itself in week 7.**
+2. **Xero custom reporting** — cheap tier occupied and its floor is free: Syft entry $0, G-Accon
+   $50/mo, Fathom from $50/mo.
+3. **Farm record-keeping / grain contracts / spray records** — seventh instance of the pattern.
+   KernelAg is free at entry and *explicitly* markets itself as replacing farm spreadsheets;
+   Harvest Profit and Bushel above it; Farm Spray Pro for the spray half.
+4. **Lawn care scheduling/billing** — Yardbook free, Jobber/Service Autopilot above.
+5. **Trucking paperwork** — Transflo, TurboScan, CamScanner, Adobe Fill & Sign already serve it.
+6. **Crop-share landlord statements** — no complaint exists to find. AgTalk crop-share threads are
+   about lease terms, not tooling; everything else was extension-service or Form 4835 tax guidance.
+   **This was hypothesis-first research and it produced nothing — the signature of an idea invented
+   rather than found. Worth remembering as a discipline check.**
+7. **Sign-shop management** — scored as ID 019 rather than dropped, because the evidence bar was met.
+8. **MSP tooling via Spiceworks** — channel dead and cheap tier free.
+
+### Structural findings worth carrying
+
+1. **Both 15-scoring ideas cleared the "gap already filled" prior the same way: the gap is guarded,
+   not unnoticed.** ID 017 is guarded by Intuit's 6-week-to-6-month app-store review; ID 018 by a
+   market too small for a VC-backed vendor to chase. This is week 6's refined gate criterion
+   producing winners for the first time, after week 6 applied it four times and got only feasibility
+   penalties. **The refinement that made it work: look for a gate that raises a competitor's cost
+   without raising the builder's *technical* difficulty.** A waiting period qualifies. A portal
+   format integration does not.
+2. **Vendor-SEO contamination, second consecutive week.** Several prices this run come from
+   comparison sites and vendor blogs (softwareconnect, itqlick, dancingnumbers, spotsaas, mie-solutions,
+   getapp). Under Mode B a price in a snippet is legitimate signal, but these are marketing documents.
+   Where two sources disagreed (JobBOSS² "from $199/mo for 1 user" vs "starting at $200"), both are
+   recorded. Treat all as approximate.
+3. **A new positive shape: the decade-old open feature request.** Xero's tiered price list has been
+   requested since **2012** and remains unbuilt on a product with millions of paying users. This is
+   strictly stronger evidence than a forum complaint — it is documented, dated, quantified unmet
+   demand from paying customers, with the vendor's own refusal attached. **Hunt this shape
+   deliberately next week.**
+
+### Deep dive note
+
+Two-way tie at 15 between the two new rows — the first time the top of the backlog has been contested
+by two ideas that both look buildable. Week 5's tie-break (prefer the row not marked *do not build*)
+could not separate them. Broken toward **017 on monetization**, the only dimension where they differ:
+017's buyer already pays $115–275/mo for the host product and the nearest substitute is $60/user/mo,
+while **018 competes against a free spreadsheet and against a free calculator its own customer is
+building in public** — precisely what reduced ID 003 to a conditional-NO. **ID 018 is the standing
+deep-dive candidate for week 8**, and its deep dive must open on willingness-to-pay, not features.
+
+### Guidance for next week
+
+1. **If WebFetch is restored, target order:**
+   [news.ycombinator.com/item?id=48045237](https://news.ycombinator.com/item?id=48045237) first
+   (seven weeks at the top); then the Craftybase lot-traceability feature page, which settles ID 003's
+   go/no-go in a single fetch; then Canny-hosted boards filtered to declined/not-planned (still the
+   one part of the feature-request class Mode B cannot reach); then re-validate IDs 001, 010, 017.
+2. **If still Mode B, hunt the decade-old-open-request shape** across Lithium/Khoros vendor
+   communities whose users are small businesses. Confirmed working: `community.xero.com`,
+   `community.hubspot.com`. Untested and worth one query each: Zoho community
+   (`help.zoho.com/portal/en/community`, which surfaced incidentally this run), Squarespace, Wix,
+   Mailchimp, Constant Contact, Shopify's own ideas board. **Query shape that worked:**
+   `site:<domain> "not planned" OR "not currently planned" <category> votes`.
+3. **Mine `practicalmachinist.com` and `woodweb.com` properly** — both were only sampled. Office/admin
+   subforums only. Untried sister forums, one query each: `weldingweb.com`, `hobby-machinist.com`,
+   `printplanet.com`, `uksignboards.com`.
+4. **Run the expired-premise check *before* scoring, not after.** It killed the best-looking wedge of
+   the run this week. Any complaint whose thread is more than ~12 months old needs a "is this still
+   true in 2026?" query before it earns a demand score.
+5. **Do not re-research** (additions this week): QBO invoice feature restoration, Xero custom
+   reporting, farm/grain/spray record keeping, lawn-care scheduling, trucking paperwork, crop-share
+   landlord statements, sign/print shop management, MSP tooling — plus everything on the weeks 2–6 lists.
+6. **Escalation, seventh consecutive run.** The block remains the binding constraint, but this week
+   argues against fatalism: the channel week 6 wrote off as unreachable was reachable, and it produced
+   the top idea. Allowlisting `news.ycombinator.com`, `hn.algolia.com`, `reddit.com`, `canny.io`,
+   `ideas.gohighlevel.com`, `localsearchforum.com`, `support.google.com`, `community.shopify.com`,
+   `apps.shopify.com`, `contractortalk.com`, `practicalmachinist.com`, `signs101.com`,
+   `talk.newagtalk.com`, `community.xero.com`, `quickbooks.intuit.com`, `wordpress.org` and
+   `sellercentral.amazon.com` remains the single highest-leverage change available.
