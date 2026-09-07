@@ -790,3 +790,173 @@ deep-dive candidate for week 8**, and its deep dive must open on willingness-to-
    `apps.shopify.com`, `contractortalk.com`, `practicalmachinist.com`, `signs101.com`,
    `talk.newagtalk.com`, `community.xero.com`, `quickbooks.intuit.com`, `wordpress.org` and
    `sellercentral.amazon.com` remains the single highest-leverage change available.
+
+---
+
+## 2026-09-07 — Week 8
+
+### Evidence mode: **B** (WebFetch UNAVAILABLE — eighth consecutive run)
+
+STEP 0 control fetches re-run fresh, not assumed:
+
+- `https://example.com` → **`EGRESS_BLOCKED`** — "Access to example.com is blocked by the network egress proxy."
+- `https://en.wikipedia.org/wiki/Main_Page` → **`EGRESS_BLOCKED`** — same message.
+
+Identical structured envelope to weeks 4–7. **Eight runs, zero variation.** WebFetch was not retried
+after STEP 0; no curl or direct-HTTP workaround attempted.
+
+### Honest read on signal quality: two new rows, both near-misses, and one re-score worth more than either
+
+Two validated rows against a 4–6 target — reported as two, not padded. Neither is a build: ID 020
+(14) and ID 021 (13) both have good demand evidence and both fail the cheap-tier check, at $49/mo
+and $60/mo. **The run's most valuable output was a re-score of an existing row**, ID 017 rising
+15 → 16 on a forcing function week 7 had not found. That is the backlog working as intended — the
+persistent memory produced more value than the new research did.
+
+Six kills, five of them on price. Four new working channels.
+
+### The finding of the run: the QuickBooks Desktop sunset is ID 017's forcing function
+
+Week 7 scored ID 017 on a structural gap (QBO Price Rules perpetually in beta, Plus/Advanced-only,
+pulled from the new invoice experience; Xero's tiered price list open since 2012). Week 8 found what
+turns that gap into a dated event:
+
+- **QuickBooks Desktop has Price Levels. QuickBooks Online cannot import them.** Result text across
+  three independent conversion-vendor domains: *"Price levels and advanced pricing rules set up in
+  Desktop do not transfer when migrating to QuickBooks Online, and QuickBooks Online simply doesn't
+  have a way to import these settings"*; QBO's Price Rules *"don't support quantity-based pricing"*;
+  *"all custom pricing work must be rebuilt from scratch."*
+- **The migration is compulsory and already running.** New Pro/Premier/Mac Plus subscriptions stopped
+  Sept 2024; **Desktop 2023 lost all support 31 May 2026**; **Desktop 2024, the last non-Enterprise
+  version, goes 30 Sept 2027.**
+
+Every Desktop shop that ran customer price levels arrives in QBO before Sept 2027 and finds the
+feature missing. Demand 4 → 5, composite 15 → 16, now the joint-highest row in the backlog.
+
+**Caveat recorded on the row:** all three sources are conversion-vendor blogs. The claim is
+consistent across three domains but has not been read on an Intuit page — a Mode A target.
+
+**Shape worth generalising: a vendor sunset is a dated, non-optional migration of a known population
+into a known gap.** This is a stronger forcing function than a regulation, because the population is
+identifiable and the deadline is the vendor's own. Hunt product sunsets deliberately.
+
+### The deep dive, and a deliberate change to the tie-break rule
+
+ID 018 was revised **down** 15 → 14 during its own deep-dive prep: **QuoteBuddy** (Therness) sells
+"Machine Shop Quoting Software with AI" to exactly this segment with published tiers starting at a
+**free 3-quotes/month**. Week 7's whitespace 4 rested on "free spreadsheet → $199/mo, nothing
+between", and that is no longer true. Whitespace 4 → 3. Its paid prices did not survive into result
+text — a Mode A target.
+
+That created a two-way tie at 14 with the new ID 020. **Week 7's monetization tie-break would have
+handed the deep dive to 020 — and was deliberately not used.** Following it would have deep-dived an
+idea whose cheap tier is occupied at $49/mo, on a dimension that has never once retired an idea here,
+while deferring 018 for a second consecutive week against an explicit pre-commitment.
+
+**New rule, grounded in this project's own record: when composites tie, prefer the higher Competitive
+Whitespace.** Nine kills in this backlog are "gap already filled." Not one is "nobody would have
+paid." Whitespace is the dimension that has actually been decisive, so it should break ties.
+
+The 018 deep dive opened on willingness-to-pay as week 7 required, and the useful datum was found:
+**CNCCookbook sells G-Wizard, a calculator, to this same audience at $79.99 for 2 seats/1 year (list
+$99), lifetime $215.99.** Machinists demonstrably pay ~$50–100/yr for a single-purpose calculator
+that does not touch revenue. So WTP exists but is **capped near $100–150/yr**. Priced at $149/yr.
+Verdict **conditional-YES gated on pre-selling ten annual licences before any code is written** —
+the same discipline as ID 003's conditional-NO, applied before the build rather than after.
+
+### Channels tested — four new and productive
+
+**NEW and productive: `biggerpockets.com` forum 32 (Commercial Real Estate).** Best Mode B behaviour
+since `sellercentral.amazon.com`: it returns member post **content**, not just titles. Produced ID
+020. **Its residential forums (52, 899) are closed** — the tooling there is free-to-cheap (PayHOA
+free under 31 homes, sub-$10 Etsy trackers) and members openly advise using a spreadsheet.
+
+**NEW and productive: `insurance-forums.com`.** XenForo, title queries work, behaves like
+`practicalmachinist.com`. Produced ID 021 and a hard price datum (Applied → Xanatek IMS ~$200/mo).
+
+**NEW and productive: `productideas.xero.com` (UserVoice).** **Completes week 7's channel rule:
+Lithium/Khoros AND UserVoice boards work under Mode B; Canny does not.** Returned Xero's refusals
+verbatim ("no plans" for a homepage widget, the Approve-button default, Canadian payroll;
+multi-entity consolidation "not currently planned"). Note generic `site:uservoice.com` returns
+nothing — query the vendor's own subdomain.
+
+**NEW and useful for a different purpose: `flippa.com`.** Listing *titles* carry real asking prices
+and MRR ("$44K rev, $8.5K profit in 10 mos, $3.9K MRR, 77 subs, 5.0-star Chrome extension", asking
+$49K), and Chrome extensions were put at **24–40× monthly revenue in 2026**. This is the project's
+first genuine **monetization benchmark** channel — use it to sanity-check deep-dive pricing, not to
+source ideas.
+
+**Also indexed and usable, categories closed:** `printplanet.com`, `woodweb.com` (Business and
+Management Forum — mined properly this run, as week 7 asked), `weldingweb.com`, `hoatalk.com`,
+`forum.squarespace.com`, `autoshopowner.com`, `cleaningtalk.com`, `selfstoragetalk.com`.
+
+**Dead this run:** `reddit.com` (site-scoped queries returned zero reddit results, twice — consistent
+with all prior weeks); `community.mailchimp.com`; `hvac-talk.com` (intercepted by vendor pages);
+generic `site:uservoice.com`.
+
+### Kills (6, five of them on price)
+
+1. **Xero delivery notes / packing slips** — **expired-premise screen, second solo kill, fired inside
+   one query.** An official Xero refusal ("a packing slip button isn't something the team have
+   planned to work on") against users asking "for over 2 years" — and result text states Xero **has
+   since shipped packing slips in new invoicing**. Real complaints, real refusal, both out of date.
+2. **Print-shop MIS** — Morning Flight gives away free estimating software ("not a demo and yours to
+   keep") with a $145 one-time Passport edition. Floor is free.
+3. **Self-managed HOA** — PayHOA free under 31 homes, then $0.99/home/mo.
+4. **Law-firm IOLTA / three-way reconciliation** — TrustBooks $39/mo, plus Clio/CosmoLex/MyCase; and
+   the only quantification found is Clio's own report. Fails on both legs.
+5. **Squarespace request-a-quote** — a textbook decade-old-open-request find, killed by QuotePlugin
+   at $17/mo and a free Elfsight widget. **The instructive kill of the run.**
+6. **Xero multi-entity consolidation** — Joiin from $23/mo, in Xero's own app store.
+
+Plus one that never reached a row: **a SaaS price-hike tracker** — toolrelief, vendorbenchmark and
+licenseware all publish one **free** as content marketing.
+
+### Structural findings worth carrying
+
+1. **Finding the open request is not finding the open market.** Week 7 told this run to hunt the
+   decade-old-open-request shape. It worked — Squarespace's "Request a Quote Option? Why is this
+   still not available" is exactly that shape, and Xero's packing-slip refusal is too. Both died at
+   the next check, one to a $17/mo plugin and one to the vendor having shipped it. **The shape finds
+   demand, not whitespace. Always pair it with the cheap-tier check and the expired-premise check in
+   the same breath — never score on the request alone.**
+2. **The cheap-tier check is now the dominant filter.** Five of six kills were price. Demand evidence
+   is no longer the scarce input; an unoccupied price tier is.
+3. **Vendor-SEO contamination, third consecutive week and worst yet.** The QBD claim, the CAM error
+   rate (IREM 40%, relayed by vendors), and the insurance underpayment figures ($23,400 found, 15–25%
+   of statements underpaid, Vertafore's 31%) all come from parties selling the fix.
+4. **New sub-rule: a vendor name inside a forum thread may be seeded.** The April 2026 BiggerPockets
+   post praising PigJet has the shape of placed content. Recorded on the row rather than counted.
+
+### Guidance for next week
+
+1. **If WebFetch is restored, target order:** [news.ycombinator.com/item?id=48045237](https://news.ycombinator.com/item?id=48045237)
+   first (eight weeks at the top); then the four single-fact checks this run generated, each of which
+   moves a score — **CapVeri's $49/mo tier** (does it include reconciliation? if not, ID 020 becomes
+   15 and a build candidate), **QuoteBuddy's paid prices** (ID 018's whitespace), **an Intuit page on
+   Desktop price levels not migrating** (ID 017's new demand-5), and the **Craftybase lot-traceability
+   page** (settles ID 003). Then Canny boards filtered to declined/not-planned.
+2. **If still Mode B, hunt vendor sunsets and end-of-life migrations.** This run's best finding came
+   from one. Live 2026–27 candidates already surfaced and unmined: **Microsoft Dynamics GP** (new
+   subscription sales stop 1 Apr 2026), **Backup Exec** (no in-family migration path), **Xero Global
+   Pay Run** (retired after Apr 2026), and ~70 Microsoft products retiring through 2026. Ask in each
+   case: what does the stranded population *lose* that the destination product does not have?
+3. **Mine the new channels properly.** `biggerpockets.com` forum 32 was productive on the first pass —
+   go back for lease abstraction, escalation clauses and estoppels. `insurance-forums.com` beyond
+   commissions. Untried sister forums, one query each: `garagejournal.com`,
+   `contractortalk.com` sister sites already used, `pumper.com`, `towforce.net`.
+4. **Run the cheap-tier check FIRST, before writing any evidence up.** Two ideas this week
+   (Squarespace, HOA) had excellent demand evidence written up before the price check killed them.
+   Reversing the order would have saved a third of the run.
+5. **Do not re-research** (additions this week): Xero delivery notes/packing slips, Xero multi-entity
+   consolidation, print-shop MIS, self-managed HOA tooling, law-firm trust accounting, Squarespace
+   quote flows, SaaS price-hike trackers, small-landlord residential tooling, QBD→QBO migration as a
+   service — plus everything on the weeks 2–7 lists.
+6. **Escalation, eighth consecutive run.** Unchanged and now quantified: four specific score-moving
+   facts were unreachable this week for want of four page fetches. Allowlisting
+   `news.ycombinator.com`, `hn.algolia.com`, `reddit.com`, `canny.io`, `biggerpockets.com`,
+   `insurance-forums.com`, `productideas.xero.com`, `community.xero.com`, `quickbooks.intuit.com`,
+   `practicalmachinist.com`, `woodweb.com`, `capveri.com`, `flippa.com`, `localsearchforum.com`,
+   `support.google.com`, `community.shopify.com`, `apps.shopify.com`, `contractortalk.com`,
+   `signs101.com`, `talk.newagtalk.com`, `wordpress.org` and `sellercentral.amazon.com` remains the
+   single highest-leverage change available.
