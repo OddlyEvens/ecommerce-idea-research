@@ -960,3 +960,161 @@ licenseware all publish one **free** as content marketing.
    `support.google.com`, `community.shopify.com`, `apps.shopify.com`, `contractortalk.com`,
    `signs101.com`, `talk.newagtalk.com`, `wordpress.org` and `sellercentral.amazon.com` remains the
    single highest-leverage change available.
+
+---
+
+## 2026-09-14 — Week 9
+
+### Evidence mode: **B** (WebFetch UNAVAILABLE — ninth consecutive run)
+
+Step 0 ran first, before any research. Both probes failed identically and immediately:
+
+- `https://example.com` → `{"error_type":"EGRESS_BLOCKED","domain":"example.com","message":"Access to example.com is blocked by the network egress proxy."}`
+- `https://en.wikipedia.org/wiki/Main_Page` → same error, same shape.
+
+Note the error is now **explicitly an egress-proxy policy block**, not an ambiguous 403 —
+consistent with weeks 2–8 and with the allowlist hypothesis. No retries were attempted
+during the run, and no curl/direct-HTTP fallback was tried, per the brief.
+
+### Honest read on signal quality: the lowest-yield week of the project for new ideas — and the most useful re-score
+
+One new row (ID 022, composite 13), fifteen candidates killed, **two backlog rows re-scored**.
+Judged on new ideas alone this was the weakest run in nine weeks. Judged on what actually
+changed the backlog, it was not: the week's best work was **closing week 8's open question on
+ID 020 and finding the platform-risk evidence against ID 017**. Both moved real rows.
+
+### The finding of the run: the cheap-tier check now kills *backlog rows*, not just candidates
+
+Week 8 left an explicit gate on ID 020: *"Do not build until the CapVeri $49 tier is read
+under Mode A."* Mode A never arrived, but **two sharper Mode B queries resolved it anyway**,
+and resolved it against the idea. Result text gives CapVeri **Starter $20/mo**, **Pro $49/mo**,
+**Business $99/mo**, with the flat statement that **"All CapVeri plans include CAM
+reconciliation"**. Independently, **ManageCasa Base is $45/mo for up to 25 units** with CAM
+reconciliation, and **CAMAudit sells single audits at $79**. A second query returned a
+different CapVeri ladder (Reconcile $99 / Control $249 / Defend $499) — unreconciled, and
+immaterial, because ManageCasa alone occupies the sub-$50 tier. ID 020: Whitespace 2 → 1,
+composite 14 → 13, and a flat do-not-build.
+
+**Two lessons, both now standing rules.**
+1. **Re-run the cheap-tier check on a row immediately before deep-diving it.** ID 020 was
+   the scheduled deep-dive target this week. Two queries turned it into a kill. A deep dive
+   would have been a wasted run.
+2. **A Mode-A-gated question is often answerable under Mode B with a better query.** Eight
+   weeks of "this needs Mode A" had become a way of deferring. One of the four deferred
+   facts fell to two ordinary searches. The other three should be retried the same way.
+
+### The second finding: ID 017's thesis has an expiry date, and Intuit is writing it
+
+**QuickBooks Online shipped native sales orders in January 2026** — Plus, Advanced and Intuit
+Enterprise Suite, or the Inventory add-on on lower plans — with custom fields, smart search,
+attachments, bundles and convert-to-PO added through 2026. Sales orders were the canonical
+twenty-year "Desktop has it, QBO doesn't" gap, complete with a six-page community thread.
+Intuit closed it. ID 017 sits in exactly that class of gap, and its own week-8 note named
+this as the biggest risk. **Whitespace 4 → 3, composite 16 → 15.** The Xero half — a
+tiered-price-list request open since 2012 — is untouched and remains the durable half.
+
+This also kills week 8's suggested shape ("a QBO-side rebuild of a specific Desktop feature
+other than price levels") on its first query. Third solo kill for the expired-premise screen.
+
+### Channels tested — one clear win, three new-but-closed, two dead
+
+**NEW and productive: `sellercommunity.com` / `community.squareup.com` (Square Seller
+Community).** Khoros, deeply indexed, returns seller frustration *text*: *"Two+ years down
+now… no update available on this Feature Request"*; *"STILL no update on this??? This thread
+is over 2 years old!"*; Square reps who *"whip out the canned-response book."* Extends the
+board rule: Lithium/Khoros and UserVoice work, Canny does not. **But both gaps it surfaced
+died at the next check** (Square shipped Packages natively; Bitship sells digital delivery at
+$9/mo) — the channel finds demand, not whitespace, exactly as week 8 warned.
+
+**NEW, indexed, categories closed:** `selfstoragetalk.com` (real price complaints — SiteLink
+*"way too expensive"* — but EMove and CCStorage are free-to-nearly-free), `plowsite.com`
+(dense billing threads, occupied by Gopher/Plowsaver/SG Advantage/QuickBooks),
+`discussions.probrewer.com` (TTB Tamer and BROPly already there). `edugeek.net` surfaced once,
+usefully, on the Publisher EOL thread. `lawnsite.com` re-confirmed as a second domain for
+contractor insurance topics.
+
+**Dead this run:** `central.toasttab.com` and `community.clover.com` (documentation pages
+only, no forum content); `community.wix.com` (returns Velo/dev threads, no price anchors);
+`community.etsy.com` (thin); site-scoped queries with a **path** (`site:biggerpockets.com
+forums/32 …`) return junk — **scope to the domain, put the forum number in as a plain word**.
+
+### Kills (15 candidates, 11 of them on price)
+
+1. **QBO sales-order rebuild** — expired premise, Intuit shipped it Jan 2026.
+2. **Square Appointments packages/session credits** — expired premise (Square ships Packages),
+   plus NextSessio $29/mo and Punchpass from $59/mo.
+3. **Square Online digital-file delivery** — Bitship $9/mo, SendOwl.
+4. **Self-storage under 100 units** — EMove *"very inexpensive"*, CCStorage free signup.
+5. **Brewery TTB BROP/excise** — TTB Tamer, BROPly, VicinityBrew. Same shape as the COLA kill.
+6. **Small-fleet DQ files** — FleetCollect $14/mo, DOTDriverFiles $5/driver/mo, MyDQFile $4.95.
+   A competitor was named *inside* the forum thread by a carrier using it.
+7. **Producer licence/appointment/CE tracking** — effectively free (NIPR PDB, Sircon, SureLC).
+8. **Exemption/resale certificate management** — Numeral free to 50 certificates; demand all
+   advisory, no seller complaint.
+9. **Snow-removal billing** — Gopher, Plowsaver, SG Advantage; QuickBooks suffices seasonally.
+10. **Job-shop material certs / C-of-C** — practice-sharing, not a gap; ERP-bundled ($149/mo).
+11. **Restaurant invoice / food-cost tracking** — no primary complaint found; MarginEdge and
+    Restaurant365 own it.
+12. **Microsoft Publisher EOL (.pub refugees)** — the best forcing function of the run
+    (1 Oct 2026 for M365 subscribers) and a genuine complaint (*"hundreds or thousands"* of
+    files, converting individually *"ludicrous"*), killed by free substitutes (LibreOffice
+    Draw, Scribus, PublishMedia free tier, Canva free for nonprofits) and by being a one-time
+    need two weeks from expiry.
+13. **Dynamics GP → Business Central** — ERP-scale, partner-led rebuild work.
+14. **Xero Global Pay Run retirement** — Talenox and JustLogin already advertise the migration.
+15. **Chrome-extension price-hike refugees** — no primary signal at all; the shape returned
+    only monetization how-to content. Do not retry this query shape.
+
+### Structural findings worth carrying
+
+1. **The sunset vein under-performed.** Week 8 recommended it on the strength of ID 017. Four
+   sunsets were tested (GP, Global Pay Run, QBD feature-loss, Publisher) and all four died —
+   because a sunset with a large stranded population **attracts migration vendors and free
+   substitutes before the deadline arrives**. The vein works only when the destination's gap
+   is (a) narrow, (b) unglamorous, and (c) still open close to the date. QBD price levels
+   had all three; Publisher's .pub archive had none.
+2. **Absence of competitors is now formally a yellow flag in the scoring, not a bonus.** ID 022
+   is the first row in nine weeks where the cheap-tier check found nothing, and its deep dive
+   concludes conditional-NO for that reason: payroll platforms, free COI tools and brokers
+   doing audit prep as a free retention service are the likeliest explanation.
+3. **Vendor-SEO contamination, fourth consecutive week.** Every price in this run's CAM
+   re-score, the $5,500 → $25,000 premium swing, and the "40% of audit adjustments are
+   subcontractor-related" figure come from parties selling the fix.
+4. **Two query-shape lessons.** Site-scoped queries must scope to the *domain* only — adding a
+   path (`forums/32`) breaks them. And exact-phrase wish queries (*"I wish there was a tool
+   that"*) returned pure listicle content for the second time; retire that shape under Mode B.
+
+### Guidance for next week
+
+1. **If WebFetch is restored, target order unchanged:** [news.ycombinator.com/item?id=48045237](https://news.ycombinator.com/item?id=48045237)
+   first (nine weeks at the top), then **QuoteBuddy's paid prices** (ID 018's whitespace), the
+   **Craftybase lot-traceability page** (settles ID 003), and **an Intuit page on Desktop price
+   levels not migrating** (ID 017's demand-5 rests on three conversion-vendor blogs). The
+   CapVeri question is now closed — remove it from the Mode A list.
+2. **Before anything else, retry the remaining Mode-A-gated facts as sharpened Mode B
+   queries.** That trick worked this week and the deferred list has been treated too
+   reverently.
+3. **Re-run the cheap-tier check on the deep-dive target before deep-diving it.** Next in line
+   after this week's re-scores: IDs 011 and 021 are both flat do-not-builds at 13, so the next
+   genuinely eligible target may have to come from new research. Expect a deep dive only if a
+   new row clears 13.
+4. **Validate or retire ID 022 quickly.** One query shape decides it: someone asking for
+   *audit-prep software* (not complaining about an audit bill) on `contractortalk.com`,
+   `lawnsite.com`, `plowsite.com` or `insurance-forums.com`. If nothing surfaces in two
+   queries, mark it do-not-build and move on — do not carry it for three weeks.
+5. **Fresh vein to try, since the sunset vein is spent:** vendor communities of *paid*
+   small-business platforms whose users are compelled to stay (Square done; try
+   `community.gusto.com`, `community.waveapps.com`, `community.godaddy.com`), filtered to
+   threads where the vendor's own staff reply with a refusal. Pair with the cheap-tier check
+   in the same breath — this week's Square finds prove the channel alone is not enough.
+6. **Do not re-research** (additions this week): QBD→QBO feature restoration of any kind,
+   Square digital delivery, Square session packages, self-storage software, brewery TTB
+   reporting, DOT driver-qualification files, insurance licence/appointment tracking,
+   exemption-certificate management, snow-removal billing, job-shop material certs,
+   restaurant food-cost tracking, Microsoft Publisher migration, Dynamics GP migration,
+   Xero Global Pay Run — plus everything on the weeks 2–8 lists.
+7. **Escalation, ninth consecutive run.** Unchanged. Add `sellercommunity.com`,
+   `community.squareup.com`, `capveri.com`, `managecasa.com`, `selfstoragetalk.com`,
+   `plowsite.com`, `lawnsite.com` and `discussions.probrewer.com` to the previously requested
+   allowlist. One counter-argument weakened this week — one deferred fact fell to a better
+   Mode B query — but three remain unreachable, and every one of them gates a real score.
