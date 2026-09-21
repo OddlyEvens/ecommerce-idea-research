@@ -1118,3 +1118,189 @@ forums/32 …`) return junk — **scope to the domain, put the forum number in a
    `plowsite.com`, `lawnsite.com` and `discussions.probrewer.com` to the previously requested
    allowlist. One counter-argument weakened this week — one deferred fact fell to a better
    Mode B query — but three remain unreachable, and every one of them gates a real score.
+
+---
+
+## 2026-09-21 — Week 10
+
+### Evidence mode: **B** (WebFetch UNAVAILABLE — tenth consecutive run)
+
+Step 0 ran first, before any research. Both probes failed identically and immediately:
+
+- `https://example.com` → `{"error_type":"EGRESS_BLOCKED","domain":"example.com","message":"Access to example.com is blocked by the network egress proxy."}`
+- `https://en.wikipedia.org/wiki/Main_Page` → same error, same shape.
+
+Explicit egress-proxy policy block again, consistent with weeks 2–9. No retries during the run,
+no curl/direct-HTTP fallback, per the brief. **Ten runs, ten blocks: treat Mode A as gone, not
+pending.** See the guidance section — the standing escalation request is now argued differently.
+
+### Honest read on signal quality: a cleanup week, and a good one
+
+One new row (ID 023, composite 10, itself a negative finding). **Five existing rows re-scored,
+four of them into flat do-not-builds.** Eight further candidates killed. Judged on discovery this
+ties week 9 as the weakest run of the project; judged on backlog accuracy it is the strongest.
+The top of the backlog was carrying three rows at 13 whose scores did not survive contact with
+one query each. That is worth more than a fourth idea nobody would build.
+
+### The finding of the run: week 9's "deferred facts fall to better queries" rule is now proven
+
+Week 9 discovered this once and flagged it as a lesson. This week it was applied deliberately as
+the run's opening move, to **three** questions this project had been carrying as "Mode A only" —
+some for six weeks. **All three resolved, in one or two ordinary searches each:**
+
+1. **Craftybase lot→customer reverse traceability (gated ID 003 since week 6).** It ships it.
+   Result text: *"show you exactly which batches, orders, and customers are impacted"* and
+   *"identify which order was shipped a product manufactured using a specific lot number."*
+   ID 003's one stated door closed. Whitespace 2 → 1, composite 13 → 12.
+2. **Intuit's own page on price levels not migrating (gated ID 017's Demand 5 since week 8).**
+   Found, on Intuit's domain: Price Levels *"is not an available feature in QuickBooks Online"*,
+   workaround is duplicating items, Price Rules *"only available in Advanced and Plus."* The
+   three-conversion-vendor-blogs caveat is retired. No score change; confidence materially up.
+3. **QuoteBuddy's paid prices (gated ID 018's whitespace).** The one that did *not* resolve —
+   four query shapes returned the pricing page URL and the tier *names* (Free 3 quotes/month,
+   Starter, Professional, Business) but never the figures. Recorded as still unresolved.
+
+**Two for three, at a cost of about five searches.** The standing instruction is now: a question
+marked "needs Mode A" is a question that has not been queried hard enough. Retry every one of
+them at the start of each run before researching new ground.
+
+### The second finding: the pre-deep-dive check killed the scheduled target for the second week running
+
+Week 9 made it a rule after ID 020 died on the way to its own deep dive. This week ID 021 —
+selected under *both* standing tie-breaks — died the same way. Week 8's gate on it was "revisit
+only if a Mode A pass shows the sub-$50 single-producer tier genuinely empty." Mode B answered:
+**Insurstein** is described doing the exact MVP (*"import statements, auto-match to policies,
+spot missing commissions, and calculate producer splits by carrier and line of business"*), and
+**AgencyComp** markets the exact wedge (*"does not require you to purchase an expensive CRM"*,
+three plans, no long-term contracts). The $59–72 floor was reconfirmed on a second domain.
+Whitespace 2 → 1.
+
+The dive then fell to ID 011, whose own pre-dive check found the platform risk had materialised
+(Shopify documents native purchase orders **and** supplier management, and is soliciting feedback
+on extending them) and the cheap tier had **fallen from $24.99/mo to $9.99/mo**. Verdict NO,
+marked Deep-Dived — which at least stops it consuming tie-break attention, as it had in three of
+the last five weeks.
+
+### The third finding: an empty cheap-tier check means search harder, not build
+
+ID 022 was scored last week partly on "no dedicated premium-audit-prep product surfaced at all",
+recorded then as a yellow flag. It was a false negative. **workerscompauditprep.com** sells a
+Construction Audit Prep Kit *and* an **Audit Packet Builder subscription** that uploads files,
+extracts values and generates the packet — the ID 022 MVP, shipped. Its demand test (a contractor
+asking for the *tool*, not complaining about the *bill*) also returned nothing in two query
+shapes. Whitespace 3 → 1, composite 13 → 11.
+
+**Week 9's yellow-flag rule should be upgraded to a stop:** when the cheap-tier check comes back
+empty, assume the query was wrong and run two more query shapes before scoring Whitespace above 2.
+
+### Channels — one excellent new find, one useful, four dead, and a third revision of the board rule
+
+**NEW and excellent: `community.waveapps.com`.** Vanilla-hosted, deeply indexed, and it returns
+*verbatim vendor staff refusals* — the ID 017 evidence shape, which is the strongest this project
+knows. Four separate refusals surfaced in one query (*"no plans to add those features to wave"*;
+*"Adding recurring bills isn't currently on our roadmap"*; *"Still no plans to have this feature
+added"*; *"There are currently no plans to implement"*), with user text alongside (*"All the
+options presented so far by WAVE are cumbersome"*; *"most of us that use WAVE are not
+accountants"*). **But the platform is closed** — no app marketplace, and the public API cannot
+read transactions or reports or create bills (ID 023). Great channel for learning what small
+businesses lack; useless as a build target. Mine it for *category* signal, not Wave products.
+
+**NEW and useful: `communityhub.sage.com`** (formerly Sage City). Indexed, returns member text
+(*"Why developers are abandoning Sage 50 US"*). Caveat: Sage 50 is 32-bit and its SDK is the
+QuickBooks-Desktop-SDK problem again — feasibility 2. Mine it for Sage *cloud* only.
+
+**Board rule, third revision.** Lithium/Khoros (HubSpot, Xero, Square), UserVoice
+(`productideas.xero.com`) and now **Vanilla** (Wave) work under Mode B. **Canny does not. And
+`Aha!` does not** — all three Sage 50 idea portals (`sage50us`, `sage50ca`, `sage50uki`
+`.ideas.aha.io`) index only as status and category *pages*, with no idea text and no vote counts,
+exactly like Canny.
+
+**Dead this run:** `community.gusto.com` and `community.godaddy.com` (both return vendor marketing
+and third-party review sites — the two "fresh vein" targets week 9 recommended, so that vein is
+now half spent, with `community.waveapps.com` its single success); `pumper.com` / `promonthly.com`
+(editorial and product spotlights only; the forum exists but is not indexed); `thehulltruth.com`
+(indexed but thin for business topics — one 2019 marina thread).
+
+### Kills (8 candidates)
+
+1. **EPA/AIM Act refrigerant recordkeeping (Subpart C, live 1 Jan 2026)** — the best forcing
+   function of the run (15 lb threshold down from 50, three-year records, *"no grace period"*),
+   dead at the cheap-tier check within one query: **RefriComply $29/mo**, RefGuard
+   $1,499 lifetime → $149/branch/mo, Refritrak, above them Fexa Trakref and Nuvolo. Eleventh
+   instance of the pattern and the fastest yet.
+2. **Wave invoice deposits / partial payments** — expired premise; Wave now documents partial and
+   instalment payments, deposits on estimates and customer credit accounts. Fourth solo kill for
+   the expired-premise screen.
+3. **Wave recurring bills** — refusal is real, but the API cannot create bills. Unbuildable.
+4. **2026 W-2 qualified tips / overtime (codes TP/TT)** — week-3 Demand-3 ceiling, no employer
+   complaint exists; work lands inside payroll systems anyway.
+5. **Small freight-broker carrier vetting** — remedy is a service (factoring companies do the
+   reliable checks); software half owned by Highway and Carrier Assure.
+6. **Marina / boatyard management** — one 2019 thread; DockMaster, MarinaOffice, BiT, Molo, Dockwa.
+7. **HVAC manufacturer warranty-claim tracking** — practice-sharing, not a gap complaint;
+   InsightPro sells the manufacturer side.
+8. **Sage 50 add-ons of any kind** — 32-bit SDK, feasibility 2 for this builder.
+
+Plus **ID 007 re-scored down** on the same logic as a kill: Oregon and Colorado exempt producers
+under **$5M** revenue and California under **$1M** in-state, so the "small brand" buyer this row
+was built for is statutorily exempt — and **EPR Insights is a $15/mo Shopify app** already sitting
+in the distribution channel the idea would have used.
+
+### Query shapes — what worked and what to retire
+
+- **Worked:** vendor-community site-scoped queries carrying *refusal vocabulary*
+  (`"not planned" OR "no plans" OR "workaround"`). This is now the single highest-yield shape the
+  project has. It produced the Wave channel on the first try.
+- **Worked:** naming a competitor and asking for the tier directly (`CommissionTrac OR "Commission
+  Tracker" OR AgencyBloc pricing 2026 … per month`) — returned three real floors in one query.
+  Use this shape for every cheap-tier check from now on; it beats category queries decisively.
+- **Failed, retire:** the Chrome-extension shape (`"used to be free" now subscription paywall`)
+  returned paywall-*bypass* extensions and monetization how-to content — a homonym trap. This is
+  the second consecutive week a browser-extension probe has returned nothing usable.
+- **Failed:** `site:`-scoped queries against Aha! idea portals (status pages only, no content).
+- **Caution:** `site:` queries against `hvac-talk.com` and `pumper.com` returned mostly
+  *off-domain* results — when a site-scoped query returns other domains, the site is not indexed
+  for that shape; stop rather than re-query.
+
+### Guidance for next week
+
+1. **Open with the deferred-facts retry, again.** It has now paid twice. Remaining list, all
+   retryable under Mode B: **QuoteBuddy's paid tiers** (ID 018's whitespace, four shapes failed
+   this week — try review aggregators and `alternativeto`, not the vendor site), and
+   **AgencyComp's three plan prices** (would confirm ID 021's kill, though the verdict does not
+   depend on it).
+2. **The deep-dive slot needs a decision.** After this week's re-scores there is **no
+   non-deep-dived row above 13, and the only 13 (ID 020) is a confirmed do-not-build.** Either
+   new research clears 13, or the slot should go to **re-validating ID 001 (16)** — the
+   accessibility scan / fix pack, deep-dived 2026-07-31 run 2 and never re-checked in eight
+   weeks. Given that this project's last five pre-dive checks have all moved scores, ID 001's
+   16 should be treated as unverified rather than as the backlog's anchor.
+3. **Run the upgraded cheap-tier rule:** an empty result means two more query shapes before
+   scoring Whitespace above 2. ID 022 is the cautionary case.
+4. **Best remaining vein: vendor communities with refusal vocabulary, on platforms that have a
+   real app marketplace.** The Wave finding shows the shape works but that a closed platform
+   wastes it. Untried targets that are both indexed-looking and *open*: `community.keap.com`,
+   `community.pipedrive.com`, `community.mailchimp.com`, `community.constantcontact.com`,
+   `community.bigcommerce.com`, `community.zoho.com`. Screen for an app marketplace **before**
+   researching the gap — that check costs one query and would have saved this week's ID 023.
+5. **One-query follow-up worth doing:** the Clover feature-loss complaint (*"promised reports to
+   reconcile daily sales but then made an update to take away report details"*). Feature loss is
+   this project's highest-rated wedge shape; the obstacle is that `community.clover.com` is dead
+   and the evidence sits only on review aggregators.
+6. **Do not re-research** (additions this week): maker COGS / batch tracking in any form (ID 003
+   closed), insurance commission reconciliation (ID 021 closed), workers' comp audit prep (ID 022
+   closed), Shopify purchase-order tooling (ID 011 closed), packaging EPR for small brands
+   (ID 007), refrigerant / AIM Act compliance, tips-and-overtime W-2 reporting, freight-broker
+   carrier vetting, marina management, HVAC warranty claims, Wave add-ons of any kind, Sage 50
+   add-ons — plus everything on the weeks 2–9 lists.
+7. **Escalation, tenth consecutive run — and the argument has changed.** For nine weeks the case
+   for an allowlist was "three deferred facts gate real scores." Two of those three fell to Mode B
+   queries this week, so that case is now weak, and it should be stated honestly: **Mode B is
+   doing more of the job than this log has been giving it credit for.** The residual case for
+   Mode A is narrower but real, and it is one thing: **the Ask HN thread
+   ([item?id=48045237](https://news.ycombinator.com/item?id=48045237))**, whose comment bodies are
+   hundreds of self-qualified demand statements from people who have already looked for a tool and
+   would pay $10–20/month — an evidence source with no Mode B substitute, and the single best
+   answer to this project's real bottleneck, which is **finding demand that is not already
+   served**, not verifying prices. If one allowlist entry is possible, ask for
+   `news.ycombinator.com` alone. Previously requested hosts remain on file.
