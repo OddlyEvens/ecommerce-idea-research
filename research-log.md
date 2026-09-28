@@ -1304,3 +1304,201 @@ in the distribution channel the idea would have used.
    answer to this project's real bottleneck, which is **finding demand that is not already
    served**, not verifying prices. If one allowlist entry is possible, ask for
    `news.ycombinator.com` alone. Previously requested hosts remain on file.
+
+---
+
+## 2026-09-28 — Week 11
+
+### Evidence mode: **B** (WebFetch UNAVAILABLE — eleventh consecutive run)
+
+Step 0 run first, before any research, as instructed. Both control URLs failed identically:
+
+- `https://example.com` → `{"error_type":"EGRESS_BLOCKED","domain":"example.com"}`
+- `https://en.wikipedia.org/wiki/Main_Page` → `{"error_type":"EGRESS_BLOCKED","domain":"en.wikipedia.org"}`
+
+The error is now a *named* egress-proxy block rather than a bare 403, which is a small but real
+change in the failure signature — it confirms an allowlist, not a transient network fault. No retries,
+no curl, no direct HTTP. **The block is permanent for this environment as configured; treat the Step-0
+check as a formality that costs two calls and stop expecting it to flip.**
+
+### Honest read on signal quality: no new ideas, and the two best results of the run were re-checks
+
+**Zero new validated ideas.** Twenty-eight queries, eleven channels, six verticals, and nothing cleared
+the two-independent-primary-source bar *and* survived the cheap-tier check. Reported as zero rather
+than padded, per the brief.
+
+That said this was not a wasted week — it was the most consequential week for the *existing* backlog
+since the project started, because it removed the anchor. The ranking of what mattered:
+
+1. **ID 001 falls 16 → 13.** The single most important result in eleven weeks.
+2. **ID 018 falls 14 → 12**, on a deferred fact carried since week 9 that fell to two queries.
+3. **ID 020 deep-dived, verdict NO**, in one query.
+
+### The finding of the run: ID 001's price chasm closed, and the backlog lost its anchor
+
+ID 001 (honest accessibility scan + platform-specific fix pack, explicitly not an overlay) has sat at
+**16** since 2026-07-31 run 2 — the highest score this project ever awarded — and was never re-checked
+in nine weeks. Week 10's log flagged exactly this: *"ID 001's 16 should be treated as unverified rather
+than as the backlog's anchor."* It was right.
+
+The row's entire thesis was a **price chasm**: overlays at $10–59/mo that demonstrably do not work,
+agency audits at $1,250–25,000, and nothing in between. Three queries this week found the middle
+occupied at every rung, **all of it inside the Shopify App Store** — the distribution channel the idea
+would itself have used:
+
+- **Patrol — free full audit with continuous monitoring, plus automated fixes written into the theme's
+  source code, from $200/month.** This is ID 001's product, shipped, and explicitly not an overlay.
+- The *honest-scanner* half is near-commoditised: **Appify Basic $4.99/mo**, whose Advanced plan
+  "includes an audit feature powered by **axe-core**, which runs a headless browser scan of your live
+  store and evaluates against WCAG criteria" — the MVP's core engine at five dollars a month;
+  **shoplab Accessibility Check $10/mo**; **Ai Accessibility free / $6.99 / $12.99**;
+  **Accessibility Way $39/mo**; **UserWay Auto AI from $39/mo**.
+- The category now has its own roundup layer, and the detail that settles it: **TestParty — cited in
+  ID 001's ORIGINAL evidence as a source — today publishes "Best Shopify Accessibility Apps in 2026:
+  12 Overlays, Scanners, and Fixers Compared."** A source that once supplied the row's demand evidence
+  now supplies its kill.
+- The services side filled too: maintenance plans **$300–1,800/mo**, SMB audits **$1,500–5,000**. So
+  "nothing between $59 and $1,250" is false on *both* sides of the chasm.
+
+**Demand went UP while whitespace collapsed.** Demand 4 → 5 on newly quantified, dated figures (5,006
+federal ADA Title III filings in H1 2026; ~6,176 projected; ~79% e-commerce; ~20% of defendants running
+an overlay; 800+ accessiBe installs sued anyway; demand letters seeking $10,000–25,000; 64% of defendants
+under $25M revenue). Whitespace 4 → 1. Monetization 4 → 3. **16 → 13.**
+
+**This is the cleanest demonstration the project has produced that demand and whitespace are independent
+axes.** Severe, growing, well-documented, legally-compelled pain told us nothing about whether the market
+was open. Weeks 1–10 kept discovering this one kill at a time; ID 001 shows it inside a single row, with
+the *same* pain getting worse while the opening shut.
+
+### The second finding: a nine-week deferred fact fell to two queries, and killed ID 018
+
+Week 9 failed on **four** query shapes to find QuoteBuddy's paid tiers; week 10 listed it as the top
+deferred fact. Two shapes this week returned it. **QuoteBuddy — "Machine Shop Quoting Software with AI"
+(`quotebuddy.therness.com`) — is $29/month founding rate for the first 50 shops, locked for the life of
+the account with no annual contract, and $59/month thereafter**, with a 14-day no-card trial and a free
+tier of three quotes a month. It also publishes shop-facing comparison content, so it is actively
+courting ID 018's exact buyer.
+
+ID 018 was *defined* as a sub-$50 job-shop quoting calculator. Its own 2026-09-07 deep dive recommended
+**$39/mo** — which lands between QuoteBuddy's two tiers with no feature argument for the gap. Whitespace
+3 → 1, composite 14 → 12.
+
+**Rule confirmed for the third time: deferred facts fall to better query shapes, not to Mode A.** The
+shape that worked was week 10's recommended one — name the vendor and ask for the price directly
+(`"quotebuddy" machine shop "$29" OR "$59" per month founding shops pricing`). Retry every deferred
+fact with the vendor-name-plus-price-token shape before ever deferring it again.
+
+### The third finding: the deep-dive slot is now structurally broken
+
+ID 020 took the slot by rule as the highest never-deep-dived row (13). The pre-dive check killed it in
+**one** query — the fourth consecutive week the pre-dive check has moved or killed the scheduled target.
+Three vendors absent from the week-8/9 sweeps have appeared: **Kardin** (whose own marketing sentence —
+"expense pools, caps, base years, pro-rata shares, and occupancy-based gross-up calculations" — is
+ID 020's complete MVP feature list), **Waltre** (explicitly for smaller commercial landlords), and
+**Zedly AI** (publishing the category roundup). Verdict NO, no build plan published.
+
+**The structural problem, now flagged two weeks running and worse after this week's moves: there is no
+never-deep-dived row above 12.** Filling the slot by rule next week guarantees another "verdict NO"
+write-up on a row already leaning negative. **Recommendation: make the slot conditional — dive only a
+row at 13+, otherwise spend the slot on re-validation, which this week returned more than any dive
+would have.**
+
+### Channels — one new, four dead, and one named source now unavailable
+
+**NEW and good: `appraisersforum.com`.** XenForo, well indexed, returns member *text* not just titles.
+Two real quotes in one query: **"Alamode is too expensive for me"** and a wish for **"one that was $30 a
+month unlimited"**. The vertical itself closed the same hour (ClickFORMS Spark $12/$49, ACI $12–48/$49,
+Anow $49 — the $30 wish is already met), and UAD 3.6 is unbuildable here (GSE verification from both
+Fannie and Freddie is an approved-vendor gate, not a feature). **Keep the channel for adjacent pain;
+never research appraisal form software.**
+
+**`site:reddit.com` exact-phrase shapes returned ZERO reddit results** — not thin, zero, across two
+attempts with different phrasings. Reddit is one of the brief's named priority sources and it is
+effectively unavailable under this search backend. Do not spend further queries on it; vendor
+communities and XenForo trade forums are the working substitutes. **This is worth stating plainly
+because it is a permanent constraint, not a bad query.**
+
+**Dead this run:** `support.bigcommerce.com` (Salesforce Lightning — results are literal "loading" pages,
+the Canny/Aha! failure mode again; **add Salesforce Experience Cloud to the unindexable-board list**);
+`community.hubspot.com` under refusal vocabulary (returns only announcements and changelogs — the shape
+that works elsewhere fails here); `community.clover.com` (re-confirmed dead, week 10's item 5 closed);
+`forum.wixstudio.com` (indexed, but returns only meta-discussion about *how to file* a feature request).
+
+**Board rule, fourth revision.** Working: Lithium/Khoros, UserVoice, Vanilla, Discourse-style
+(`community.monday.com`, `community.pipedrive.com`), `ideas.gohighlevel.com`. Not working: Canny, Aha!,
+**Salesforce Experience Cloud**.
+
+### Kills (6)
+
+1. **De minimis / small-parcel customs tooling** — best-dated live forcing function of the run
+   (Federal Register 24 Jun 2026 indefinite suspension; OBBBA permanent repeal 1 Jul 2027; EU €150
+   threshold gone 1 Jul 2026; $15–25 brokerage per parcel). Dead at the cheap-tier check: **Harmonize
+   self-serve AI classifier publicly from $49/mo**, SimplyDuty, **CustomsMobile free**, free USITC/CBP
+   CROSS references, Zonos at $2 + 10%, plus a seven-tool "SMB importers under $500K duties" roundup.
+   Extends the week-3 HTS kill. Do not re-research customs/duty/landed cost/HTS in any form.
+2. **Appraisal software** — cheap tier occupied, forcing function gated behind GSE verification.
+3. **monday.com "item lives on multiple boards"** — a textbook refusal whose own result text named
+   **seven marketplace apps already filling it**. monday's marketplace is unusually efficient; treat a
+   monday refusal as *weak* evidence of opportunity.
+4. **GoHighLevel** — real indexed gaps, but all *platform-level* (agency-level API, account switching).
+   The missing API **is** the gap, so there is nothing to build against.
+5. **Pipedrive product reporting** — quotable refusal, but the thread is **December 2020**. Check
+   thread dates before scoring any Pipedrive gap.
+6. **Jobber / Housecall Pro** — every result was vendor-comparison and affiliate content. **Fails the
+   evidence bar outright.** Comparison roundups are not demand evidence; do not cite them as such.
+
+### New lead recorded: abandoned-extension takeover as a METHOD
+
+Two independent domains with quoted text (Indie Hackers, dev.to): target extensions abandoned **12–24
+months ago**, because "the angry 1-star reviews are your pre-built feature roadmap, in the users own
+words." Live instances: Fakespot delisted, ReviewMeta offline, uBlock Origin MV2 dead on stable Chrome
+since v138. **But the same sources carry the counter-evidence** — "the store gives you no way to message
+another extension's users, so the install base almost never moves over directly"; what is inherited is
+*search demand*, not users. And the obvious instance is taken (**SureVett launched in 2026 to replace
+Fakespot**). Parked, not scored. **Before it earns a row it needs one thing: a named abandoned extension
+whose replacement does NOT already exist — i.e. run the cheap-tier check on the replacement, not on the
+dead product.** Note this is the third straight week a browser-extension probe failed to yield a row.
+
+### Structural findings worth carrying
+
+- **Every score this project has ever revisited under a fresh check has fallen.** Eleven weeks, and not
+  one upward revision to a composite. Either the initial scoring is systematically optimistic — most
+  likely on Whitespace, which is scored before the cheap-tier check is exhausted — or markets close
+  faster than weekly research can track. **Proposed correction: cap Whitespace at 3 on first scoring,
+  and allow 4–5 only after a row has survived one full re-check.** ID 001 would never have reached 16
+  under that rule.
+- **ID 002 has an expired premise the Stale rule cannot catch.** EU AI Act Article 50 applied
+  **2 Aug 2026** — eight weeks ago. The row has sat at 12 since 2026-07-31 as an *upcoming-deadline*
+  play. It escapes the Stale rule only by sitting exactly at the 12 threshold. **The staleness rule
+  should test premise expiry, not just age and score.**
+- **Thirteen backlog rows now carry scores that predate their last real check.** That, not new
+  discovery, is where this project's cheapest value currently sits.
+
+### Guidance for next week
+
+1. **Open with re-validation, not discovery.** It has now outperformed discovery two weeks running and
+   decisively this week. Priority order: **ID 002** (expired Art. 50 premise — re-score or retire),
+   **ID 017** (the new anchor at 15, last checked 2026-09-21), **ID 010** (14, untouched since
+   2026-08-10 and never re-checked), **ID 009 / 014** (both 12, New, never checked at all).
+2. **Apply the vendor-name-plus-price-token shape to every remaining deferred fact.** It has now resolved
+   two of three. Remaining: **AgencyComp's three plan prices** (would confirm ID 021's kill; verdict does
+   not depend on it).
+3. **Make the deep-dive slot conditional on a 13+ never-dived row.** Otherwise spend it on re-validation.
+4. **Adopt the Whitespace cap** (max 3 on first scoring) if it survives a sanity check against IDs 017
+   and 010.
+5. **Best remaining vein:** Discourse-hosted vendor communities on platforms with *paid* app marketplaces,
+   screened for marketplace density first — monday.com showed that a refusal in a dense marketplace is
+   worthless, so **check how many apps already serve the gap before researching the gap**. Untried and
+   plausibly open: `community.airtable.com`, `community.notion.so`, `community.clickup.com`,
+   `community.smartsuite.com`, `discuss.bubble.io`.
+6. **Do not re-research** (additions this week): website accessibility in any form (ID 001 closed),
+   job-shop quoting (ID 018 closed), CAM/NNN reconciliation (ID 020 closed), customs / duty / landed cost
+   / HTS / de minimis, appraisal software, monday.com multi-board, GoHighLevel agency-level gaps, Wix —
+   plus everything on the weeks 2–10 lists.
+7. **Escalation, eleventh run.** The week-10 position is unchanged and still honest: Mode B is doing more
+   of the job than early weeks credited, and prices are no longer the bottleneck. Two things would now
+   justify an allowlist entry, in order: **`news.ycombinator.com`** (the Ask HN thread
+   [item?id=48045237](https://news.ycombinator.com/item?id=48045237) — hundreds of self-qualified demand
+   statements, no Mode B substitute) and **`reddit.com`**, which this week proved is not merely thin under
+   Mode B but entirely absent, removing one of the brief's own named priority sources. Previously
+   requested hosts remain on file.
