@@ -1502,3 +1502,153 @@ dead product.** Note this is the third straight week a browser-extension probe f
    statements, no Mode B substitute) and **`reddit.com`**, which this week proved is not merely thin under
    Mode B but entirely absent, removing one of the brief's own named priority sources. Previously
    requested hosts remain on file.
+
+---
+
+## 2026-10-05 — Week 12
+
+### Evidence mode: **B** (WebFetch UNAVAILABLE — twelfth consecutive run)
+
+Step 0 run first, before any research. Both control URLs failed identically and immediately:
+
+- `https://example.com` → `{"error_type":"EGRESS_BLOCKED","domain":"example.com","message":"Access to example.com is blocked by the network egress proxy."}`
+- `https://en.wikipedia.org/wiki/Main_Page` → same, `domain":"en.wikipedia.org"`
+
+Signature identical to week 11 — a *named* egress-proxy block, not a bare 403. No retries, no curl, no direct HTTP.
+**Twelve for twelve. The week-11 position stands: treat Step 0 as a two-call formality and stop expecting it to flip.**
+
+### Honest read on signal quality: discovery 0-for-3, re-validation 4-for-5. The ratio is now the project's central fact.
+
+**Zero new validated ideas — the second consecutive zero.** Fourteen queries. Three discovery veins probed, all three closed, each
+by a *different* screen — which is the useful part, because it means the screens are doing work rather than the veins being
+randomly bad:
+
+1. **Airtable** — closed by the **marketplace-density screen** (week 11's own recommendation) in ONE query.
+2. **Xero customer-PO field** — closed by a **new screen this week, the free-workaround screen**.
+3. **2026–27 sunsets** — closed because the forcing functions are either already on file or enterprise-scale.
+
+Meanwhile re-validation moved four scores and resolved the last deferred fact. **Two weeks running, and now three of the last
+four, re-validation has returned more than discovery. This is no longer a weekly observation; it is the method.**
+
+### The finding of the run: ID 017 earned its best evidence ever and its score deliberately did NOT rise
+
+This is the most important judgement call this project has made, so it is recorded in full.
+
+`productideas.xero.com` suggestion **44960380** ("Product & services — Create custom (tiered) price lists for contacts") carries
+**128 votes**, the official status **"Not in pipeline"** — *"the Inventory team reviewed the idea but does not have development
+planned for enabling more extensive Inventory management like this"* — and a **May 2026** comment stating the pain in the product's
+own vocabulary: assign a pricing level to Contacts so customers *"don't need to have the item price manually overwritten on every
+invoice."* Vendor refusal, vote count, dated live demand, in the vendor's own words. Nothing in twelve weeks is better evidenced.
+
+**And no dimension moved.** Reasoning, because the temptation was real:
+
+- **Demand** was already capped at 5.
+- **Whitespace held at 3, not 4.** The one claim that would justify 4 — *"a search through the app store did not find an app that
+  offers this feature and integrates with Xero"* — is **single-source and a second query could not confirm it**. Absence of
+  evidence is not evidence of absence, and week 11's discipline (allow 4+ only on confirmed whitespace) bites exactly here.
+  Separately, the QBO half is being *absorbed by the platform*, which argues down, not up.
+- **Monetization held at 4, not 5.** The counter-intuitive reason worth carrying: **the absence of any comparable app means there
+  is no observed willingness-to-pay anchor, which is a monetization WEAKNESS.** "Nobody sells this" and "nobody has proven anyone
+  pays for this" are the same sentence read two ways. The brief's own yellow-flag rule says so; it applies to scoring too.
+
+**So: twelve weeks, still zero upward composite revisions.** That streak is now strong enough to be a prior, not a curiosity.
+
+**Honesty check that changed the outcome.** I initially read QBO's native **Price Rules** (customer-level targeting, help article
+updated 3 Aug 2026) as a new kill — then grepped the backlog and found ID 017's own note *already* recorded it ("still in beta
+after years", "Plus/Advanced only", and week 9's line "a native Price Rules would erase the QBO half"). **It was not a new finding.
+Rule: grep the row's existing note before reporting any re-check result as new.** This is the second time a grep-first check would
+have prevented a wrong conclusion.
+
+### New screen adopted: the free-workaround screen
+
+The Xero customer-PO-number probe looked like the best find of the discovery half and had **three independent primary sources**
+including a superb consequence statement — *"no customer will pay an invoice without their purchase order number appearing on an
+invoice"* — plus a quotable structural cause (*"Xero doesn't permit custom fields"*). It died at **zero dollars**: the **Reference
+field** *"prints on the invoice, and is also searchable"* and the invoice template can simply be **renamed** to say "Purchase Order
+Number."
+
+**RULE: before scoring any platform refusal, check whether the vendor's own documented workaround is free AND sufficient.** Second
+instance of the pattern (week 6: short-term-rental permits, whose sources' own remedy was *"calendar reminders"*).
+
+**The distinction that keeps ID 017 alive under the same screen, and it is a real one:** its workaround is *recurring labour the
+users themselves name as the complaint* (overwrite the price on every invoice, or duplicate every item and break inventory). The
+PO-field workaround is a one-time setting. **Free-and-one-time kills; free-and-recurring does not.**
+
+### New evidence class: Flippa / Acquire.com listings. Use it every week.
+
+The brief has named these as priority sources since week 1 and this project had barely used them. They are **unusually well suited
+to Mode B** because listing *titles* carry revenue, profit and asking prices — no other channel does that. Two queries produced:
+**$3.9K MRR / 77 subs / asking $49,000** for an AI Chrome extension (**≈$50/subscriber/month**, a genuinely useful pricing anchor);
+a bulk-downloader extension at **10.5K users / $700/mo profit / zero costs**; an SOP SaaS at **$108K ARR / 66% margins**; and norms
+of **2–3.5x ARR / 25–45x MRR** for sub-$10K-MRR micro-SaaS, against **615 acquire.com listings averaging 2.6x TTM revenue**.
+
+**Standing instruction: one listings query per week, and benchmark every deep-dive price point against these figures.** Caveat
+recorded in the backlog: these are *asking prices and seller claims*, never verified earnings.
+
+### Channels
+
+- **`community.airtable.com` — WORKS (evidence only).** Returns member *text*, not titles. Produced the strongest single demand
+  sentence of the run. **But a dead build target** — miniExtensions ($29/mo) serves the gaps and an alternatives layer exists.
+  Keep for adjacent pain; never research Airtable feature gaps.
+- **`community.clickup.com` — DEAD.** Zero results from the domain, intercepted by Spotify/Adobe/Wikipedia. Same signature as
+  `site:reddit.com` in week 11. Do not retry.
+- **`sunsetproof.com` — NEW, keep as a feed.** A live "SaaS Sunset Tracker 2025–2027". Read it instead of running generic sunset
+  queries, and note it also forecloses building one.
+- **`productideas.xero.com` — reconfirmed as the single best board in this project.** Returns verbatim status text, vote counts and
+  dated comments. It alone carried this week's best finding.
+- **Dead query shape:** the exact-phrase wish form (`"I wish there was a tool that"` / `"is there a tool that"`) returned **only
+  Gumroad template spam and listicles**. Mode B cannot work this shape; stop spending queries on it.
+
+### Deferred facts: the shape is now 3-for-3, and the queue is EMPTY
+
+**AgencyComp resolved** — Pro **$39.95/mo** (500 clients, 1 extra user), Select **$54.95**, Premier **$64.95**, 14-day trial, no
+contract. This confirmed ID 021's kill and settled the deep-dive slot in one query.
+
+**The vendor-name-plus-price-token shape has now resolved every fact ever deferred (QuoteBuddy, Kardin/Waltre, AgencyComp) — 3 for
+3 — and none of them needed Mode A.** No deferred facts remain. **Never defer a price again without first trying this shape.**
+
+### The deep-dive slot: week 11's prediction came true, and the slot was split
+
+There was **no never-deep-dived row at 13+ anywhere in the backlog** — precisely the structural break week 11 forecast. Handled by
+splitting: ID 021 took the slot by rule, the pre-dive check killed it in one query (verdict NO, no build plan), and the real depth
+went to **ID 017** as a re-dive, since its 2026-08-31 dive predates the 128-vote status, the May 2026 comment, the 1 Aug 2026 QBO
+repricing and the 2 Mar 2026 Xero API repricing. **Recorded as a deliberate, stated deviation from the letter of the brief.**
+**Fifth consecutive week the pre-dive check has moved or killed the scheduled target.**
+
+### Structural finding: Xero repriced developer access, and it changes the maths for every Xero idea
+
+Discovered while stress-testing ID 017's biggest risk. Effective **2 March 2026** Xero **retired its 15% App Store revenue share**
+for five tiers keyed to connected orgs and data egress: Starter **$0 (5 connections)**, Core **~$22 USD (50 connections, 10 GB)**,
+Plus **~$152 (1,000)**, Advanced **~$895 (10,000)**, overage **$2.40 AUD/GB**; premium endpoints require Advanced. Trade press:
+*"'All you can eat Xero data buffet' comes to abrupt end."*
+
+**Net read is mixed, not fatal, and the nuance matters:** a flat $22 beats 15% of revenue for a small app, and **the free
+5-connection tier makes validation cost literally $0** — ideal for this builder. But there is a hard **$22 → $152 cliff at the
+51st customer**, and the platform demonstrated it will reprice unilaterally. **Carry this into every future Xero-app idea.**
+
+### Guidance for next week
+
+1. **Open with re-validation again — it is now the method, not the warm-up.** Priority order: **ID 012** (13, Deep-Dived
+   2026-08-17, never re-checked — now the highest row with no fresh check), **ID 006** (13, untouched since 2026-08-03, never
+   re-checked), **ID 001** (13, re-checked only once), **ID 020 / 011** (both 12 with verdict NO — confirm, then consider retiring
+   rather than re-checking). **ID 010 and ID 014 are now closed; do not re-check them.**
+2. **ID 017 is the whole backlog.** Its one soft spot is the **unconfirmed Xero App Store absence**. Spend 2–3 queries trying to
+   confirm or refute that *specifically* — name candidate app categories (B2B/wholesale, inventory, pricing) and query the Xero App
+   Store directly. If an app is found, ID 017 falls and the backlog has nothing above 13. **That is the single highest-value query
+   available next week.**
+3. **Run one Flippa/Acquire listings query every week** — new standing item.
+4. **Untried from week 11's list:** `community.notion.so`, `community.smartsuite.com`, `discuss.bubble.io`. **Screen marketplace
+   density FIRST** — it closed Airtable in one query and would have saved monday.com in week 11.
+5. **Apply the free-workaround screen before scoring any platform refusal**, and **grep the row's own note before calling any
+   re-check result "new."**
+6. **Do not re-research** (additions this week): Prop 65 tooling in any form (ID 010 closed), COI / compliance-document expiry
+   tracking (ID 014 closed), Shopify inventory forecasting and reorder planning (ID 009 closed), EU AI Act Article 50 (ID 002
+   retired), carrier commission reconciliation (ID 021 closed), Airtable feature gaps, Xero PO-number field, generic software-sunset
+   queries, SaaS sunset/price-hike trackers — plus everything on the weeks 2–11 lists.
+7. **Escalation, twelfth run.** Position unchanged and still honest: Mode B is carrying this work, prices are not the bottleneck,
+   and this week's best finding (a vote count and a vendor status string) came through Mode B cleanly. The two hosts that would
+   actually add something remain, in order: **`news.ycombinator.com`** (Ask HN
+   [item?id=48045237](https://news.ycombinator.com/item?id=48045237) — hundreds of self-qualified demand statements, no Mode B
+   substitute) and **`reddit.com`** (proven absent, not merely thin). A third is now worth naming: **`apps.xero.com`** — the Xero
+   App Store — because confirming or refuting one absence claim there would settle the backlog's only live idea. Previously
+   requested hosts remain on file.
