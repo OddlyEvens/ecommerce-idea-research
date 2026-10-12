@@ -1652,3 +1652,198 @@ Plus **~$152 (1,000)**, Advanced **~$895 (10,000)**, overage **$2.40 AUD/GB**; p
    substitute) and **`reddit.com`** (proven absent, not merely thin). A third is now worth naming: **`apps.xero.com`** — the Xero
    App Store — because confirming or refuting one absence claim there would settle the backlog's only live idea. Previously
    requested hosts remain on file.
+
+## 2026-10-12 — Week 13
+
+### Evidence mode: **B** (WebFetch UNAVAILABLE — thirteenth consecutive run), but the FAILURE MODE CHANGED
+
+Step 0 run first, before any research. Both control URLs failed immediately — and **not the way they have failed
+for the last two weeks**:
+
+- `https://example.com` → `getaddrinfo ENOTFOUND example.com`
+- `https://en.wikipedia.org/wiki/Main_Page` → `getaddrinfo ENOTFOUND en.wikipedia.org`
+
+Weeks 11–12 returned a *named egress-proxy refusal* (`{"error_type":"EGRESS_BLOCKED","domain":...,"message":"Access
+to ... is blocked by the network egress proxy."}`). This week there is **no proxy response at all — DNS resolution
+itself fails**. Same outcome, different mechanism: last week something answered and said no; this week nothing
+resolves. Worth logging because it suggests the block is **infrastructure configuration drift rather than a stable
+policy**, so the two-call formality stays cheap and stays worth running. No retries, no curl, no direct HTTP.
+**Thirteen for thirteen.**
+
+### Honest read: discovery 0-for-1 (third consecutive zero), re-validation 3-for-3. The ratio held again.
+
+**Zero new validated ideas.** Twelve queries. But the discovery half was not weak this week — it was *decisive*,
+and that is a different thing. One vein was worked all the way to a conclusion and closed on a found price.
+
+**Re-validation again returned more than discovery — now four of the last five weeks.** Two scores moved (both
+down), one row was strengthened without moving, one dead row was closed out, and one went Stale.
+
+### The finding of the run: the best demand signal this project has ever seen, killed by a $7.50/month competitor
+
+**Xero invoice subtotals / line-item grouping.** On raw demand this beat everything in thirteen weeks:
+**353 votes** (ID 017 has 128), status **"Not in pipeline"**, a **13 Apr 2026** reply from Xero's own community
+manager, Xero's words *"no foreseeable plans"*, and **four further open requests clustered on the same
+capability** — subtotals, combine-and-hide lines, blank-line grouping, hide cost on quotes. It cleared the
+free-workaround screen cleanly (Xero's workarounds are *recurring* labour: type the maths yourself, or *"export
+the invoice as a PDF and edit it externally"*). The vendor even escalated to *"invoicing tools in the Xero App
+Store"* without naming one — the exact ID 017 pattern.
+
+Then **[invoicepolish.com](https://invoicepolish.com/)**: **$90/yr (≈$7.50/mo)** Basic, **$268/yr (≈$22.33/mo)**
+Professional, extra orgs $5–6/mo, 7-day trial, no card. **The cheapest incumbent this project has ever found.**
+
+**Three lessons, in order of value:**
+
+1. **Vote counts are not whitespace.** 353 votes measured the *demand* leg perfectly and said nothing about the
+   *competition* leg. A high-vote vendor refusal is now proven compatible with a saturated cheap tier. Do not let
+   a big number on a feature board shortcut the cheap-tier check again.
+2. **The competitor was sitting inside the complaint channel the whole time**, recommended by name in the Xero
+   idea threads (apparently by its own developer) — and still took **five queries** to surface, four of which
+   were targeted at exactly this niche.
+3. Which produced **the rule that cost ID 017 a point** (below).
+
+### ID 017 re-scored DOWN 15 → 14, and the reason generalises beyond this row
+
+Week 12's guidance named one query as the highest-value available: confirm or refute the user claim that no Xero
+App Store app does customer-specific price lists. **Done, and it is partly refuted.**
+**[Qoblex](https://apps.xero.com/us/app/qoblex)** is on the Xero App Store and its own blog claims B2B wholesale
+with *"custom price lists per customer"*. Honest qualification recorded on the row: Qoblex delivers via a *B2B
+storefront* rather than auto-applying a contact's price on a Xero invoice, and it is **$99–149/mo**, so the
+sub-$50 focused tier is still open and the chasm wedge survives. But the *feature* is no longer absent from the
+marketplace, which is what whitespace 3 rested on.
+
+**The second reason is the more important one, and it is a method rule:**
+
+> **RULE: never score Competitive Whitespace 3+ on an absence claim. Require either a named, priced incumbent, or
+> a vendor-name-plus-price-token query that came back empty.**
+
+Justification is this week's own evidence: InvoicePolish — live, priced, dedicated — was invisible across four
+targeted queries in an adjacent Xero niche. **If deliberate searching misses that, a user's casual "I have been
+through the app store and cannot find an app" is near-worthless.** That sentence was load-bearing for ID 017.
+
+**Thirteen weeks, still zero upward composite revisions.** The prior is now very strong.
+
+### ID 012 re-scored DOWN 13 → 12: the gate is worse, and it is a human gate
+
+Re-checked per week 12's priority order. Feasibility 3 → 2. New beyond the thread already on file: GBP API
+approval is **per GCP project** and does not transfer; **API keys are rejected outright** (OAuth 2.0 only);
+eligibility needs a **verified profile active 60+ days**; *"rejections are common for vague or thin
+applications"*; reported waits **4 days to 6 weeks** against a stated 7–10 business days; and the reviews
+endpoint still returns *"Service mybusiness.googleapis.com is not available to this consumer"* with a possible
+**separate allowlist unresolved**.
+
+**Source-quality caveat stated on the row, not buried:** the forum thread was already cited in week 6, and the new
+specifics come from third-party blogs — weaker than a vendor page. The direction is one-way regardless. An opaque
+human approval gate that can reject you, and must be re-won per project, is the wrong shape for a non-coder.
+
+### ID 006 strengthened on six new dated obligations — and the composite deliberately did NOT move
+
+This is the second time (after week 12's ID 017) that the project has taken its best new evidence of the run and
+declined to raise a score. The reasoning is worth keeping because it is the same shape both times.
+
+**What is new since the 2026-08-03 dive:** NYC's Click-to-Cancel rule live **1 Oct 2026** (DCWP, **$525 / $1,050 /
+$3,500** per violation, restitution, each omission possibly separate, **no small-business exemption**, and a
+**public complaint portal from day one**); **Virginia 1 Jul 2026**; **Maryland 1 Jun 2026**; **Colorado 16 Feb
+2026, extended to B2B**; **Maine 1 Jan 2026**; **Louisiana** summer 2026; FTC **restarted rulemaking** (ANPR
+13 Mar 2026). The sources even state the product thesis: *"a cancel flow that satisfies one state can breach
+another."*
+
+**Why nothing moved:** the binding constraint was never the forcing function. It is that **Demand 3 rests entirely
+on law-firm and enforcement content with zero merchant voices** — and that was attacked head-on this week with a
+dedicated HN/Indie Hackers query for founder *"we had to rebuild"* stories, which **returned zero threads from
+either domain**. Second independent failed attempt. Whitespace held at 3: no vendor sells a cancel-flow compliance
+auditor **at any price** (closest published adjacent tool is **RenewalTracker $49/mo**), which is part whitespace
+and part the same yellow flag.
+
+> **A bigger, better-dated, more enforceable obligation on an unproven buyer is still an unproven buyer.**
+
+### METHOD FINDING, and it is the most portable thing in this entry: one `site:` operator per query
+
+Both compound queries this week — `site:community.notion.so OR site:discuss.bubble.io` and
+`site:community.waveapps.com OR site:communityhub.sage.com` — **returned zero results from any named domain**,
+intercepted by Spotify, Adobe, Qlik, SAP and Wikipedia. That is the **exact interception signature this log has
+twice recorded as proof a channel is DEAD** (`site:reddit.com` in week 11, `community.clickup.com` in week 12).
+
+In the same run, **single-`site:` queries worked perfectly**: `site:productideas.xero.com` returned vote counts,
+status strings and dated vendor replies; `site:sellercommunity.com` returned seller frustration text.
+
+**Two consequences, and the second one matters more:**
+
+1. **RULE: never put two `site:` operators in one query.**
+2. **The interception signature does NOT reliably mean "dead channel" — it can mean "malformed query".** Wave and
+   Sage were logged as *productive* in weeks 10–11 and this week's zero is **not** evidence against them; they stay
+   on the live list. **Week 11's and week 12's dead-channel verdicts (`reddit.com`, `community.clickup.com`) were
+   both reached with single-`site:` queries, so they stand** — but any future dead-channel call must be made on a
+   single-`site:` query or it is not a call at all.
+
+### The deep-dive slot: split again, sixth week running the pre-dive check moved the target
+
+By the letter of the brief the slot was **ID 021**'s (12, highest never-deep-dived). Week 12 had already killed it
+with a found price (**AgencyComp Pro $39.95/mo**). Deep-diving it would have manufactured a fake deliverable, so
+**ID 021 was marked Deep-Dived to close it out** and the real depth went to **ID 006** as a re-dive, on the same
+precedent week 12 set with ID 017. Stated as a deliberate deviation in both the report and the history table.
+
+**The structural problem week 11 forecast is now chronic, not episodic:** there has been **no never-deep-dived row
+at 13+ for three consecutive weeks**. Expect to split the slot again. The honest framing for next week is that the
+deep-dive slot is now effectively a **re-dive slot**, and the selection rule should be stated that way rather than
+contorted each week.
+
+### Channels
+
+- **`productideas.xero.com` — reconfirmed, third week running, as the single best channel in this project.** It
+  alone produced this week's headline finding, with vote counts, official status strings and a dated vendor reply
+  in result text. The `site:`-scoped `"not in pipeline"` sweep is the productive query shape and surfaced a whole
+  inventory of refusals (invoice subtotals 353 votes; Analytics Plus cashflow, Not in pipeline 7 Jul 2026; Hubdoc
+  contact creation 12 votes, 21 Sep 2026; Practice tools report-template client access 95 votes, declined; AU
+  payroll future leave balances). **Mine it again — but screen every hit for a cheap incumbent FIRST this time.**
+- **`sellercommunity.com` (Square) — works, but returned nothing dated 2026.** Real long-run frustration text
+  (decimal-quantity pricing with *"our workaround is slowing things down, not acceptable for a long term
+  solution"* against Square's *"we have no updates to share at this time"*; order notes requested for years;
+  two-year wait on service modifiers) — but thread ages ran **689–2,495 days** and the surcharge request has since
+  **shipped**. Treat Square hits as needing an expired-premise check before anything else.
+- **`community.notion.so` / `discuss.bubble.io` — UNRESOLVED, deliberately not called dead.** Only ever probed
+  inside the broken compound query. Retest singly.
+- **Flippa — standing weekly query run (run 2).** New anchors on the backlog lead row; the useful one is
+  **≈$41/subscriber/month** (local-SEO SaaS, $17,753 MRR / 430 subs), a second independent observation after week
+  12's ≈$50/sub/mo that **SMB/agency micro-SaaS ARPU sits ≈$40–50**. That pair priced the ID 006 deep dive.
+
+### Housekeeping
+
+- **ID 023 marked Stale** on the standing rule (first seen 2026-09-21, three weeks, composite 10, no new
+  evidence). It was already a negative finding when scored.
+- **Report length: ~1,600 words against the ~1,400 target.** Noted rather than hidden. Four trim passes were run;
+  the remainder is citation density (every claim carries a link) and the two tables the brief requires. Next week,
+  draft the obligations table and the candidate table *first* and write the prose to the remaining budget.
+
+### Guidance for next week
+
+1. **Open with re-validation. It is the method.** Priority order, with the two now-closed rows removed:
+   **ID 001** (13, re-checked once, 2026-09-28 — now the stalest 13), then **ID 020** (13, verdict NO — confirm
+   and consider **retiring** rather than re-checking; the backlog is accumulating dead rows that still occupy the
+   top ten). **Do NOT re-check ID 012, ID 021, ID 010, ID 014, ID 009 or ID 023 — all closed or stale.**
+2. **ID 017 is still the whole backlog at 14, and its remaining soft spot has moved.** The app-store absence
+   question is now answered (Qoblex exists). The *new* open question is narrower and more valuable: **does Qoblex,
+   or anything else, actually apply a contact's price list when raising an invoice inside Xero — or only inside its
+   own B2B storefront?** If something does it *in Xero*, ID 017 falls to whitespace 1 and the backlog has nothing
+   above 13. Two queries, and name the mechanism, not the product.
+3. **Apply the new whitespace rule from the top:** no whitespace 3+ on an absence claim; require a named priced
+   incumbent or an empty vendor-name-plus-price query. **Apply the cheap-tier check BEFORE being impressed by a
+   vote count** — that is this week's whole lesson.
+4. **One `site:` operator per query, always.** And never again call a channel dead off a compound query.
+5. **Re-mine `productideas.xero.com` "not in pipeline"** (the inventory above is only partly worked), and
+   **retest Wave, Sage, Notion and Bubble singly.**
+6. **Run the Flippa/Acquire listings query** (standing item, now 2-for-2 useful).
+7. **Restate the deep-dive rule honestly.** Three weeks with no never-deep-dived row above 12 makes it a re-dive
+   slot. Proposed rule for next week: *deep-dive the highest-composite row whose dive predates a material change in
+   its premise, preferring never-dived rows at equal composite* — and retire NO-verdict rows so they stop holding
+   top-ten slots.
+8. **Do not re-research** (additions this week): **Xero invoice subtotals / line-item grouping / combine-and-hide
+   lines in any form** (InvoicePolish at $7.50/mo), **carrier commission reconciliation** (ID 021 closed),
+   **Wave job-costing** (ID 023 stale), plus everything on the weeks 2–12 lists.
+9. **Escalation, thirteenth run.** Position unchanged and still honest: Mode B is carrying this work and produced
+   both of this week's best findings (a 353-vote vendor refusal, and a competitor's complete price card). The
+   bottleneck is **not prices — it is self-qualified demand statements**, which is precisely what the two
+   unreachable hosts hold: **`news.ycombinator.com`** (Ask HN
+   [item?id=48045237](https://news.ycombinator.com/item?id=48045237)) and **`reddit.com`**. This week supplied a
+   sharp illustration: ID 006 is blocked at Demand 3 *solely* because two separate attempts could not reach founder
+   voices on HN or Indie Hackers, and no amount of law-firm content substitutes. **`apps.xero.com`** remains third
+   and would settle guidance item 2 directly. Previously requested hosts remain on file.
