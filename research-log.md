@@ -1847,3 +1847,221 @@ contorted each week.
    sharp illustration: ID 006 is blocked at Demand 3 *solely* because two separate attempts could not reach founder
    voices on HN or Indie Hackers, and no amount of law-firm content substitutes. **`apps.xero.com`** remains third
    and would settle guidance item 2 directly. Previously requested hosts remain on file.
+
+## 2026-10-19 — Week 14
+
+### Evidence mode: **B** (WebFetch UNAVAILABLE — fourteenth consecutive run). Failure signature unchanged from week 13.
+
+Step 0 run first, before any research:
+
+- `https://example.com` → `getaddrinfo ENOTFOUND example.com`
+- `https://en.wikipedia.org/wiki/Main_Page` → `getaddrinfo ENOTFOUND en.wikipedia.org`
+
+Identical to week 13: **DNS resolution itself fails, no proxy response at all**. Weeks 11–12 returned a named
+`EGRESS_BLOCKED` proxy refusal; weeks 13–14 return nothing. So the drift week 13 hypothesised has **stabilised in
+the worse state** — last week's framing ("configuration drift rather than stable policy") should be downgraded: two
+identical runs now suggest a stable DNS-level block, not flapping. The two-call formality stays cheap and stays
+worth running, but the expectation should no longer be that it will spontaneously fix itself. No retries, no curl,
+no direct HTTP. **Fourteen for fourteen.**
+
+### THE MOST IMPORTANT ITEM OF THE RUN IS NOT RESEARCH: week 13 was never pushed.
+
+Discovered while checking git state before any writing. `git status -sb` reported **`## HEAD (no branch)`** — the
+repository was in **detached HEAD**, and commit `593f546` ("Week of 2026-10-12: research update") was sitting on it
+**orphaned**: not an ancestor of `main`, and `origin/main` still pointed at `c4ddfd7` (2026-10-05). Last week's
+entire run — the InvoicePolish finding, the ID 017 and ID 012 re-scores, the one-`site:`-per-query method rule, the
+ID 006 re-dive — existed **only as a dangling object inside an ephemeral container**. Had the container been
+reclaimed before this run, all of it would have been lost, and week 14 would have silently rebuilt on week 12 state.
+
+**Recovered** with `git merge --ff-only 593f546` (its parent was `main`'s tip, so it fast-forwarded cleanly) and
+pushed together with this week's work. Both commits are now on `origin/main`.
+
+> **STANDING RULE, first item of every future run: before committing, verify `git status -sb` shows a real branch,
+> and confirm `git merge-base --is-ancestor <last week's commit> main`. A commit is not a save; a push is.**
+
+This also explains nothing about the research and should not be allowed to flatter it: the week-13 entry was
+recovered intact, so the accumulated memory is whole.
+
+### Honest read: discovery 1-for-1, re-validation 2-for-2. Both halves produced, which has not happened in a month.
+
+**One new validated idea (ID 024, composite 11)** — the first new row in four weeks, after three consecutive
+zero-discovery runs. **Two downward re-scores**, both well-evidenced, both on rows week 13 named by priority.
+**One row retired.** **Fourteen weeks, still zero upward composite revisions**, and the backlog ceiling has fallen
+from 14 to **13**.
+
+### The finding of the run: the competitor was hiding in the complaint channel. Again.
+
+Week 13's headline lesson was that InvoicePortal/InvoicePolish — live, priced, dedicated — sat invisible across
+four targeted queries *and was being recommended inside the Xero complaint threads themselves*. **It happened
+again, on the project's top row, in the same channel.**
+
+Week 13's guidance named one question as the highest-value query available: does Qoblex, or anything else,
+actually apply a contact's price list when raising an invoice *inside* Xero? The answer arrived with a passenger.
+A developer has posted in the Xero idea thread that they built *"an app that offers a customer price list
+solution, allowing users to build and manage price lists for different customers and use these to create invoices
+in Xero"* and is recruiting **beta testers** at **oceanpricing.com**
+([user page](https://productideas.xero.com/users/6468051653-mark-shields)). That is **ID 017's product, by name**,
+built by exactly the solo-builder profile this project writes for.
+
+**ID 017 re-scored DOWN 14 → 13.** Whitespace 2 → 1. Ocean Pricing is **unpriced and in beta**, so this is a
+weaker kill than InvoicePolish's complete price card — two dedicated searches for its pricing came back empty —
+but a dedicated direct entrant already recruiting the exact buyer pool is not whitespace. The mechanism question
+also resolved cleanly and in ID 017's favour on the *feature* axis: **Qoblex** keeps price lists in its own B2B
+storefront and *syncs* invoices to Xero (**$99/mo**, Xero listing), and **Upstock** likewise uses *"your price
+lists in Upstock"* when **it** creates the invoice. So nothing yet applies a contact price list natively on a
+Xero-raised invoice — but something dedicated is now being built to, which is the point.
+
+**Demand simultaneously strengthened and could not move**, being already capped at 5: a **second independent Xero
+thread** ([46911148](https://productideas.xero.com/forums/939198-for-small-businesses/suggestions/46911148-invoice-ability-to-add-a-price-list-to-a-custome),
+7 votes) states the exact mechanism — pricing *"automatically added when invoicing"* — and a commenter notes
+*"Zoho, Sage, Freshbooks, and Quickbooks they all have the function"*, confirming Xero as the lone outlier. This
+is the **third** time in three weeks that the run's best new evidence has been recorded without raising a score.
+That is now a pattern worth naming: **this project's rows are demand-saturated and whitespace-starved.** Finding
+more demand is cheap and changes nothing; the only score that moves is whitespace, and it only ever moves down.
+
+### ID 001 re-scored DOWN 13 → 12: a free tier is a harder kill than a cheap one
+
+Re-checked as the stalest 13, per week 13's priority order. Monetization 3 → 2. The *honest-scanner* half that
+survived the 2026-09-28 collapse **is now given away**. **AccessRadar** scans WCAG 2.1, returns a score and a
+prioritised fix list, re-scans weekly with email alerts, uses **no overlay**, makes no full-compliance claim, and
+has a **free plan** — ID 001's MVP *and* its stated differentiator, at zero. Alongside it: **HewnScan** (free, 26
+deterministic checks, and it *traces each violation to the third-party app that caused it*), **AccessKit**
+(launched 28 Jul 2026, free), **Accessify AI** (free, WCAG 2.2 AA, AI code fixes), **WCAG Guard** (launched Feb
+2026, Agency **$189/mo**), **Accessibility Manager Pro $9.99/mo** — against **67+ accessibility apps** on the
+store, per TestParty, which was cited in this row's *original* week-1 evidence and now publishes the roundup.
+
+> **A cheap incumbent sets a price you must beat. A free incumbent removes the price entirely.** ID 024 and ID 001
+> are now both anchored at $0, and neither is a problem a better product solves.
+
+### ID 024 — the new row, and why it scores 11 rather than 14
+
+**Back-in-stock waitlist + reorder-demand report for Square Online.** Found by accident: the dead
+`site:forum.squarespace.com` probe was intercepted by **Square's** boards, which is where the thread was.
+
+It carries the **freshest demand signal this project has ever recorded** — a request **27 days old** stating the
+feature *"has been a feature request from countless users for many years and it's still being ignored"* — against
+Square's own *"not yet available for Square Online in any of our markets"*, six-plus separate request threads, a
+moderator's *"no update or ETA"*, a seller threatening to leave the platform, and a Square-run *"Feature Request
+Highlight"* on this very request. It **passes the week-9 Square expired-premise rule** decisively: week 13 found
+Square threads aged 689–2,495 days; this one is 27.
+
+**And it still only scores 11, for three reasons worth recording separately:**
+
+1. **Demand capped at 4, not 5, on source independence.** `sellercommunity.com` and `community.squareup.com` are
+   **both Square-operated**. The brief's two-different-domains letter is met; its spirit is not. **New rule: count
+   domains, but score *organisations*.** Had this standard been applied earlier it would have changed nothing —
+   but it should be applied from here.
+2. **Monetization 2 — the binding constraint, verified not assumed.** The comparable Shopify category is
+   commoditised at **$0–9/mo**: free tiers at 100 emails/mo from GrootApps and Crawlapps, Zooomy **Pro $5.99**,
+   Restocked **Pro $9**, Digismoothie from **$14.99**, Amp **$19/$49/$99** — and **Restockify has already shut
+   down** in the category. Independently corroborated by this week's Flippa finding (below): plugin-class products
+   earn **≈$3.31/subscriber/month**.
+3. **Whitespace 2 under the week-13 rule.** No Square-compatible incumbent surfaced across two dedicated extended
+   hunts and every mature competitor is Shopify-locked — a real gap — but the rule forbids 3+ on an absence claim,
+   and a Zapier pair page naming a "Back In Stock - Restock Alerts" + Square connection exists (probably
+   auto-generated for the Shopify app, but it is a named product and the rule does not permit optimism).
+
+**The deep-dive slot went to it by rule, and the four-week "re-dive slot" problem has broken.** After retiring ID
+020, the backlog held nine rows at 12–13 **all already deep-dived**, and a ten-way tie at 11 in which ID 024 was
+the only non-Stale row. Unlike ID 021 in weeks 12–13, diving it was **not** padding: no competitor serves Square at
+all, so a builder could genuinely be first on the platform, and the dive's job was to state plainly what the found
+prices imply — a **$12/mo ceiling with a free 50-alert tier**. Headline risk recorded: **Square shipped preorders
+for sold-out items on 24 September 2026**, the same merchant problem from the other direction.
+
+### Negative finding worth as much as the positive one: HubSpot calculated line items
+
+The strongest *raw* demand of the discovery half, dead inside an hour because the cheap-tier check ran **first**
+(week 13's whole lesson, applied). ["Calculated properties for Products"](https://community.hubspot.com/t5/HubSpot-Ideas/Calculated-properties-for-Products/idc-p/998663):
+**98 replies**, users calculating *"by hand before entering them, which invites errors"*, one saying the gap *"is
+the main reason they don't use HubSpot for quoting"*, another reporting the feature *"had been in planning for two
+years without reaching beta"*. Killed on three counts: **Quotivity** sells Calculated Pricing on its Enterprise
+plan (named incumbent); HubSpot **shipped custom line-item properties in February 2026** (vendor filling the gap);
+and the gap is a **paid-tier gate** — Revenue Hub Professional **$95/mo**, Enterprise **$140/mo** — so the buyer's
+alternative is HubSpot's own upsell, which no third party undercuts. Feasibility fails independently: `calculated`
+cannot apply to Price fields, the documented route is the API, and *"the Quote builder can overwrite those edits on
+autosave"*. **Recorded as a lead, deliberately not scored**, per week 13's instruction to stop accumulating dead rows.
+
+### METHOD FINDINGS, in order of portability
+
+1. **Query the feature on some boards, the status string on others.** On Xero, `site:` + `"not in pipeline"` is the
+   productive shape. **On HubSpot it returned almost nothing, while a feature-name query returned everything** —
+   reply counts, vote figures, verbatim complaints, dated staff updates. Match the query shape to the board.
+2. **RULE REFINED — a single-`site:` zero is necessary but no longer sufficient for a dead-channel verdict.**
+   `community.waveapps.com` returned a clean single-`site:` zero this week, which by week 13's letter is a valid
+   kill — but weeks 10–11 recorded Wave as the strongest new channel since `biggerpockets.com`, returning verbatim
+   staff refusals. A channel cannot be both. The likely cause is **query-shape sensitivity, exactly as with
+   HubSpot**. A dead-channel call now additionally requires that the query shape be one the domain has previously
+   answered, or that two different shapes both return zero.
+3. **Count domains, score organisations** (from ID 024, above).
+4. **One `site:` operator per query** — week 13's rule held up; every single-`site:` query this week behaved
+   predictably.
+
+### Channels
+
+- **`community.hubspot.com` — NEW and the best channel win since `productideas.xero.com`.** Indexed down to
+  individual `idc-p` comment permalinks, returns reply counts and dated staff updates, and sits on a platform with
+  a large **paid** marketplace and buyers already paying $95–140/mo. Unworked inventory visible: "Cloning a Deal"
+  (830), CC/BCC (298), more calculated-property functions, BCC email logging. **Mine it with feature-name queries.**
+- **`community.squareup.com` / `sellercommunity.com` — upgraded.** Week 13 warned Square hits needed an
+  expired-premise check; this week the board produced a **27-day-old** complaint and a current vendor status line.
+  Square's `Feature-Requests` sub-board and release notes are both indexed and should be read together.
+- **`community.notion.so` and `forum.squarespace.com` — both CHANNEL DEAD**, both calls made on single-`site:`
+  queries. Notion moves from UNRESOLVED to DEAD. **`discuss.bubble.io` remains unresolved and untested.**
+- **`ideas.gohighlevel.com` — barely indexed.** Two site-scoped queries returned exactly one board page (196-vote
+  Feefo request, 13 May 2025, Canny). Not dead, not minable at Mode B cost. Deprioritise.
+- **BigCommerce — no indexed community feature-request board found at all.** The thin-marketplace theory that
+  produced ID 024 did not transfer here.
+- **Flippa — standing weekly query (run 3), and it produced a genuine new pricing law.** A WordPress
+  form-builder↔CRM bridge plugin at **$3,285 MRR / 992 subscribers / asking $90,570** = **≈$3.31/sub/month**,
+  against the **≈$41–50/sub/mo** recorded in weeks 12–13 for SMB/agency SaaS. **The distribution channel sets the
+  ARPU ceiling, not the product's quality** — plugin/marketplace-distributed tools price at $3–5/sub/mo, direct-sold
+  SMB/agency SaaS at $40–50. This independently priced ID 024. Also a caution: a listing cut **$350K → $150K
+  (−57%)**; asking prices here are aspirational and are not valuation evidence on their own.
+
+### Housekeeping
+
+- **ID 020 RETIRED** (CAM/NNN reconciliation, composite 13, deep-dived 2026-09-28 verdict NO against six-plus
+  competitors spanning $45–299/mo). Moved to a **new `## Retired Rows` section** so closed-out rows stop occupying
+  top-ten slots, per week 13's guidance. Score frozen; no further re-checks. **ID 021 (12, verdict NO) is the next
+  retirement candidate** and should go next week unless something changes.
+- **No new Stale marks this week.** The only row reaching three weeks was ID 024's cohort (new), and nothing else
+  crossed the threshold with a composite below 12 that was not already Stale.
+- **Report length: 1,400 words, exactly on the ~1,400 target — the first time in three weeks it has not overrun.**
+  Week 13's fix worked: the three tables were drafted first and the prose written to the remaining budget. Keep
+  doing that.
+
+### Guidance for next week
+
+1. **Open with the git check, not with research.** `git status -sb` must show a branch; confirm last week's commit
+   is an ancestor of `main`. This cost nothing to fix this week and would have cost everything next week.
+2. **Mine `community.hubspot.com` with feature-name queries.** It is the best new channel in five weeks and is
+   barely touched. Start with the high-vote inventory listed above, and run the **cheap-tier + tier-gate check
+   first** — HubSpot's own $95→$140 upsell path killed this week's candidate and will kill most others, so check
+   whether the missing feature is simply gated behind Enterprise before spending more queries.
+3. **Re-validation priority order:** **ID 006** (13, re-dived 2026-10-12 — now the stalest live 13, and its
+   Demand-3 ceiling rests on zero merchant voices, which is the one thing Mode B has twice failed to fix), then
+   **ID 012** (12) only if something external changed. **Do NOT re-check ID 001** (closed, free tiers — the row
+   says so), **ID 017** (just re-scored), or anything Stale or Retired.
+4. **ID 024's two open questions, both cheap and both decisive.** (a) Does Square Online's embed block allow
+   **per-product** widget injection, or only page-level widgets? Feasibility 3 rests on this and a single help-page
+   query may settle it. (b) Does the **24 Sept 2026 preorder release** cover Square **Online**, or only POS/KDS? If
+   it covers Online, the premise is substantially eroded and ID 024 should fall.
+5. **Retest `community.waveapps.com` once with a feature-name query** (per method finding 2) before any verdict,
+   and **test `discuss.bubble.io` singly** — the last genuinely untested channel on week 11's list.
+6. **Run the Flippa/Acquire listings query** (standing item, now 3-for-3 useful).
+7. **Expect to retire, not to add.** Nine rows sit at 12–13 and every one is deep-dived; the ceiling has fallen
+   14 → 13 and the project has **never** revised a composite upward in fourteen runs. The honest posture is that
+   this backlog's job is now **narrowing to the least-dead row**, and the deep-dive slot should keep going to new
+   rows like ID 024 rather than re-diving the top.
+8. **Do not re-research** (additions this week): **HubSpot calculated line-item / product properties for quoting**
+   (Quotivity + Feb 2026 vendor ship + $95/$140 tier gate), **Chrome MV2-removal refugee tooling** (consumer
+   population, replacement roundups already exist), **BigCommerce feature gaps** (no indexed board), **Shopify
+   accessibility scanning in any form** (ID 001, free tiers), plus everything on the weeks 2–13 lists.
+9. **Escalation, fourteenth run.** Position unchanged and still honest: Mode B produced every finding above,
+   including the project's freshest demand signal and two well-evidenced re-scores. The bottleneck remains
+   **self-qualified demand statements from founders and merchants**, which is what the unreachable hosts hold:
+   **`news.ycombinator.com`** (Ask HN [item?id=48045237](https://news.ycombinator.com/item?id=48045237)) and
+   **`reddit.com`**. ID 006 is *still* stuck at Demand 3 solely for want of founder voices on HN or Indie Hackers —
+   now three failed attempts across three runs. **`apps.xero.com`** stays third: it would settle whether anything
+   on the marketplace applies a contact price list natively, which is the last open question on the backlog's top
+   row. Previously requested hosts remain on file.
