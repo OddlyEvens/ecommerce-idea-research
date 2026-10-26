@@ -2065,3 +2065,206 @@ autosave"*. **Recorded as a lead, deliberately not scored**, per week 13's instr
    now three failed attempts across three runs. **`apps.xero.com`** stays third: it would settle whether anything
    on the marketplace applies a contact price list natively, which is the last open question on the backlog's top
    row. Previously requested hosts remain on file.
+
+---
+
+## 2026-10-26 — Week 15
+
+### STEP 0 — WebFetch UNAVAILABLE. **Mode B**, fifteenth consecutive run — but the failure mode CHANGED, and that is worth recording.
+
+Both probes failed instantly: `https://example.com` and `https://en.wikipedia.org/wiki/Main_Page` each returned
+**`getaddrinfo ENOTFOUND`** — a **DNS resolution failure**, not the **403** that every prior run logged. Weeks 2–14
+recorded a network egress *allowlist* rejecting hosts at the proxy; this is name resolution failing before any
+policy decision is reached. Per the brief I did not retry, did not attempt curl, and switched entirely to Mode B.
+
+**Infrastructure history is now: blocked in all 15 runs, but by two distinct mechanisms.** Whether this is a
+different block or the same one surfacing differently, it is not intermittent and it is not improving. Re-check
+fresh next week as always.
+
+### Git check ran first, per week 14's standing rule, and came back clean.
+
+`git status -sb` showed **`## main...origin/main`** (a real branch, in sync), and
+`git merge-base --is-ancestor 8ab01aa main` confirmed **week 14's commit is an ancestor of `main`**, with
+`origin/main` and `main` both at `8ab01aa`. No detached-HEAD recurrence. The rule cost one command and should
+stay first in every run.
+
+### Honest read: zero new validated ideas, two well-evidenced downward re-scores, one row retired, and the
+### largest batch of channel findings the project has produced. **Fifteen runs, still zero upward revisions.**
+
+The discovery half **failed** — eleven candidate channels probed, seven dead, and the one candidate that cleared
+the evidence bar was killed by its own feasibility check inside the same session. The re-validation half
+**delivered 2-for-2**, both on the rows week 14 named by priority. **The backlog ceiling holds at 13 and the
+count of live 13s has fallen to one (ID 017).**
+
+### The pattern completed itself: for the fourth consecutive week, the competitor was in the complaint channel.
+
+Weeks 12–14 each ended with the same shape — InvoicePolish inside the Xero threads, Ocean Pricing inside the Xero
+threads, and now this. **ID 006 re-scored DOWN 13 → 12**, Whitespace 3 → 2. The query was aimed at *raising* the
+row's Demand score and it returned the kill instead: **CancelCheck**, an Indie Hackers founder profile dated
+**September 2026**, offering **free state auto-renewal compliance scans for subscription businesses** and
+recruiting early users. That is ID 006's scanning wedge, at zero, built by this project's exact reader profile.
+Chargebee's free **Click-to-Cancel Compliance Hub** with a per-framework status tracker occupies the same
+top-of-funnel. Monetization deliberately **held at 3** — the free entrant takes the scan, not the recurring
+evidence-archive half that was always the paid thesis.
+
+> **The rule now has four independent confirmations and should be promoted to a method step, not a lesson:
+> query the complaint channel for the competitor BEFORE scoring whitespace. It is where direct entrants are
+> found, because that is where they recruit.**
+
+### The most important finding of the run is an access finding, and it closes a question rather than opening one.
+
+**`indiehackers.com` IS REACHABLE.** Weeks 12–14 escalated three times that the bottleneck was *self-qualified
+demand statements from founders*, held by the unreachable `news.ycombinator.com` and `reddit.com`. Indie Hackers
+is named in the brief as a priority source and had **never been tested site-scoped**. It works, and returns body
+text, not just titles.
+
+**And it did not fix ID 006.** Queried directly for the row whose Demand-3 ceiling has failed five runs running,
+it returned founders *selling* churn and cancel-flow tools and **zero subscription operators describing
+compliance pain in their own words**.
+
+> **Three weeks of escalation attributed that ceiling to access. Access was not the cause.** Indie Hackers is a
+> channel of **sellers, not buyers** — excellent for build-in-public, ARPU and pricing data, and for finding
+> direct competitors early; useless for buyer-voice complaints. **ID 006's demand is not there in the voice the
+> row needs. Do not spend a sixth run on it.**
+
+### ID 024 re-scored DOWN 11 → 10: both of week 14's "cheap and decisive" questions answered, both against it.
+
+Feasibility 3 → 2. Week 14 called these questions cheap; they cost one query batch and settled the row.
+
+1. **The embed mechanism is the binding constraint.** Square's help article 6899 states that embedding external
+   content **requires Square Online Plus or Premium** — every prospect must already be paying Square. Embeds are
+   **page-level** (Website → Edit site); **product pages are not documented as supported**. And a seller on
+   Square's own board reports embed code of about **209 characters rendering blank**, with Square phone support
+   saying **the code was too long**, shorter embeds working, and the seller sent to the Ideas board to ask for a
+   higher limit. Square adds that it is *"unable to assist with custom code of any kind."* **A per-product
+   back-in-stock widget cannot live in a page-level box that broke at ~209 characters.**
+2. **Premise partially eroded, not destroyed — and the distinction is real.** Square Online preorders are live
+   (help article 8285) and also gated to Plus/Premium, but cover items **not yet available**, sold against a
+   future date range (24h–365d), **pickup or local delivery only**. That is "sell it before it arrives," not
+   "tell me when the sold-out thing is back." **How sold-out items interact with preorders is undocumented and
+   stays unresolved.** Demand holds at 4.
+
+### The one candidate that cleared the evidence bar, and why it is a lead and not a row.
+
+**BAS/GST lodgement snapshot + post-lodgement drift detection for Xero.** Demand was the best of the run:
+verbatim, audit-grade, across **five organisations** — *"no tracking or record of an amendment in Xero"*; after
+lodging, GST account balances *"no longer agree to the BAS that was lodged"* with users needing *"full
+transaction support for the BAS lodged"*; the NZ **Publish** function **removed** from the new GST report at
+**188 votes** and parked **Not in Pipeline**; final GST reports *reverting to draft with no way to identify who
+made the change*; plus an accounting firm's KB, a Xero consultancy's pre-lodgement advice, and a forum workaround.
+
+**Killed three ways, any one sufficient**, and recorded as a resolved-negative lead per the weeks 13–14 rule
+against accumulating dead rows:
+
+1. **Feasibility, near-hard-stop.** XBert's own help article states **Xero does not expose the lodged statement
+   through its API**, so XBert *recalculates BAS labels from the ledger*. The product cannot read the lodged
+   figures; it would have to reimplement AU BAS label logic well enough to survive an **ATO audit**.
+2. **A dedicated priced incumbent owns the buyer and channel.** **XBert**: Xero/MYOB/QBO, **Australia-only**
+   (this row's exact region lock), **A$8.40–A$118.80 per client/month** plus **A$34.80/user/month**.
+3. **The competitor ships it natively.** **QuickBooks Online** lets you *mark a BAS as lodged*, surfaces later
+   changes as **prior-period adjustments** with an **audit report of affected transactions**, and has a **GST
+   Amendments report**. Table stakes at the rival means Xero is likeliest to close it. Compounding: Xero
+   **already has Published Reports**, so the snapshot half is native, and the workaround costs **$0**.
+
+### METHOD FINDINGS, in order of portability
+
+1. **`discuss.bubble.io` DOES NOT EXIST — the real host is `forum.bubble.io`.** Weeks 11–14 carried it as "the
+   last genuinely untested channel," deferred four times. The hostname was a typo. **RULE: verify a hostname
+   resolves to real content before calling a channel dead; a zero from a non-existent host is not a finding.**
+   `forum.bubble.io` is live and rich (dated 2026 threads, verbatim complaints, an Idea Board whose *"top
+   upvoted idea is from 2020 with 1036 upvotes asking for a PDF generator"*) — **but the marketplace screen
+   kills it as a build target in one query: Zeroqode alone publishes ~871–873 plugins.** Demand channel only,
+   same standing as Airtable.
+2. **Query the complaint channel for the competitor before scoring whitespace** (four confirmations — above).
+3. **`capterra.com` review pages work under Mode B — but query products, not phrases.** Found accidentally when
+   a dead `site:lawnsite.com` query was intercepted by Capterra, which returned **verbatim, dated, star-rated**
+   text (a 2023 one-star LawnPro review whose messaging feature *sent clients repeated copies of the same text*;
+   a user wishing it worked with **desktop** QuickBooks). Targeted exact-phrase Capterra queries returned
+   nothing. First confirmation that the brief's priority 1–2 star source is usable here.
+4. **A working forum does not vouch for its network — the VerticalScope sibling theory is dead.**
+   `contractortalk.com` works, so `electriciantalk.com`, `plumbingzone.com` and `painttalk.com` were probed on
+   the assumption of shared indexing. **All three returned zero from domain.**
+5. **One `site:` per query** — week 13's rule, still holding at 4-for-4 runs.
+
+### Channels
+
+- **`indiehackers.com` — NEW, LIVE, and the best channel win of the project.** Sellers not buyers; see above.
+- **`forum.bubble.io` — LIVE** (correct hostname). Demand/method only; marketplace-saturated as a build target.
+- **`thetruckersreport.com` — NEW and LIVE.** Returns real forum text. It also produced and killed its own idea
+  in one breath: IFTA mileage/fuel tracking, where the forum's own recommended answer is *"a simple spread
+  sheet... you can use a notebook too"* from users who passed audits on it, with an Etsy Excel tracker and
+  TruckingOffice as paid options. **The free incumbent here is the one buyers recommend to each other.**
+- **`capterra.com` — NEW source class.** Query by product name.
+- **DEAD this week (zero from domain):** `lawnsite.com`, `community.gusto.com`, `troublefreepool.com`,
+  `hvac-talk.com`, `electriciantalk.com`, `plumbingzone.com`, `painttalk.com`. **`dentaltown.com`** returns
+  blog/channel posts only, no forum content — thin, treat as dead.
+- **`community.waveapps.com` — NOW CALLED DEAD**, and the call is valid under week 14's refined rule. A
+  feature-name query (`recurring invoice feature request`) returned **zero from the domain**, a second query
+  shape after week 14's refusal-vocabulary zero. Two shapes, two zeros. The weeks 10–11 "strongest new channel"
+  verdict cannot be reconciled with this and is superseded.
+- **`community.hubspot.com`** — mechanically productive (indexed to `idc-p` comment permalinks, returns dated
+  staff roadmap replies) but its inventory keeps landing on HubSpot's own upsell or its own roadmap. Week 14's
+  tier-gate warning held; see the three-kill lead row. **Deprioritise relative to its week-14 billing.**
+- **`productideas.xero.com`** — still the best board in the project. Produced the week's only bar-clearing
+  candidate plus: granular CIS tracking (65 votes, *"isn't on the foreseeable roadmap"*), leave balances in days
+  (32, Not in Pipeline), Inland Revenue transfers (36, Not in pipeline), and a **vendor-fills-gap** datum — the
+  254-vote *simple accounts tax solution* answered by **Xero shipping a paid annual add-on from August 2026**.
+
+### Housekeeping
+
+- **ID 021 RETIRED** (carrier commission reconciliation, composite 12, verdict NO), per week 14's standing
+  nomination. Moved to `## Retired Rows`; score frozen. **Next retirement candidate: ID 010 or ID 018** — both
+  12, both deep-dived, both notes reading flat do-not-build.
+- **No new Stale marks.** Nothing crossed three weeks with a composite below 12 that was not already Stale;
+  ID 024 is one week old.
+- **NO DEEP DIVE, and this is the first run to use the brief's skip provision.** After retiring ID 021, **every
+  non-deep-dived row sits at 11 or below, is Stale, and is already a recorded do-not-build**, while the whole
+  live top (017 at 13; 006, 001, 012, 010, 018, 003, 011 at 12) is fully deep-dived. The choice was a nine-way
+  tie among Stale do-not-builds or a re-dive week 14 explicitly ruled out. **Reasoning written into the Deep
+  Dive History rather than padding the slot.**
+- **Report length: ~1,340 words**, inside the ~1,400 target. Tables drafted first, prose to the remaining
+  budget — the week-13 fix, now 3-for-3.
+
+### Guidance for next week
+
+1. **Git check first.** `git status -sb` must show a branch; confirm this week's commit is an ancestor of `main`.
+2. **Promote the competitor-hunt to a method step, before scoring.** For any candidate, query its complaint
+   channel *for the competitor* first. Four for four. It would have saved most of weeks 12–15.
+3. **Re-validation priority order:** **ID 017** (13, the last live 13 — check whether **Ocean Pricing** has
+   published pricing or left beta, which would take Whitespace to a hard 1), then **ID 012** (12) only if
+   something external changed. **Do NOT re-check ID 006** (closed — five failed demand runs, free entrant),
+   **ID 024** (just re-scored), **ID 001** (closed, free tiers), or anything Stale or Retired.
+4. **Mine `indiehackers.com` properly — but for the right thing.** It is a seller channel. Use it for (a) finding
+   direct competitors to any candidate *before* scoring, (b) real ARPU/pricing data, (c) `$X/mo` build-in-public
+   posts that benchmark monetization. **Do not query it for buyer complaints.** Untried shapes worth one query
+   each: `site:indiehackers.com "churn"`, `"pricing"`, `"my first paying customer"`.
+5. **Test the remaining untried channels singly, hostnames verified first:** `community.smartsuite.com`,
+   `community.godaddy.com`, `communityhub.sage.com` (cloud products only — the Sage 50 32-bit SDK is a
+   feasibility 2). And **`capterra.com` by product name** against any candidate's named incumbents.
+6. **Run the Flippa/Acquire anchors query** (standing item, 4-for-4 useful).
+7. **The structural read, stated for the record at fifteen runs.** The ceiling has fallen 14 → 13 and there is
+   now **exactly one live 13**. Fifteen runs, **zero upward composite revisions**, and the last four weeks have
+   produced one new row between them. The method is working — it generates reliable, well-evidenced *negative*
+   findings fast, and this week it correctly killed a bar-clearing candidate in one session. **What is exhausted
+   is the search space, not the method: vendor-feature-board gaps in SMB SaaS are systematically occupied,
+   because the same boards that reveal the gap also recruit the founders who fill it.** The honest posture is
+   that this backlog's remaining job is narrowing to the least-dead row. **If the next run also produces zero
+   new rows, the recommendation is to change the search space — not the query shapes.** Candidate pivots worth
+   one run each: non-English-language SMB platform gaps; *offline-first* trades where the buyer has no board at
+   all (reached only via Capterra reviews); and buying rather than building (the Chrome-extension and
+   Microns.io/TrustMRR routes), which the brief's no-large-capital constraint currently excludes.
+8. **Do not re-research** (additions this week): **Xero BAS/GST lodgement snapshot & drift detection** (XBert
+   priced + no API for the lodged statement + QBO ships it natively), **HubSpot BCC/email logging** (vendor in
+   beta), **Square custom reporting** (Square ships custom reports; advanced reporting is a Plus/Premium tier
+   gate), **Jobber↔QuickBooks sync repair** (Jobber documents every fix; sync gated to Connect ~$139/mo),
+   **owner-operator IFTA tracking** (spreadsheet/notebook is the buyers' own recommended answer), **Bubble as a
+   build target** (~871 Zeroqode plugins), plus everything on the weeks 2–14 lists.
+9. **Escalation, fifteenth run — and it is now a narrower ask than before.** Mode B produced every finding above,
+   including two well-evidenced re-scores and a three-way kill of a bar-clearing candidate. **One prior
+   escalation is formally withdrawn:** founder-voice access was the stated bottleneck for three runs, and
+   `indiehackers.com` turning out to be reachable proved that diagnosis wrong — the demand was absent, not
+   hidden. What remains genuinely unreachable and still worth requesting: **`reddit.com`** and
+   **`news.ycombinator.com`** for *buyer*-side complaints (the voice Indie Hackers does not carry), and
+   **`apps.xero.com`**, which would settle whether anything on the marketplace applies a contact price list
+   natively — still the last open question on ID 017, the backlog's only remaining live 13. Previously requested
+   hosts remain on file.
