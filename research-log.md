@@ -2268,3 +2268,172 @@ against accumulating dead rows:
    **`apps.xero.com`**, which would settle whether anything on the marketplace applies a contact price list
    natively — still the last open question on ID 017, the backlog's only remaining live 13. Previously requested
    hosts remain on file.
+
+---
+
+## 2026-11-02 — Week 16
+
+### STEP 0 — WebFetch UNAVAILABLE. **Mode B**, sixteenth consecutive run; failure mode unchanged from week 15.
+
+Both probes failed instantly: `https://example.com` and `https://en.wikipedia.org/wiki/Main_Page` each returned
+**`getaddrinfo ENOTFOUND`** — DNS resolution failure, the same mechanism week 15 first recorded, not the 403 of
+weeks 2–14. Per the brief I did not retry, did not attempt curl, and switched entirely to Mode B.
+
+**Infrastructure history: blocked in all 16 runs, by two distinct mechanisms — 403 at the proxy (weeks 2–14),
+DNS non-resolution (weeks 15–16).** The DNS form has now held two runs, so it is the current steady state, not a
+blip. Still not intermittent, still not improving.
+
+### Git check ran first, per week 14's standing rule, and came back clean.
+
+`git status -sb` showed **`## main...origin/main`**, and `git merge-base --is-ancestor 1a1083b main` confirmed
+week 15's commit is an ancestor of `main`, with both refs at `1a1083b`. One command, keep it first.
+
+### Honest read: **the ceiling moved UP for the first time in 16 runs.** One new row at composite 14, one
+### bar-clearing candidate killed in-session, one recorded as a resolved-negative lead, one retirement.
+
+Sixteen runs of monotonic decline (14 → 13) broke this week. **ID 025 — Xero Payroll leave-liability provision
+report + one-click journal — scored 14 and took the deep-dive slot by rule, no tie.** This is the first *upward*
+composite movement the project has recorded. It should be read with the hedge attached: **the row's Whitespace 3
+rests on `apps.xero.com` being unreachable**, so "no direct competitor" is absence of evidence, not a marketplace
+read. If Mode A ever returns, this row is the first thing to re-score.
+
+### The competitor-hunt method step fired for the SIXTH time — and produced its first *favourable* nuance.
+
+Weeks 12–15 ended four times with the competitor sitting inside the complaint channel. It happened again, and
+then turned: the author of the *"Australian Leave Liability Playbook"* — the single best demand document found
+for ID 025 — **is the competitor. Finlert sells LeaveCal** (£10/£14/£20 per month by headcount band on the Xero
+App Store UK; AUD $15/mo for 10 members on its own site; price rise 1 Aug 2025).
+
+> **But LeaveCal's own FAQ says it *"will never retrieve any of your invoice, payment or salary data"* — and
+> valuing a leave liability requires salary data. The incumbent publicly disclaims the data the wedge needs.**
+> This is the only time in 16 runs the competitor hunt has found a competitor and left the wedge standing.
+> **It is a privacy promise, not a moat** — adding salary scope is a product decision. Named as the dive's
+> single biggest risk alongside the unverified marketplace.
+
+**The method step is now 6-for-6 and should stay a pre-scoring step permanently.** It also produced the run's
+cheapest kill ever: one query ended the bank-statement-converter candidate (below).
+
+### The fastest kill the project has produced — one query, a 304-vote board gap, dead.
+
+**Bank statement PDF → CSV for Xero/Hubdoc.** Demand looked excellent: *Hubdoc – Convert bank statement to csv*
+at **304 votes**, **Not in pipeline June 2026**, Xero saying there *"isn't any work planned for this idea"*, and
+Xero genuinely accepts CSV/OFX/QIF/QFX but **not PDF**. The competitor hunt returned nine-plus priced rivals —
+**$4.50/100 pages**, **$5/mo for 3,000 pages**, $15–29/mo, €49/mo, $79/mo — **plus free tiers** (StatementBridge
+*"free — 10 pages/month"*; a rival branded *"Free Bank Statement Converter… CSV & Xero"*). Whitespace 1.
+
+> **RULE, now explicit: a high vote count on a vendor board is a demand signal and nothing else. It says
+> nothing about whether the gap is filled off-platform.** 304 votes with a $4.50 floor and a free tier is not
+> an opportunity. Hunt the competitor before letting a vote count raise your expectations.
+
+### Week 15's recommended search-space pivot was run and **FAILED** — stated plainly so it is not retried blind.
+
+Week 15's structural read said to change the search space, not the query shapes. Both named pivots were run:
+
+1. **Offline-first trades (via Capterra) — same wall, different vertical.** Dumpster/roll-off hauling returned
+   a dense priced field *with free incumbents*: Roll-Off Amigo *"free forever for owner-operators"*, Dumpster
+   Controls *"free for a whole team, drivers included"*, Dumpster Rental Systems $79.95/mo, Bin Boss and DSQ
+   Hauler $99/mo, QuoteIQ from $29.99/mo, ServiceCore ~$200/mo. Towing the same: TowBook ~$209/$319 against
+   TowMarX $19–79/mo + $3/job. **The free-incumbent pattern is not a property of vendor-board verticals — it is
+   the trades-software market generally.** The pivot does not escape the wall.
+2. **Non-English SMB gaps — thin, but the channel shape is now known.** German accounting (lexoffice/sevDesk)
+   returned **no forum threads at all**; every real signal came through **Shopify app reviews** and `omr.com`
+   (a sevDesk reviewer wanting deeper payroll integration; sevDesk reportedly no longer allowing a German
+   USt-IdNr. on invoices with a *Nachtext* workaround; a lexoffice B2B merchant wanting conditional English
+   invoices). All single-merchant-specific. **For non-English, query app-store reviews, not forums. One more
+   run at most.**
+
+> **Important: ID 025 came from the OLD vein — `productideas.xero.com`, the project's best board. Do not read
+> this week's success as vindication of the pivot.** The honest conclusion is the opposite of week 15's
+> hypothesis: the vendor-board vein still had a row in it, and the new spaces had none.
+
+### METHOD FINDINGS, in order of portability
+
+1. **Hunt the competitor before scoring — 6-for-6**, and it now has a favourable case as well as five kills.
+2. **Vote counts measure demand only, never whitespace** (the 304-vote kill above).
+3. **Flippa MRR figures do not reconcile across views of the same listing.** A revived listing headlined
+   *"previously $43k MRR… sitting at 10k MRR"* shows **AUD $36,245 MRR at 0.2x profit, asking USD $37,306**; a
+   finance SaaS reads **~$14,000 MRR asking $350,000→$200,000** in one view and **$5,504 MRR at 1.7x revenue**
+   in another. **Treat Flippa as asking-price anchors only, never as demand evidence.** Standing item, run 5.
+4. **`capterra.com` confirmed a second time — product-name queries only, and it yields complaints, not prices.**
+   Arborgold returned real review text (*"a very expensive software"*, *"Kind of expensive"*, *"things that
+   should be part of the system are not getting updated"*, slow reports) but the listing price is *"Contact
+   vendor"*. Week 15's "query products, not phrases" rule holds.
+5. **Verify a hostname returns domain results before calling a channel dead** — week 15's rule, applied this
+   week and it caught one: `communityhub.sage.com` *did* return real thread URLs, so it is live and my query
+   shape was simply wrong.
+6. **One `site:` per query** — week 13's rule, 5-for-5 runs.
+
+### Channels
+
+- **`productideas.xero.com` — still the best board in the project, and it produced the run's only new row.**
+  Two queries returned a dense, dated, vote-counted cluster: cross-account bank search (**253 votes**, *"no
+  plans… in the short term"*), batch-payment splitting (**347**, Jan 2026), Hubdoc PDF→CSV (**304**, Jun 2026),
+  edit bank account on transactions (Mar 2026), fixed-asset depreciation in cash-basis reports (**167**),
+  asset revaluation (**165**), custom payroll reports (Jan 2026), AU employee payroll details (**96**), AU
+  leave provisions (**114**), attach files to leave requests (**100**), AU contact details (**65**), flexible
+  pay periods (**43**), leave balances excluding next-year requests (**39**).
+- **`communityhub.sage.com` — LIVE** (real thread URLs across gb/us/es locales). The *"not planned"* shape
+  returned no status labels because **Sage routes requests to a separate Ideas board — find and test that
+  board's hostname next.**
+- **`capterra.com`** — second confirmation; product-name queries.
+- **DEAD this week (zero from domain):** `community.smartsuite.com` (only `help.smartsuite.com` and the blog,
+  which do confirm an Idea Exchange with Open/In Process/Complete statuses), `community.godaddy.com` (two
+  phrasings).
+- **`indiehackers.com`** — queried per week 15's guidance for build-in-public pricing data and returned mostly
+  profile/history pages, not post bodies: a first paying user after 35 free signups (Jun 2026), first 8 users
+  after a price drop (May 2026), one paid cold-email customer from 43 sends (Jul 2026). **Thin for pricing.
+  Week 15 over-billed this channel; it is a competitor-discovery tool, nothing more.**
+- **`practicalmachinist.com`** — one relevant thread, ~5,400 days old. Coverage is thinner than week 10 implied.
+- **`accountingweb.co.uk`** — productive and worth keeping: supplied the second independent domain for the
+  bank-transaction lead, with a bookkeeper quote. Its Xero threads skew 2–5 years old.
+
+### Housekeeping
+
+- **ID 018 RETIRED** (sub-$50 machine-shop quoting, composite 12, verdict NO) on week 15's standing nomination.
+  QuoteBuddy sells the exact MVP at **$29/mo founding then $59/mo with a free tier**; flat do-not-build since
+  2026-09-28 and six weeks moved nothing. Score frozen, moved to `## Retired Rows`.
+  **Next retirement candidate: ID 010** (12, deep-dived, thesis gone to Sustalium).
+- **ID 022 marked Stale** (11, first seen 2026-09-14, seven weeks, composite below 12 — the standing rule; it
+  had been missed in prior sweeps). **ID 024 is NOT yet Stale** — first seen 2026-10-19, exactly two weeks old;
+  it qualifies next run if nothing changes.
+- **Active rows: 22** (+025, −018). **Ceiling: 14. Live rows at 13: one (ID 017).**
+- **Report length: 1,422 words** against the ~1,400 target. Tables drafted first, prose to the remaining
+  budget — the week-13 fix, now 4-for-4.
+
+### Guidance for next week
+
+1. **Git check first.** `git status -sb` must show a branch; confirm this week's commit is an ancestor of `main`.
+2. **Hunt the competitor before scoring.** 6-for-6. Non-negotiable now.
+3. **Re-validation priority order:** **ID 025** is the whole priority — it is the new ceiling and the most
+   provisional row in the backlog. One question decides it: **does any Xero App Store app value a leave
+   liability (not merely display balances)?** Specifically, has **LeaveCal added salary-data scope**, which
+   would collapse Whitespace to 1 in a single stroke? Then **ID 017** only if a *new* angle on Ocean Pricing
+   appears. **Do NOT re-check** ID 006 (closed), ID 001 (closed), ID 024 (re-scored), ID 018/021 (retired), or
+   anything Stale.
+4. **Two rows are now blocked on one unreachable host.** ID 017 and ID 025 both hinge on `apps.xero.com`. That
+   makes it the highest-value single access request in the project — see escalation.
+5. **Do not re-run the week-15 pivots blind.** Offline-first trades hit the same free-incumbent wall; non-English
+   yields only app-store-review signal. **If non-English gets one more run, query app-store reviews, not forums.**
+6. **Untested channel leads worth one query each:** **Sage's separate Ideas board** (hostname unknown — find it);
+   `xero.uservoice.com/forums/250567-payroll-api` (surfaced incidentally this week — a **Payroll API** idea board
+   distinct from the main product board, with Leave and completed categories; **never tried, and it is the board
+   that would reveal API-level blockers before they cost a build**).
+7. **Run the Flippa/Acquire anchors query** (standing item, 5-for-5 useful).
+8. **The structural read, revised at sixteen runs.** Week 15 concluded the search space was exhausted and the
+   method was fine. **This week is evidence the first half was wrong and the second half was right.** The
+   vendor-board vein still had a composite-14 row in it; the two *new* spaces had none. The method's edge is
+   that it kills fast and cheap — two candidates died in one query each. **Revised recommendation: stay in the
+   vendor-board vein, but go one level deeper than the product board — to the API/developer idea boards**
+   (item 6), which is where feasibility blockers live and where this project has repeatedly been surprised
+   late (the week-15 BAS kill, ID 024's embed limit). **Do not spend another run opening new verticals.**
+9. **Do not re-research** (additions this week): **bank-statement PDF→CSV for Xero/Hubdoc** (nine-plus priced
+   rivals from $4.50, free tiers), **Xero wrong-bank-account transaction fixer** (free native find-and-recode,
+   unreconcile restrictions, no recurring payment), **dumpster/roll-off and towing software** (free incumbents),
+   **German lexoffice/sevDesk gaps** (single-merchant-specific), plus everything on the weeks 2–15 lists.
+10. **Escalation, sixteenth run — and it is now a single, concrete, high-value ask.** Mode B again produced the
+    week's findings, including a new ceiling row and two one-query kills, so the method is not access-starved
+    for *discovery*. What it cannot do is **verify a negative**. **`apps.xero.com` is now the one host that
+    would settle two rows at once** — ID 025's Whitespace (does any app value leave liability?) and ID 017's
+    last open question. If one host can be allowed, that is the one. **`reddit.com`** and
+    **`news.ycombinator.com`** remain wanted for buyer-voice complaints, which Indie Hackers demonstrably does
+    not carry. Previously requested hosts remain on file.
