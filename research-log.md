@@ -2437,3 +2437,237 @@ Week 15's structural read said to change the search space, not the query shapes.
     last open question. If one host can be allowed, that is the one. **`reddit.com`** and
     **`news.ycombinator.com`** remain wanted for buyer-voice complaints, which Indie Hackers demonstrably does
     not carry. Previously requested hosts remain on file.
+
+---
+
+## 2026-11-09 — Week 17
+
+### STEP 0 — WebFetch UNAVAILABLE. **Mode B**, seventeenth consecutive run; failure mode unchanged from weeks 15–16.
+
+Both probes failed instantly: `https://example.com` and `https://en.wikipedia.org/wiki/Main_Page` each returned
+**`getaddrinfo ENOTFOUND`** — DNS non-resolution, identical to weeks 15–16. Per the brief I did not retry, did not
+attempt curl, and switched entirely to Mode B.
+
+**Infrastructure history: blocked in all 17 runs, by two mechanisms — 403 at the proxy (weeks 2–14), DNS
+non-resolution (weeks 15–17).** The DNS form has now held three runs. Steady state, not a blip, not improving.
+
+### Git check ran first per week 14's standing rule, and **it caught a real problem this time.**
+
+`git status -sb` returned **`## HEAD (no branch)`** — a detached HEAD at `d1bb0e3` (week 16's commit), while local
+`main` and `origin/main` both sat at `1a1083b` (week 15). The ancestor assertion **FAILED**. `git ls-remote origin`
+then showed the remote's `main` already at `d1bb0e3`, so **nothing was lost — week 16 pushed fine and the local
+clone's refs were simply stale.** Fixed with `git fetch origin main` + `git checkout -B main d1bb0e3`; the check
+then passed clean. **New standing rule: if the ancestor check fails, run `git ls-remote origin` BEFORE concluding
+anything is missing.** The container is cloned fresh weekly and can arrive on a detached HEAD with stale refs; that
+is a checkout artefact, not data loss. Three weeks of this check paid for itself today.
+
+### Honest read: **the ceiling moved back DOWN to 13 — week 16's upward move lasted exactly one week — and the
+### week's genuine win is one clean new row that took the deep-dive slot by rule.**
+
+**ID 025 re-scored 14 → 13** (Whitespace 3 → 2) on strong, specific evidence, while its *demand* strengthened.
+**ID 026 (portable long service leave returns) is new at composite 12** and is the first deep-dive target in three
+runs to be selected with no tie, no judgement call and no padding. **Two kills, one method unlock, one retirement.**
+
+**Yield was BELOW the brief's 4–6 target: one new validated row, not four.** Stated plainly rather than padded —
+three further candidates were worked and died (below), and two probed channels yielded grievance without a nameable
+gap. One honest row plus one well-evidenced re-score is this run's true output.
+
+### The competitor-hunt-before-scoring step fired for the SEVENTH time — and for the FIRST time it did not kill
+### or move the target.
+
+Weeks 12–16 ended five times with the competitor inside the complaint channel, and once favourably. On **ID 026**
+the step ran first and came back genuinely clear: the only real incumbent feature (**Employment Hero's Portable LSL
+Report**) is locked inside its own payroll platform at **A$10/employee/month, ~A$100 minimum monthly spend**, which
+is a payroll *replacement*, not a cheap add-on; `paycat.com.au` is a **consultancy**, not a product; and the free
+government portals are the lodgement **destination**, not a rival tool — both QLeave and the Victorian PLSA accept a
+spreadsheet, so producing a validation-clean file from payroll data is exactly the unpaid work. **Cheap tier
+unoccupied.** The step is now 7-for-7 as a *decision* step and stays mandatory pre-scoring.
+
+### ID 025: the re-score is the run's most consequential finding, and the vendor did it.
+
+Week 16 named one question as the whole priority: has LeaveCal added salary scope? **Answer: no — the favourable
+week-16 finding HOLDS.** LeaveCal's AU listing still reads as leave visibility into calendar/email/Slack at **AUD
+$18.00/mo for 6–20 employees** (a new band against week 16's AUD $15/10 members). But two *other* things moved:
+
+1. **SCOPE COLLAPSE — Xero shipped two of the three regions.** NZ Payroll's Leave Balances Report now *"will also
+   include the total leave liability as a dollar amount"*; UK is marked **accepted**, Xero having *"agreed a Leave
+   Balances Report is a valuable addition and it's something we want to address."* **A row written AU/NZ/UK is now
+   AU-only.** Only AU still carries *"Not in pipeline"* and *"not something we're planning to build in the
+   immediate future."*
+2. **A competitor plausibly ships the journal half.** A user on Xero's board was considering **Tanda** *because it
+   automates leave accruals and creates the journals in Xero*; a third-party comparison claims Tanda values annual
+   and LSL liabilities *"in the journal automatically, calculated against each employee's current hourly rate"* —
+   **secondary and competitor-published; discounted, but no longer absent.** Tanda is sales-gated at **AUD
+   $1.60–$9.60/user/module/mo**, bundle ~**AUD $10–16/user/mo**.
+
+Also new: **Leave Balance** (`leavebalance.com`) at **$10/mo or $100/yr flat for unlimited employees** (its pages
+also say AUD $29/mo and NZD $32/mo) — and **leave liability is absent from its pages too.** The wedge survives; the
+market around it does not pay much. Monetization held at 4 on buyer difference, but that flat-unlimited anchor
+should cut it to 3 if any priced liability-valuing rival appears.
+
+> **RULE, new and important: "the vendor has no plans" is a PERISHABLE finding with a short half-life.** ID 025's
+> whitespace rested on three regions of vendor inaction; two reversed within one quarter. **Score region-by-region,
+> never as a bloc, and treat any single-report wedge sitting on a public vendor idea board as structurally fragile.**
+> This is now ID 026's named biggest risk, evidenced rather than hypothesised.
+
+### METHOD UNLOCK — **`reddit.com` and `news.ycombinator.com` ARE reachable under Mode B, via mirrors. A five-week
+### escalation is partly withdrawn, and the diagnosis behind it is half-refuted.**
+
+Weeks 12–16 escalated repeatedly that the missing ingredient was *buyer*-side complaint voice held by two
+unreachable hosts. **Both were tested this run with WebSearch `site:` queries — which had apparently never been
+done, the escalation having assumed WebFetch's block applied to search too. It does not.**
+
+- **HN:** `site:news.ycombinator.com` returned real item URLs and verbatim comment text (*"I wish there was a better
+  way to make spreadsheets use a database as a backend"*; *"I make a good living replacing Excel for small
+  businesses"*). Two indexed **HN mirrors** are also queryable: **`hn.svelte.dev`**, **`brianlovin.com/hn`**.
+- **Reddit:** `site:reddit.com` returned little from the canonical host but exposed a **dense indexed mirror
+  ecosystem** — **`reddit.sentinel-team.org`** (dated snapshot pages, by far the most productive),
+  `reddit.sudovanilla.org`, `libreddit.winscloud.net`, `reddit.fsky.io`, `pol1.lr.ggtyler.dev` — plus the
+  aggregators `gummysearch.com` and `discury.io`, which carry quoted Reddit text. Real buyer quotes came back:
+  *"Payroll alone has literally doubled in cost the last two years. I'm desperate for an alternative"*; a stack
+  tallied at *"easily $400-500/month for tools that often don't integrate well with each other"*; *"spending 30+
+  hours a month pulling data from accounting, CRM, and payroll tools."*
+
+**MANDATORY CAVEAT: mirror text is SECONDHAND.** Label any such quote mirror-sourced; never cite it as a page read.
+A `site:` on one mirror is not honoured reliably — one query aimed at two mirrors returned results from a third.
+
+> **Honest read, against my own interest: the channel works for discovery, and its FIRST yield was generic.** Three
+> queries produced no specific buildable gap — complaints were broad (manual admin, tool sprawl, price rises) and
+> the one concrete thread was answered by named incumbents (**Fathom**, **LiveFlow**) inside the snippet. So
+> weeks 12–16's diagnosis is **half-refuted twice over**: first by `indiehackers.com` in week 15, now by these.
+> **The voice was not unreachable, and having it did not produce a row.** Use it to test a hypothesis already in
+> hand, not to go prospecting. Three consecutive access escalations have now proved to be mis-diagnoses.
+
+### Week 16's structural recommendation was run and **FAILED — stated plainly so it is not retried blind.**
+
+Week 16 said: stay in the vendor-board vein but go one level deeper, to the **API/developer idea boards**. Done.
+`xero.uservoice.com` is **live and deeply indexed** — both the Payroll API forum (250567) and the Accounting API
+forum (5528) returned real request text, including one item at **1,217 votes** answered *"Currently, we've no plans
+to work on this feature"* (near-neighbours at 1,226 and 1,243 votes/72 comments), plus missing-endpoint complaints
+and *"when pulling the journals from Xero, we can not accurately recreate the balance sheet and P&L (as vital
+journals are missing)."*
+
+**But the recommendation was wrong for this project.** These are gaps that block *developers building
+integrations* — plumbing, not a billable job a non-technical founder can sell to a business buyer. **Their real
+value is feasibility intelligence:** the per-employee leave-balance rate-limit finding that set ID 026's
+Feasibility score came from exactly this vein. **Query the API boards BEFORE a build decision, never as an idea
+source.** That is the corrected rule.
+
+### Kills and negative findings (cheap, and the vote-count rule fires again)
+
+- **Consolidated / multi-org Xero group reporting — DEAD in one query. Seventh firing of the week-16 vote rule.**
+  Board shows **264 votes** (multi-org combined reporting) and **216** (budgets on balance sheet), with consolidated
+  reporting answered *"not currently planned."* **Joiin** occupies the exact slot, priced by company count at
+  roughly **$23/mo for 1–2 companies**, $57 for 5–10, $139 for 20–50, $252 for 100+, **all features on every plan,
+  unlimited users**; one reviewer runs it across *"over 40 Xero entities."* **264 votes with a $23 floor is not an
+  opportunity.**
+- **Reddit-research / pain-point-mining tooling — killed on arrival, and it is the project's own method as a
+  market.** GummySearch is shutting down, vacating a known niche; one query returned `painonsocial.com`,
+  `trend-seeker.app`, `bigideasdb.com`, `snoops.co`, `statichum.studio` and an Indie Hackers post titled *"we're
+  building a GummySearch replacement and it does more"*, advertised at **$79–199/month**. A competitor concedes the
+  real constraint is **Reddit's API access** — a moat a solo builder cannot cross. Whitespace 1.
+- **Chrome-extension takeover (standing METHOD lead) — strengthened with hard dates, window already closed once.**
+  Google removed **all remaining MV2 extensions from the Chrome Web Store on 31 August 2026** (confirmed 8 July
+  2026); Chrome 138 stopped running MV2 in July 2025 and **Chrome 151 (28 July 2026)** removed the last MV2 code
+  paths. Real dated cohort of extensions that died with users attached — failure mode is *"the developer never
+  shipped a Manifest V3 rebuild."* **But headline categories are re-filled and the removal is ~10 weeks past.**
+  Remaining value is narrow: niche MV2 listings with users and no MV3 successor. Sources conflict on 138 vs 139.
+
+### Channels
+
+- **`productideas.xero.com` — still the best board in the project, 17 runs running, and it produced the new row.**
+  ID 026 came from *AU Payroll – Add portable long service leave report* ([47693666], **3+ pages**).
+- **`xero.uservoice.com` — LIVE** (both forums, deeply indexed). Feasibility intelligence only; see above.
+- **`community.reckon.com` — LIVE and valuable as a CROSS-PLATFORM CONFIRMER.** It carried the same portable-LSL gap
+  on a different ledger, which is what lifted ID 026's demand beyond one vendor's backlog. Keep for triangulation.
+- **Regulator sites are a first-class evidence channel and were under-used until now:** `qleave.qld.gov.au`,
+  `plsa.vic.gov.au`, `leaveplus.com.au`, `actleave.act.gov.au` gave hard deadlines, penalty mechanics, file-format
+  guides with *"Common Faults and Upload Codes"*, and a **dated forward obligation** (*"the expanded scheme will
+  commence on 1 July 2026"*). They also publish **bookkeeper/accountant-facing pages**, which doubles as an
+  acquisition channel. **Statute is checkable, dated and does not market at you — prefer it to vendor blogs.**
+- **`apps.xero.com` — PARTIALLY REACHABLE, and week 16's single-host escalation is partly withdrawn.** `site:` on it
+  returns zero; a **product-name** query returns its listing URLs with prices in the snippet. Same rule as Capterra:
+  **query products, not phrases.**
+- **Sage's separate Ideas boards — FOUND**, answering week 16's open item. Not on `communityhub.sage.com`: the
+  hostnames are **`sagecity.com/.../i/...-ideas`** (per-product portals) and **Aha!-hosted** at
+  **`sage200uki.ideas.aha.io`** and **`sageexperienceplatform.ideas.aha.io`**. Statuses exist and are mineable
+  (*"Will not implement"*, *"Already exists"*, *"Planned"*, *"Shipped"*; Intacct uses *"Closed – Not Planned"*).
+  **Untested for demand content — best channel lead for week 18.**
+- **`community.airtable.com`** — live but yields grievance, not gaps (roadmap opacity, a petition relaying *"ZERO
+  PLANS"*), mostly 2018–2019 and secondhand.
+- **QuickBooks Online — UNMINEABLE, and this is why 17 runs keep landing on Xero.** Intuit staff answer with
+  export-to-spreadsheet workarounds and refuse timelines (*"there's no specific time frame"*, *"there are no plans
+  at the moment"*), and a user notes the dedicated feature-request page *"has been closed"*. **No public board with
+  statuses or vote counts.** Do not re-probe for idea discovery.
+- **Failed query shapes:** a generic `"is there a tool that" ... bookkeeper` exact-phrase query returned only
+  affiliate listicles (one usable datum: **Booke AI at $129/business/month, no free trial**). A stray non-ASCII
+  character in that query was **silently ignored rather than erroring** — check query strings before trusting a thin
+  result.
+
+### Housekeeping
+
+- **ID 010 RETIRED** (Prop 65 audit/register, composite 12) on week 16's standing nomination. Score frozen, moved to
+  `## Retired Rows`. **Next retirement candidate: ID 011** (12, deep-dived verdict NO, Whitespace 1, flat
+  do-not-build with platform risk now that Shopify documents native purchase orders and supplier management).
+- **ID 024 marked Stale**, exactly as week 16 predicted it would qualify (first seen 2026-10-19, three weeks,
+  composite 10).
+- **Active rows: 22** (+026, −010). **Ceiling: 13, back down from 14. Live rows at 13: two** (017, 025).
+- **Flippa anchors run 6:** asking prices only, cuts dominate — AI-captioning SaaS **$175,000 → $110,000** (1.5×);
+  B2C finance SaaS **$350,000 → $150,000** (−57%); e-commerce SaaS ~$1.3k MRR at **$9,500** (0.5×); the recurring
+  WordPress↔CRM plugin at ~$3.2k MRR asking **$90,570** (**1.8×**, against week 15's 2.0× profit reading of the
+  *same* listing — **cross-view inconsistency now confirmed across three runs**). An analysis of **651 listings**
+  puts bootstrapped micro-SaaS at **~2.0× trailing revenue** and cautions these are asking prices, not closed deals.
+
+### Guidance for next week
+
+1. **Git check first** — and if the ancestor check fails, **run `git ls-remote origin` before concluding anything is
+   missing.** Today that distinction was the difference between a false alarm and a real one.
+2. **Hunt the competitor before scoring.** 7-for-7, now with one clean pass. Non-negotiable.
+3. **Re-validation priority order: ID 026 first, and two specific questions decide it.** (a) Does **LeavePlus** — as
+   distinct from PLSA, where it is confirmed — accept a **spreadsheet upload** at all? This run could not confirm
+   it, and the MVP's whole shape depends on it. (b) Does any `apps.xero.com` app already ship a PLSL return?
+   **Use a product-name query, not `site:`.** Then **ID 025**: watch for AU moving off *"Not in pipeline"*, and
+   verify the **Tanda** journal claim against a non-competitor source. **Do NOT re-check** ID 017 unless a new
+   Ocean Pricing angle appears, and do not re-check anything Stale or Retired.
+4. **Score region-by-region, never as a bloc** (the new ID 025 rule). And treat *"the vendor has no plans"* as
+   **perishable** — two of three regions reversed inside one quarter.
+5. **Best channel lead: Sage's Ideas portals** (`sagecity.com/.../i/`, `sage200uki.ideas.aha.io`,
+   `sageexperienceplatform.ideas.aha.io`). Statuses confirmed to exist; demand content untested. **One `site:` per
+   query** (week 13's rule, 6-for-6).
+6. **Regulator sites are now a named first-class channel.** Dated statutory obligations with penalties and published
+   file formats are the most reliable demand evidence this project has found that is not a vendor board — and the
+   regulators' bookkeeper-facing pages double as an acquisition channel. **Look for the next dated obligation wave.**
+7. **Do NOT use the API/developer boards as an idea source** (week 16's recommendation, tested and failed). Use them
+   as a **pre-build feasibility check**, which is where they are genuinely strong.
+8. **Reddit/HN are available via mirrors — use them to TEST, not to prospect**, and always label quotes
+   mirror-sourced. Three consecutive access escalations have now proved to be mis-diagnoses; **the next escalation
+   must first prove the host is unreachable via WebSearch `site:`, not only via WebFetch.**
+9. **Run the Flippa/Acquire anchors query** (standing item, 6-for-6 useful).
+10. **The structural read at seventeen runs.** The vendor-board vein produced a clean composite-12 row and a clean
+    deep-dive slot, so it is not dead — but **the ceiling has sat at 13–14 for sixteen consecutive runs and the
+    binding constraint is no longer access.** It is that every gap big enough to pay for is either filled off-platform
+    at $10–30/mo or shipped by the vendor within a quarter. **The one thing that demonstrably escapes that wall this
+    run is statute**: a legal obligation with a deadline and a penalty cannot be undercut by a free tier, and the
+    vendor has little incentive to build seven state-specific return formats. **Recommendation for week 18: hunt
+    dated statutory obligations (new or expanding schemes with lodgement deadlines) in the same way this project has
+    hunted vendor boards.** That is where ID 026 came from, and it is the first genuinely new vein in six runs.
+11. **Do not re-research** (additions this week): **consolidated/multi-org Xero reporting** (Joiin from ~$23/mo),
+    **Reddit-research tooling** (crowded, $79–199/mo, API moat), **QBO as a discovery channel** (no public board),
+    **Airtable community for gaps** (grievance only), **Xero API/developer boards as an idea source** (plumbing, not
+    jobs), plus everything on the weeks 2–16 lists.
+12. **Escalation, seventeenth run — and it is now SMALLER than at any point in the project.** Mode B produced a new
+    row, a well-evidenced re-score, two kills, a retirement and a method unlock. **Two previously escalated hosts
+    (`reddit.com`, `news.ycombinator.com`) are now reachable via mirrors, and `apps.xero.com` is partly reachable by
+    product-name query — so all three of last week's named asks are withdrawn or downgraded.** What remains genuinely
+    valuable is **Mode A itself**, for one reason only: verifying a negative. Specifically, confirming no
+    `apps.xero.com` app ships a PLSL return (ID 026's Whitespace 3) and reading LeavePlus's own employer pages for
+    the file spec. **No single host would settle it this week** — the ask is the fetch capability, not an allowlist
+    entry. Previously requested hosts remain on file.
+
+### Report length note (housekeeping, week 17)
+
+**1,510 words against the ~1,400 target — over, and deliberately so.** Tables were drafted first per week 13's fix
+(5-for-5), but this run's two evidence cells carry an unusual number of direct quotes and cited prices, and four
+trim passes could not reach 1,400 without deleting sourced evidence. **Evidence was kept and the overage recorded
+rather than hidden.** Next run: cap each evidence cell at roughly three quotes and push the rest into the backlog
+note, where there is no word budget.
