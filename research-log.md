@@ -2671,3 +2671,273 @@ source.** That is the corrected rule.
 trim passes could not reach 1,400 without deleting sourced evidence. **Evidence was kept and the overage recorded
 rather than hidden.** Next run: cap each evidence cell at roughly three quotes and push the rest into the backlog
 note, where there is no word budget.
+
+---
+
+## 2026-11-16 — Run 18
+
+### Evidence mode: **B**. Step 0 ran first, before any research, and the block is UNCHANGED — but the failure signature has shifted and that matters.
+
+`WebFetch` on **both** probe URLs failed with **`getaddrinfo ENOTFOUND`** — `example.com` and
+`en.wikipedia.org`. **This is a DNS-resolution failure, not the 403 recorded in earlier weeks.** The
+tool's own error text names the cause: a host *"fails to resolve like this when it is outside the
+session's allowed network domains."* Per standing rule, **WebFetch was not retried for the rest of
+the run and no curl/direct HTTP was attempted.** Mode B for the **18th consecutive run** — the
+infrastructure block is **persistent, not intermittent**, across eighteen checks. Logging the
+signature change because it slightly sharpens the diagnosis: an **egress allowlist at the DNS layer**,
+not an HTTP-layer policy rejection.
+
+### The run's most consequential finding is a CORRECTION TO MY OWN WEEK-17 CONCLUSION, and it should be read before anything else here.
+
+Week 17 ran the competitor hunt on **ID 026** and reported, for the first time in seven firings, a
+**clean pass** — recording `paycat.com.au` as *"a **consultancy**, not a product."* **That was wrong.**
+Pay Cat ships **Pay Cat Toolbox** (one of nine named automations) whose portable-LSL report *"pulls
+each worker's wages for the period straight from your Pay Cat Payroll file, applies the pay categories
+that are reportable for your scheme, and fills in both the ordinary wages and annual rate of pay
+columns for the QLeave spreadsheet import."* Its NSW and VIC guides price Toolbox at **$2 per active
+employee per month** and state it **covers every state and territory scheme**. ID 026 re-scored
+**12 → 11** (Whitespace 3 → 2; held off 1 only because Toolbox requires Pay Cat *Payroll*, a
+replacement rather than a Xero add-on).
+
+> **RULE, new: a "consultancy, not a product" verdict is NOT a competitor clearance.** It was reached
+> last week from blog-shaped results on the vendor's domain. A single query this week — the vendor's
+> **own product name** plus "pricing" — overturned it. **Before recording any cheap-tier pass, query
+> the suspected incumbent's PRODUCT NAME and the word "pricing" explicitly.** Week 16's `apps.xero.com`
+> lesson ("query products, not phrases") generalises to competitor clearance, and I failed to apply it.
+
+So the competitor-hunt-before-scoring step is **8-for-8 as a decision step** — and its one apparent
+exception has now been withdrawn. It killed three of this week's four candidates outright. **Keep it
+mandatory pre-scoring; it is the highest-value step in this process by a wide margin.**
+
+### Week 17's headline structural recommendation was RUN IN FULL and HALF-FAILED — and the failure mode is now specific enough to be actionable.
+
+Week 17 recommended hunting **dated statutory obligations** the way this project has hunted vendor
+boards, reasoning that *"a legal obligation with a deadline and a penalty cannot be undercut by a free
+tier."* **Four probes ran. All four returned accurate, dated, penalty-bearing regulatory facts and
+ZERO buyer complaint voice.**
+
+- **UK packaging EPR** — small producers report full-year 2026 data by **1 April 2027**; but small
+  producers *"will not be obligated to pay a Local Authority Waste Management fee, purchase PRNs or
+  perform recyclability assessments"* — **the cheap segment has almost no obligation to tool for.**
+- **US pay transparency** — a real dated wave (**Delaware 26 Sep 2027** >25 employees, **Illinois
+  1 Jan 2027** 15+, **Columbus OH 1 Jan 2027** 15+, NY enforcement 2027), but mid-market HR buyers
+  and Rippling-class incumbents, and **no complaint voice**.
+- **US state paid leave** — the best mechanics of the four (Minnesota's **second** wage-detail
+  submission for Paid-Leave-only employees; *"don't assume it also files Paid Leave"*; OnPay *"is
+  unable to submit quarterly wage reports on your behalf"* without the Paid-Leave-only account number;
+  **small-employer status at 0.66% vs 0.88% forfeited** if an employer *"has failed to report wages in
+  one or more quarter"*) — but payroll providers do the filing, leaving only a thin checker.
+- **MTD ITSA joint ownership** — **premise refuted outright** (below).
+
+> **CORRECTED RULE, and this is the main structural output of run 18: statute alone yields CALENDARS,
+> not DEMAND. Statute produced a row ONLY where it INTERSECTED A DOCUMENTED VENDOR DEFECT.** ID 027
+> exists because CIS300 has a monthly deadline and a day-one penalty **and** Xero demonstrably
+> under-reports it. **Week 19 should hunt that intersection — a statutory filing whose numbers come out
+> of a ledger that gets them wrong — not statutory calendars.** Half of week 17's recommendation
+> survives; the half that says "hunt statute" on its own does not.
+
+### ID 027 — the new row, and the first time the ceiling has moved off 13 in seventeen runs.
+
+**CIS300 pre-filing checker + nil-return watchdog for UK construction contractors on Xero. Composite
+14 — highest in the backlog.** Two independent domains, both with verbatim text in the snippet:
+
+- **`accountingweb.co.uk`** (*XERO - CIS mthly returns fail on cis mats only*): the return *"does not
+  pull though this invoice value onto the report"* for materials-only invoices, and the poster's fix is
+  **two offsetting £1 and −£1 lines** on a CIS labour code. **A user-invented hack is the strongest
+  single demand signal this project has found all year** — someone is paying in workarounds already.
+- **`productideas.xero.com`** (*CIS Monthly Return - To include material only bills*, 49471805, 2025,
+  still discussed **May 2026**): *"materials were not being reported via our submissions on Xero."*
+  Sibling idea *CIS - Ability to add CIS Codes* (45000574) is **Not in pipeline** since Nov 2025 —
+  *"only one labour and one materials code"*, forcing a firm to *"either operate the CIS function or
+  analyse costs using account codes, but not both."*
+- **Statutory half, independently sourced:** CIS300 due the **19th**; **£100 automatic from day one**,
+  **£200** at two months, **£300 or 5%** at six and twelve. **From 6 April 2026 nil returns are
+  compulsory again** — confirmed by **`cipp.org.uk`** (the payroll profession's institute, *not* a
+  vendor) plus `bdo.co.uk` and several practices.
+- **Competitor hunt PASSED** (only the second genuine pass ever): **Chalkstring** $49/user/mo
+  (Capterra) or $200/mo (Software Advice); **Archdesk** £690/mo (Software Advice), $420/$800
+  (SaaSWorthy). A targeted query for cheap Xero CIS add-ons returned **nothing** — logged as a
+  **yellow flag**, not as good news.
+
+**Named biggest risk, and it is worse than ID 026's:** the materials-only idea is **OPEN and actively
+discussed, NOT "Not in pipeline"** — so this is **the most patchable wedge this project has ever
+backed**, directly against ID 025's perishability rule. And **the sources conflict on whether
+materials-only subcontractors belong on the return at all**: one AccountingWeb thread reports the CIS
+helpline saying such a subcontractor *need not appear*, and Xero support reportedly told the first
+poster HMRC doesn't want materials without CIS labour. **Verify HMRC's position before any code.**
+
+### ID 025 — evidence upgraded, score held at 13, and the correction favours the row.
+
+Week 17 discounted the Tanda journal claim as competitor-published. **It is now confirmed from Tanda's
+own documentation** (`help.tanda.co`): liability is *"worked out by multiplying accrued hours by the
+employee's hourly rate and the leave loading"*, and **leave liability accounts are included in the
+payroll journal after the next pay run is posted**. So the **annual-leave half is genuinely taken.**
+**But the decisive nuance cuts the other way: Tanda's long service leave (calculated) type does NOT
+post like regular leave — its liability sits in a separate LSL Liability Report.** **The LSL half of
+the wedge survives.** Whitespace stays 2, composite stays **13**. The deciding question (has Xero AU
+moved off *"Not in pipeline"*?) was **not re-probed** — budget went to ID 026's two named questions and
+the new row. Still **AU-only**; keep scoring region-by-region.
+
+### ID 026's two named questions from week 17 — both answered, one negative.
+
+- **(a) Does LeavePlus accept a spreadsheet upload? NO.** A Xero community comment: LeavePlus
+  *"doesn't allow file upload, can only enter data manually"*; its own quarterly-returns page describes
+  completing the return online, and its portal's *"securely upload and download documents"* refers to
+  documents, not returns. **VIC construction is out of MVP scope.** What survives: **PLSA takes a
+  spreadsheet** (*"enter data directly or upload a spreadsheet"*, upload *"may be easier for employers
+  with more than 30 workers"*, a *"new workers"* tab on first return, states in capitals), and
+  **QLeave takes a spreadsheet import** — confirmed indirectly but clearly by Pay Cat's own report
+  targeting *"the QLeave spreadsheet import."*
+- **(b) Does any `apps.xero.com` app ship a PLSL return?** Product-name query found none. **Negative
+  not fully verifiable under Mode B** — this remains the one thing Mode A would settle.
+
+### Channels
+
+- **`productideas.xero.com` — still the best board in the project, 18 runs running, and it produced the
+  new row again.** **The high-value discovery this run is a STATUS INDEX PAGE:
+  `/forums/967133-reports-tax/status/5361156` = "Reports & tax: Not in pipeline (50 ideas)."** It
+  yielded four candidates in one query (CIS codes, fixed assets, multi-country VAT/OSS, detailed
+  transaction-level P&L, custom payroll reports). **Mine the status-index pages per forum, not
+  individual ideas — this is the single best query shape found since week 13.** Note the forum itself
+  shows **913 ideas "Hot"** in Reports & tax.
+- **Sage Ideas portals — week 17's "best channel lead" is TESTED and SPENT.** `sage200uki.ideas.aha.io`
+  is **live and genuinely mineable** (real statuses and votes: *Drill Down Reports* **115 votes**,
+  *"Idea Accepted - Gauging Support"*, 17 Nov 2023; stock-transaction revamp **46 votes**; a Delivered
+  2018 item) — **but a 115-vote ceiling fails this project's own vote-count rule, and Sage 200 is
+  mid-market sold through resellers: the wrong buyer.** `sageexperienceplatform.ideas.aha.io` is
+  reachable but **thin** (status filters all showing **count 0**). **`sagecity.com` — `site:` DOES NOT
+  RESTRICT** (leaked Wikipedia and Microsoft Learn), and yields grievance not gaps. **Deprioritize all
+  three.**
+- **`accountingweb.co.uk` — NEW, LIVE, and the best new channel since `community.hubspot.com`.** It
+  supplied half of ID 027's evidence, including the £1/−£1 hack. **It is practitioner voice (accountants
+  and bookkeepers describing client problems), which is exactly the buyer-side voice weeks 12–16 kept
+  escalating about.** Its *Any Answers* threads are indexed and quote well. **Top channel priority for
+  week 19.**
+- **`cipp.org.uk` — NEW and authoritative.** A professional institute, not a vendor or a law firm; it
+  confirmed the April 2026 CIS nil-return change. **Professional institutes (CIPP, AAT, ICB, ICAEW) are
+  a better class of source than vendor blogs for dated obligations — add them to the regulator tier.**
+- **`help.tanda.co` — vendor help-docs as a COMPETITOR-VERIFICATION channel.** It settled the Tanda
+  question that week 17 could only source from a competitor comparison. **Generalise: to verify whether
+  a rival really ships a feature, query ITS OWN HELP DOCS, not comparison pages.**
+- **`site:reddit.com` on the canonical host — ZERO Reddit results again**, consistent with week 17.
+- **MY OWN QUERY ERROR, recorded so it is not mistaken for a channel death:** I queried
+  `reddit.sentinel-team.org` as **bare text, not as `site:`**, and got Gumroad template sellers. **The
+  mirror channel is NOT disconfirmed — the query shape was invalid. Always `site:<mirror>`, one `site:`
+  per query** (week 13's rule, now 7-for-7).
+- **`site:news.ycombinator.com` + "I wish there was" — CONFIRMS week 17's warning: it prospects badly.**
+  Real verbatim wishes came back, all generic or non-buyer (a *"document vault"* for vendor contracts,
+  a fees-owed service, someone who *"would pay for"* a hierarchical undo view in Zed, a wish for a
+  business *"just fixing most annoying bugs"* answered by *small bounties rarely cover the cost*).
+  Threads up to ~10 years old. **Also: the engine does not filter by date — adding a year to a query
+  does NOT narrow it.** Use mirrors/HN to TEST only.
+- **Chrome MV2 takeover method — THIRD failed conversion; retire it as a search target.** An exact-phrase
+  1-star-review query returned almost entirely `superchargebrowser.com` listicles (one vendor with a
+  commercial interest in recommending replacements). Dates still conflict across sources. One genuinely
+  new datum, as a **warning**: **QuickLens** was listed for sale in late 2025, **changed owner Feb 2026,
+  and a malicious update landed within days.** Buying an abandoned extension carries a security tail.
+
+### Kills (all cheap, all from the Xero "Not in pipeline" index)
+
+- **Xero fixed assets / depreciation — KILLED, incumbent occupies BOTH halves.** Strong voice existed
+  (*"couldn't believe the depreciation schedule had no way to account for private use"*; Xero's own
+  *"creating manual journals is the only available option"*; a two-journal workaround; *"other
+  fundamentally broken things are labelled as 'not in pipeline'"*; tax books only for **AU/NZ**, with
+  **UK/US/ZA accounting depreciation only**). But **AssetAccountant** on the Xero App Store already does
+  *"tax depreciation rules for several countries"* **and one-click journal posting**, at **$6–$12 per 100
+  assets + $4/loan**, with third-party listings at **$1 per client register**. Whitespace 1.
+- **EU multi-country VAT / OSS — KILLED.** **hellotax** OSS Reports **from €41/mo**, filings **from
+  €75/mo**; Taxually quote-gated at an estimated €49–99/mo. Also squarely in the *heavy data-compliance*
+  category the brief says to avoid.
+- **HubSpot report→Sheets / ACV-per-month — KILLED.** Real voice (*"API doesn't export reports as they
+  are"*, *"can't calculate annual contract value divided by 12"*), but **Coefficient** at **$49/mo with
+  a free tier** and Skyvia are named **inside the complaint threads themselves**. Threads **400–3,400
+  days old**.
+- **MTD ITSA joint ownership — PREMISE REFUTED.** **Hammock** already ships per-owner quarterly
+  submissions; the rules have **no joint filing** by design; and bridging software **VitalTax at ~£30 +
+  VAT per YEAR** sets a price floor no solo entrant can live under.
+
+### Parked (not scored, deliberately)
+
+**UK guaranteed-hours duty for zero/low-hours workers (Employment Rights Act 2025, 2027).** The closest
+shape to another ID 026 found all run — a new statutory duty **calculated from rota/timesheet data**,
+with law firms confirming the burden (*"rolling 12-week subsequent reference periods could increase the
+administrative burden"*; *"with workers potentially having different reference periods this could be
+administratively difficult"*). **Parked because the rules are not fixed:** reference-period length
+(12 weeks preferred, alternatives consulted on, subsequent period *"does not have to be the same"*),
+**mean vs median** still open, and the low-hours threshold proposed *"within the range of eight to 20
+hours per week."* Consultation closed **25 Aug 2026**; commencement 2027, dates depend on regulations.
+**And zero buyer voice — every source is a law firm or HR vendor.** Earns a row only when the regulations
+fix the method AND real employer complaint voice appears.
+
+### Housekeeping
+
+- **ID 011 RETIRED** (supplier PO chasing, composite 12) on week 17's standing nomination. Score frozen,
+  moved to `## Retired Rows`. **Next retirement candidate: ID 001** (accessibility scan, composite 12,
+  Whitespace 1, re-scored down twice, deep-dived back in week 2 — the oldest row still active).
+- **Active rows: 22** (+027, −011). **Ceiling: 14 — the first move off 13 in seventeen runs.** Live rows
+  at 13+: three (027, 025, 017).
+- **No new Stale marks.** Every row below composite 12 is already Stale; ID 026 fell to 11 but is one
+  week old. Rows at exactly 12 (006, 001, 012, 003) are not below the threshold.
+- **Flippa/Acquire anchors, run 7 — and the cross-view inconsistency is now 4-for-4.** No
+  listing-level November data surfaced. **Flippa's own figures are profit-based** (*"2.5× to 4.5× profit
+  (SDE)"*; **H1 2026 average 2.47×, top quartile 4.06×**) while **third-party guides are MRR-based and
+  far higher** (*"25–45× MRR"*, *"25-30x MRR"*). One source states the reconciliation rule explicitly:
+  *"Flippa listings usually quote profit multiples, not MRR multiples."* Live anchors: ~**€1,336 MRR**
+  asking ~**€8,500** at **0.6×**; another at **4.6×** reduced; `spyderads.app` at ~**$3k MRR**. Churn
+  benchmark: under 5%/mo healthy, under 3% premium. **All asking prices, not closed deals.**
+
+### Guidance for next week (run 19)
+
+1. **Git check first**, and `git ls-remote origin` before concluding anything is missing. Clean this run.
+2. **Hunt the competitor before scoring — 8-for-8, and query the incumbent's PRODUCT NAME + "pricing".**
+   Non-negotiable. The ID 026 correction happened because last week's pass skipped that exact step.
+3. **Mine Xero's STATUS-INDEX pages, forum by forum.** The *"Not in pipeline"* index for Reports & tax
+   gave four candidates in one query. Do the same for Payroll, Invoices & quotes, Banking, Practice tools.
+   **This is the best new query shape since week 13.**
+4. **`accountingweb.co.uk` is the top channel priority** — practitioner voice, indexed *Any Answers*
+   threads, and it supplied the best demand signal of the year (the £1/−£1 hack). **Query it for
+   "doesn't pull through", "workaround", "fails" + a named platform.**
+5. **Hunt the INTERSECTION, not statute alone:** a statutory filing with a deadline and a penalty whose
+   numbers come out of a ledger that gets them wrong. That is the corrected week-17 recommendation and
+   it is the only thing that has lifted the ceiling.
+6. **Re-validation priority for ID 027, and one question decides it: what is HMRC's actual position on
+   materials-only subcontractors on the CIS300?** Sources conflict and the whole wedge rests on it. Try
+   `gov.uk` CIS340 guidance and `cipp.org.uk`. Second: has Xero shipped the materials-only fix? Then
+   **ID 025**: has Xero AU moved off *"Not in pipeline"*? **Do NOT re-check** ID 017, ID 026 (just
+   re-scored), or anything Stale or Retired.
+7. **Verify a rival's feature from ITS OWN HELP DOCS**, never from comparison pages. That settled Tanda.
+8. **Professional institutes (CIPP, AAT, ICB, ICAEW) join the regulator tier** as dated-obligation
+   sources — better than vendor blogs, and they publish practitioner-facing pages that double as an
+   acquisition channel.
+9. **Mirrors with `site:`, one `site:` per query, to TEST not prospect.** My bare-text mirror query
+   failed this run; that is a query error, not a channel death.
+10. **Do not re-research** (additions this run): **Xero fixed assets/depreciation** (AssetAccountant
+    $6–12/100 assets), **EU multi-country VAT/OSS** (hellotax from €41/mo), **HubSpot report→Sheets**
+    (Coefficient $49/mo + free tier), **MTD joint ownership** (Hammock ships it; £30/yr floor),
+    **Sage Ideas portals** (live, 115-vote ceiling, wrong buyer), **Chrome MV2 takeover as a search
+    target** (3 failed conversions), **statute-only calendars** (EPR, pay transparency, paid-leave) —
+    plus everything on the weeks 2–17 lists.
+11. **Escalation, eighteenth run — unchanged in substance and still small.** Mode B produced the
+    highest-composite row in the project's history, a self-correction, four kills, a retirement and two
+    new channels. **The one genuine Mode A need is verifying a NEGATIVE** — specifically that no
+    `apps.xero.com` app ships a PLSL return (ID 026) — and now a second: reading HMRC's CIS340 guidance
+    directly rather than through practice blogs that conflict. **No single host would settle it; the ask
+    is the fetch capability.** Previously requested hosts remain on file.
+12. **The structural read at eighteen runs.** The ceiling moved — 13 → 14 — for the first time in
+    seventeen runs, and it moved for a specific, repeatable reason: **ID 027 is the first row where a
+    dated statutory penalty and a documented vendor defect point at the same number.** Statute alone
+    gave calendars; vendor boards alone gave gaps that are filled at $10–30/mo or shipped within a
+    quarter. **The intersection is the vein, and run 19 should work it deliberately rather than by
+    accident.** The honest caveat, stated against my own result: ID 027's wedge is an **open** defect,
+    which makes it the most patchable thing this project has backed — the ceiling may well come back
+    down next quarter.
+
+### Report length note (housekeeping, run 18)
+
+**1,507 words against the ~1,400 target — over by ~7%, and recorded rather than hidden** (week 17 was
+1,510, so this is flat, not worse). Week 17's fix was applied: tables drafted first, and evidence cells
+capped at roughly three quotes with the remainder pushed into the backlog notes where there is no word
+budget. **Three further trim passes could not reach 1,400 without deleting sourced evidence**, and note
+that `wc -w` counts markdown table pipes and bold markers as words, so prose is nearer the target than
+the figure suggests. **Evidence was kept.** Next run: consider moving the "killed this week" bullets
+entirely into the backlog and leaving a one-line pointer in the report.
